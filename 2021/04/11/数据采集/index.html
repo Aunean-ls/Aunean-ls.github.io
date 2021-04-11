@@ -20,28 +20,39 @@
     var CONFIG = {"hostname":"aunean-ls.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="第一章、爬虫基础1.1 HTTP 基本原理1.1.1 URI 和 URL URI 的全称为 Uniform Resource Identifier ，统一资源标志符  URL 称为 Universal Resource Locator，统一资源定位符  URL 是 URI 的子集，也就是说每个 URL 都是 URI ，但不是每个 URI 都是 URL。   1.1.2 超文本 超文本，其英文名称叫">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://aunean-ls.github.io/index.html">
+<meta property="og:url" content="https://aunean-ls.github.io/2021/04/11/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一章、爬虫基础1.1 HTTP 基本原理1.1.1 URI 和 URL URI 的全称为 Uniform Resource Identifier ，统一资源标志符  URL 称为 Universal Resource Locator，统一资源定位符  URL 是 URI 的子集，也就是说每个 URL 都是 URI ，但不是每个 URI 都是 URL。   1.1.2 超文本 超文本，其英文名称叫">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201116210501159.png">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201116210517596.png">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201124104319661.png">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201124105453279.png">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201124143721294.png">
+<meta property="og:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201124155850837.png">
+<meta property="article:published_time" content="2021-04-11T08:55:49.081Z">
+<meta property="article:modified_time" content="2020-12-25T13:09:34.000Z">
 <meta property="article:author" content="Aunean">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Aunean/AppData/Roaming/Typora/typora-user-images/image-20201116210501159.png">
 
-<link rel="canonical" href="https://aunean-ls.github.io/">
+<link rel="canonical" href="https://aunean-ls.github.io/2021/04/11/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -139,76 +150,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://aunean-ls.github.io/2021/04/11/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Aunean">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/11/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-11 16:57:00 / Modified: 17:15:18" itemprop="dateCreated datePublished" datetime="2021-04-11T16:57:00+08:00">2021-04-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>-–</p>
-<p>title: 数据分析</p>
-<p>date: 2021-04-11 16:57:00</p>
-<p>tags: web</p>
-<p>-–</p>
-<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><h2 id="安装需要的东东"><a href="#安装需要的东东" class="headerlink" title="安装需要的东东"></a>安装需要的东东</h2><p>- Typora</p>
-<p>回车两次进行换行</p>
-<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2583035764,1571388243&fm=26&gp=0.jpg" alt="&#39;美丽的图片&#39;"></p>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">一篇不错的博客</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -224,10 +169,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/04/11/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -257,7 +201,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="第一章、爬虫基础"><a href="#第一章、爬虫基础" class="headerlink" title="第一章、爬虫基础"></a>第一章、爬虫基础</h1><h2 id="1-1-HTTP-基本原理"><a href="#1-1-HTTP-基本原理" class="headerlink" title="1.1 HTTP 基本原理"></a>1.1 HTTP 基本原理</h2><h3 id="1-1-1-URI-和-URL"><a href="#1-1-1-URI-和-URL" class="headerlink" title="1.1.1 URI 和 URL"></a>1.1.1 URI 和 URL</h3><ul>
+        <h1 id="第一章、爬虫基础"><a href="#第一章、爬虫基础" class="headerlink" title="第一章、爬虫基础"></a>第一章、爬虫基础</h1><h2 id="1-1-HTTP-基本原理"><a href="#1-1-HTTP-基本原理" class="headerlink" title="1.1 HTTP 基本原理"></a>1.1 HTTP 基本原理</h2><h3 id="1-1-1-URI-和-URL"><a href="#1-1-1-URI-和-URL" class="headerlink" title="1.1.1 URI 和 URL"></a>1.1.1 URI 和 URL</h3><ul>
 <li><p>URI 的全称为 Uniform Resource Identifier ，统一资源标志符</p>
 </li>
 <li><p>URL 称为 Universal Resource Locator，统一资源定位符</p>
@@ -892,92 +836,33 @@
 
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://aunean-ls.github.io/2021/04/05/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Aunean">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-05 21:50:02 / Modified: 22:06:39" itemprop="dateCreated datePublished" datetime="2021-04-05T21:50:02+08:00">2021-04-05</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/05/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/11/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -1030,6 +915,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%81%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">第一章、爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-HTTP-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 HTTP 基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-URI-%E5%92%8C-URL"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 URI 和 URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E8%B6%85%E6%96%87%E6%9C%AC"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 超文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-HTTP-%E5%92%8C-HTTPS"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.1.3 HTTP 和 HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-4-%E8%AF%B7%E6%B1%82"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.1.4 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-5-%E5%93%8D%E5%BA%94"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.1.5 响应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%88%AC%E8%99%AB%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 爬虫的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E8%83%BD%E6%8A%93%E5%8F%96%E6%80%8E%E6%A0%B7%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.2 能抓取怎样的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-JavaScript-%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.3 JavaScript 渲染页面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E3%80%81%E5%9F%BA%E6%9C%AC%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">第二章、基本库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%BD%BF%E7%94%A8-urllib"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 使用 urllib</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 发送请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 处理异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-%E8%A7%A3%E6%9E%90%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.1.3 解析链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E4%BD%BF%E7%94%A8-requests"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 使用 requests</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.2 高级用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-search"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.3 search()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-findall"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.4 findall()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-5-sub"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.5 sub()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%81%E8%A7%A3%E6%9E%90%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">第三章、解析库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%BD%BF%E7%94%A8-XPath"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 使用 XPath</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-XPath-%E5%B8%B8%E7%94%A8%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 XPath 常用使用规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-%E5%AD%90%E8%8A%82%E7%82%B9"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.3 子节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4-%E5%AD%90%E5%AD%99%E8%8A%82%E7%82%B9"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.4 子孙节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-5-%E7%88%B6%E8%8A%82%E7%82%B9"><span class="nav-number">3.1.4.</span> <span class="nav-text">3.1.5 父节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-6-%E5%B1%9E%E6%80%A7%E5%8C%B9%E9%85%8D"><span class="nav-number">3.1.5.</span> <span class="nav-text">3.1.6 属性匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-7-%E6%96%87%E6%9C%AC%E8%8E%B7%E5%8F%96"><span class="nav-number">3.1.6.</span> <span class="nav-text">3.1.7 文本获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-8%E5%B1%9E%E6%80%A7%E8%8E%B7%E5%8F%96"><span class="nav-number">3.1.7.</span> <span class="nav-text">3.1.8属性获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-9-%E5%B1%9E%E6%80%A7%E5%A4%9A%E5%80%BC%E5%8C%B9%E9%85%8D"><span class="nav-number">3.1.8.</span> <span class="nav-text">3.1.9 属性多值匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-10-%E5%A4%9A%E5%B1%9E%E6%80%A7%E5%8C%B9%E9%85%8D"><span class="nav-number">3.1.9.</span> <span class="nav-text">3.1.10 多属性匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-11-%E6%8C%89%E5%BA%8F%E9%80%89%E6%8B%A9"><span class="nav-number">3.1.10.</span> <span class="nav-text">3.1.11 按序选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-12-%E8%8A%82%E7%82%B9%E8%BD%B4%E9%80%89%E6%8B%A9"><span class="nav-number">3.1.11.</span> <span class="nav-text">3.1.12 节点轴选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E4%BD%BF%E7%94%A8-Beautiful-Soup"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 使用 Beautiful Soup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 节点选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E5%85%B3%E8%81%94%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 关联选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0%E3%80%81%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="nav-number">4.</span> <span class="nav-text">第四章、数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-TXT-%E6%96%87%E6%9C%AC%E5%AD%98%E5%82%A8"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 TXT 文本存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-JSON-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 JSON 文件存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-CSV-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 CSV 文件存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 关系型数据库存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-MySQL-%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1 MySQL 的存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 非关系型数据库存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-MongoDB-%E5%AD%98%E5%82%A8"><span class="nav-number">4.3.1.</span> <span class="nav-text">4.3.1 MongoDB 存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%E3%80%81Ajax%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">5.</span> <span class="nav-text">第五章、Ajax数据爬取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E3%80%81%E5%8A%A8%E6%80%81%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%88%AC%E5%8F%96"><span class="nav-number">6.</span> <span class="nav-text">第六章、动态渲染页面爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Selenium-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 Selenium 的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B"><span class="nav-number">7.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BCtop100%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">7.1.</span> <span class="nav-text">1. 使用框架爬取猫眼top100的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE"><span class="nav-number">7.2.</span> <span class="nav-text">2. 爬取豆瓣电影数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E5%8F%96%E5%B0%8F%E8%AF%B4"><span class="nav-number">7.3.</span> <span class="nav-text">4.使用scrapy框架爬取小说</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%88%AC%E5%8F%96%E5%89%8D%E7%A8%8B%E6%97%A0%E5%BF%A7%E6%8B%9B%E8%81%98%E6%95%B0%E6%8D%AE-%E6%AD%A3%E5%88%99"><span class="nav-number">7.4.</span> <span class="nav-text">5.爬取前程无忧招聘数据(正则)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E5%9B%BE%E4%B9%A6%EF%BC%88scrapy"><span class="nav-number">7.5.</span> <span class="nav-text">10爬取豆瓣图书（scrapy)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%A1%A3"><span class="nav-number">8.</span> <span class="nav-text">文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-requests%E6%96%87%E6%A1%A3"><span class="nav-number">8.1.</span> <span class="nav-text">1.requests文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-scrapy%E6%96%87%E6%A1%A3"><span class="nav-number">8.2.</span> <span class="nav-text">2.scrapy文档</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
