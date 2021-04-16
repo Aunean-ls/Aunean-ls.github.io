@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python, Aunean&#39;s Blog">
+    <meta name="keywords" content="Scala学习, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python | Aunean&#39;s Blog</title>
+    <title>Scala学习 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python</h1>
+                    <h1 class="description center-align post-title">Scala学习</h1>
                 </div>
             </div>
         </div>
@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-12
+                    2021-04-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-12
+                    2021-04-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    1.6k
                 </div>
                 
 
@@ -475,19 +475,166 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h1 id="第一章-Scala的概述"><a href="#第一章-Scala的概述" class="headerlink" title="第一章  Scala的概述"></a>第一章  Scala的概述</h1><ul>
+<li><p>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。</p>
+</li>
+<li><p>Scala 运行在 Java 虚拟机上，并兼容现有的 Java 程序。</p>
+</li>
+<li><p>Scala 源代码被编译成 Java 字节码，所以它可以运行于 JVM 之上，并可以调用现有的 Java 类库。</p>
+</li>
+</ul>
+<h2 id="1-1-Scala-和-Java-以及-JVM的关系分析图"><a href="#1-1-Scala-和-Java-以及-JVM的关系分析图" class="headerlink" title="1.1 Scala 和 Java 以及 JVM的关系分析图"></a>1.1 Scala 和 Java 以及 JVM的关系分析图</h2><p><img src="https://i.loli.net/2021/04/16/PIcb6EWZSiMXgCy.png" alt="关系图"></p>
+<h2 id="1-2-Scala语言的特点"><a href="#1-2-Scala语言的特点" class="headerlink" title="1.2 Scala语言的特点"></a>1.2 Scala语言的特点</h2><h3 id="1-2-1-面向对象特性"><a href="#1-2-1-面向对象特性" class="headerlink" title="1.2.1 面向对象特性"></a>1.2.1 面向对象特性</h3><p>Scala是一种纯面向对象的语言，每个值都是对象。对象的数据类型以及行为由类和特质描述。</p>
+<p>类抽象机制的扩展有两种途径：一种途径是子类继承，另一种途径是灵活的混入机制。这两种途径能避免多重继承的种种问题。</p>
+<h3 id="1-2-2-函数式编程"><a href="#1-2-2-函数式编程" class="headerlink" title="1.2.2 函数式编程"></a>1.2.2 函数式编程</h3><p>Scala也是一种函数式语言，其函数也能当成值来使用。Scala提供了轻量级的语法用以定义匿名函数，支持高阶函数，允许嵌套多层函数，并支持柯里化。Scala的case class及其内置的模式匹配相当于函数式编程语言中常用的代数类型。</p>
+<p>更进一步，程序员可以利用Scala的模式匹配，编写类似正则表达式的代码处理XML数据。</p>
+<h3 id="1-2-3-静态类型"><a href="#1-2-3-静态类型" class="headerlink" title="1.2.3 静态类型"></a>1.2.3 静态类型</h3><p>Scala具备类型系统，通过编译时检查，保证代码的安全性和一致性。类型系统具体支持以下特性：</p>
+<ul>
+<li>泛型类</li>
+<li>协变和逆变</li>
+<li>标注</li>
+<li>类型参数的上下限约束</li>
+<li>把类别和抽象类型作为对象成员</li>
+<li>复合类型</li>
+<li>引用自己时显式指定类型</li>
+<li>视图</li>
+<li>多态方法</li>
+</ul>
+<h3 id="1-2-4-扩展性"><a href="#1-2-4-扩展性" class="headerlink" title="1.2.4 扩展性"></a>1.2.4 扩展性</h3><p>Scala的设计秉承一项事实，即在实践中，某个领域特定的应用程序开发往往需要特定于该领域的语言扩展。Scala提供了许多独特的语言机制，可以以库的形式轻易无缝添加新的语言结构：</p>
+<ul>
+<li>任何方法可用作前缀或后缀操作符</li>
+<li>可以根据预期类型自动构造闭包。</li>
+</ul>
+<h3 id="1-2-5-并发性"><a href="#1-2-5-并发性" class="headerlink" title="1.2.5 并发性"></a>1.2.5 并发性</h3><p>Scala使用Actor作为其并发模型，Actor是类似线程的实体，通过邮箱发收消息。Actor可以复用线程，因此可以在程序中可以使用数百万个Actor,而线程只能创建数千个。在2.10之后的版本中，使用Akka作为其默认Actor实现。</p>
+<h2 id="1-3-Scala程序开发注意事项"><a href="#1-3-Scala程序开发注意事项" class="headerlink" title="1.3 Scala程序开发注意事项"></a>1.3 Scala程序开发注意事项</h2><ol>
+<li>Scala源文件以 .scala 为扩展名</li>
+<li>Scala程序的执行入口是 main() 函数</li>
+<li>Scala语言严格区分大小写</li>
+<li>Scala方法由一条条语句构成,每个语句后不需要分号</li>
+<li>如果在同一行有多条语句,除了最后一条语句不需要分号,其他语句需要分号</li>
+</ol>
+<h2 id="1-4-Scala语言转义字符"><a href="#1-4-Scala语言转义字符" class="headerlink" title="1.4 Scala语言转义字符"></a>1.4 Scala语言转义字符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>\</td>
+<td>一个 \</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>一个 “</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>一个回车</td>
+</tr>
+</tbody></table>
+<h2 id="1-5-Scala三种输出方式"><a href="#1-5-Scala三种输出方式" class="headerlink" title="1.5 Scala三种输出方式"></a>1.5 Scala三种输出方式</h2><pre class=" language-scala"><code class="language-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>chapter01
+
+<span class="token keyword">object</span> printDemo <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> str1<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">"hello"</span>
+    <span class="token keyword">val</span> str2 <span class="token operator">=</span> <span class="token string">" world!"</span>
+    println<span class="token punctuation">(</span>str1 <span class="token operator">+</span> str2<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> name <span class="token operator">=</span> <span class="token string">"Tom"</span>
+    <span class="token keyword">val</span> age <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">val</span> sal<span class="token operator">:</span> <span class="token builtin">Float</span> <span class="token operator">=</span> <span class="token number">10.56f</span>
+    <span class="token keyword">val</span> height<span class="token operator">:</span> <span class="token builtin">Double</span> <span class="token operator">=</span> <span class="token number">180.15</span>
+    <span class="token comment" spellcheck="true">// 格式化输出</span>
+    printf<span class="token punctuation">(</span><span class="token string">"名字是=%s 年龄是%d 薪水是%.2f 身高是%.3f"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> sal<span class="token punctuation">,</span> height<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// scala支持使用$输出内容，编译器回去解析$对应的变量</span>
+    println<span class="token punctuation">(</span>s<span class="token string">"\n个人信息如下：\n名字$name \n年龄$age \n薪水$sal"</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 如果在字符串中出现类似$&amp;#123;age + 10&amp;#125;则表示&amp;#123;&amp;#125;是一个表达式</span>
+    println<span class="token punctuation">(</span>s<span class="token string">"\n个人信息如下2：\n名字$&amp;#123;name&amp;#125; \n年龄$&amp;#123;age+10&amp;#125; \n薪水$&amp;#123;sal*10&amp;#125;"</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<h1 id="第二章-变量"><a href="#第二章-变量" class="headerlink" title="第二章 变量"></a>第二章 变量</h1><h2 id="2-1-变量的介绍"><a href="#2-1-变量的介绍" class="headerlink" title="2.1 变量的介绍"></a>2.1 变量的介绍</h2><h3 id="2-1-1-概念"><a href="#2-1-1-概念" class="headerlink" title="2.1.1 概念"></a>2.1.1 概念</h3><blockquote>
+<p>变量相当于内存中一个数据存储空间的表示,可以把变量看作是一个房间门牌号,通过门派号我们可以找到房间,而通过变量名可以访问到变量值</p>
+</blockquote>
+<h3 id="2-1-2-变量使用的基本步骤"><a href="#2-1-2-变量使用的基本步骤" class="headerlink" title="2.1.2 变量使用的基本步骤"></a>2.1.2 变量使用的基本步骤</h3><ol>
+<li>声明/定义变量(Scala 要求变量声明时初始化)</li>
+<li>使用</li>
+</ol>
+<h2 id="2-2-Scala变量的基本使用"><a href="#2-2-Scala变量的基本使用" class="headerlink" title="2.2 Scala变量的基本使用"></a>2.2 Scala变量的基本使用</h2><h3 id="2-2-1-快速入门"><a href="#2-2-1-快速入门" class="headerlink" title="2.2.1 快速入门"></a>2.2.1 快速入门</h3><pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> VarDemo01 <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> sal<span class="token operator">:</span> <span class="token builtin">Double</span> <span class="token operator">=</span> <span class="token number">10.9</span>
+    <span class="token keyword">var</span> isPass<span class="token operator">:</span> <span class="token builtin">Boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment" spellcheck="true">// 在Scala中，小数默认为Double，整数默认为Int</span>
+    <span class="token keyword">var</span> score<span class="token operator">:</span> <span class="token builtin">Float</span> <span class="token operator">=</span> <span class="token number">70.9f</span>
+    println<span class="token punctuation">(</span>age<span class="token punctuation">,</span> sal<span class="token punctuation">)</span>
+    print<span class="token punctuation">(</span>s<span class="token string">"$age, $sal"</span><span class="token punctuation">)</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<h2 id="2-3-Scala变量使用说明"><a href="#2-3-Scala变量使用说明" class="headerlink" title="2.3 Scala变量使用说明"></a>2.3 Scala变量使用说明</h2><h3 id="2-3-1-变量声明基本语法"><a href="#2-3-1-变量声明基本语法" class="headerlink" title="2.3.1 变量声明基本语法"></a>2.3.1 变量声明基本语法</h3><blockquote>
+<p>val | var 变量名 [: 变量类型] = 变量值</p>
+</blockquote>
+<h3 id="2-3-2-注意事项"><a href="#2-3-2-注意事项" class="headerlink" title="2.3.2 注意事项"></a>2.3.2 注意事项</h3><ol>
+<li>声明变量时,类型可以省略(编译器自动推导,即类型推导)</li>
+<li>类型确定后,就不能修改,说明Scala是强语言类型语言</li>
+<li>在声明/定义一个变量时，可以使用 var 或者 val 来修饰，var 修饰的变量可以改变，val 修饰的变量不可以改</li>
+<li>val修饰的变量在编译后,等同于加上final</li>
+<li>声明变量时,需要初始值</li>
+</ol>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>chapter01<span class="token punctuation">.</span>vars
+
+<span class="token keyword">object</span> VarDemo02 <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 类型推导</span>
+    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token comment" spellcheck="true">// 方式一：可以利用idea的提示来证明</span>
+    <span class="token comment" spellcheck="true">// 方式二：使用isInstanceOf[Int]判断</span>
+    println<span class="token punctuation">(</span>num<span class="token punctuation">.</span>isInstanceOf<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+
+    <span class="token comment" spellcheck="true">// 类型确定后，就不能修改，说明Scala是强类型语言</span>
+    <span class="token comment" spellcheck="true">// num = 2.3</span>
+
+    <span class="token comment" spellcheck="true">// 在声明/定义一个变量时，可以使用 var 或者 val 来修饰，</span>
+    <span class="token comment" spellcheck="true">// var 修饰的变量可以改变，val 修饰的变量不可以改</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">10</span>
+    age <span class="token operator">=</span> <span class="token number">30</span>
+    <span class="token comment" spellcheck="true">// val 修饰的变量在编译后，等同于加上了 final</span>
+    <span class="token keyword">val</span> num2 <span class="token operator">=</span> <span class="token number">30</span>
+    <span class="token comment" spellcheck="true">// num2 = 23 //val 修饰的变量不可以改</span>
+    println<span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">/*
+      Scala设计者为什么设计 var 和 val？
+      1.在实际编程中，我们更多的需求是获取/创建一个对象后，读取该对象的属性，
+      或者是修改对象的属性值，很少去改变这个对象本身，这时，我们就可以使用 val。
+      2.val 没有线程安全问题，因此效率高，Scala的设计者推荐使用 val。
+      3.如果对象需要改变，则使用 var
+     */</span>
+
+    <span class="token keyword">val</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> Dog
+    <span class="token comment" spellcheck="true">// dog = new Dog // Reassignment to val</span>
+    dog<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">90</span>
+    dog<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小黑"</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> Dog <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 声明一个age</span>
+  <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token comment" spellcheck="true">// 声明名字</span>
+  <span class="token keyword">var</span> name<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
                 
             </div>
@@ -514,7 +661,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://Aunean-ls.github.io/2021/041216107.html">https://Aunean-ls.github.io/2021/041216107.html</a>
+                    <a href="https://Aunean-ls.github.io/2021/04162.html">https://Aunean-ls.github.io/2021/04162.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -719,9 +866,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04162.html">
                     <div class="card-image">
@@ -739,9 +887,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -750,6 +898,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -760,13 +909,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/041157683.html">
+                <a href="/2021/041216107.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="数据分析">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python">
                         
-                        <span class="card-title">数据分析</span>
+                        <span class="card-title">python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,7 +926,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
                             </span>
                         <span class="publish-author">
                             
