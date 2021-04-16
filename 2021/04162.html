@@ -29,8 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
 
 
 
@@ -534,7 +537,7 @@
 <td>一个 \</td>
 </tr>
 <tr>
-<td>&quot;</td>
+<td>"</td>
 <td>一个 “</td>
 </tr>
 <tr>
@@ -544,27 +547,27 @@
 </tbody></table>
 <h2 id="1-5-Scala三种输出方式"><a href="#1-5-Scala三种输出方式" class="headerlink" title="1.5 Scala三种输出方式"></a>1.5 Scala三种输出方式</h2><pre><code>package com.atguigu.chapter01
 
-object printDemo &#123;
-  def main(args: Array[String]): Unit = &#123;
-    var str1: String = &quot;hello&quot;
-    val str2 = &quot; world!&quot;
+object printDemo {
+  def main(args: Array[String]): Unit = {
+    var str1: String = "hello"
+    val str2 = " world!"
     println(str1 + str2)
 
-    val name = &quot;Tom&quot;
+    val name = "Tom"
     val age = 10
     val sal: Float = 10.56f
     val height: Double = 180.15
     // 格式化输出
-    printf(&quot;名字是=%s 年龄是%d 薪水是%.2f 身高是%.3f&quot;, name, age, sal, height)
+    printf("名字是=%s 年龄是%d 薪水是%.2f 身高是%.3f", name, age, sal, height)
 
     // scala支持使用$输出内容，编译器回去解析$对应的变量
-    println(s&quot;\n个人信息如下：\n名字$name \n年龄$age \n薪水$sal&quot;)
-    // 如果在字符串中出现类似$&#123;age + 10&#125;则表示&#123;&#125;是一个表达式
-    println(s&quot;\n个人信息如下2：\n名字$&#123;name&#125; \n年龄$&#123;age+10&#125; \n薪水$&#123;sal*10&#125;&quot;)
-  &#125;
-&#125;
+    println(s"\n个人信息如下：\n名字$name \n年龄$age \n薪水$sal")
+    // 如果在字符串中出现类似${age + 10}则表示{}是一个表达式
+    println(s"\n个人信息如下2：\n名字${name} \n年龄${age+10} \n薪水${sal*10}")
+  }
+}
 
-&#123; &quot;$oid&quot;: &quot;5c09f1e5aeb04b22f8460965&quot; &#125;
+{ "$oid": "5c09f1e5aeb04b22f8460965" }
 </code></pre>
 <h1 id="第二章-变量"><a href="#第二章-变量" class="headerlink" title="第二章 变量"></a>第二章 变量</h1><h2 id="2-1-变量的介绍"><a href="#2-1-变量的介绍" class="headerlink" title="2.1 变量的介绍"></a>2.1 变量的介绍</h2><h3 id="2-1-1-概念"><a href="#2-1-1-概念" class="headerlink" title="2.1.1 概念"></a>2.1.1 概念</h3><blockquote>
 <p>变量相当于内存中一个数据存储空间的表示,可以把变量看作是一个房间门牌号,通过门派号我们可以找到房间,而通过变量名可以访问到变量值</p>
@@ -573,8 +576,8 @@ object printDemo &#123;
 <li>声明/定义变量(Scala 要求变量声明时初始化)</li>
 <li>使用</li>
 </ol>
-<h2 id="2-2-Scala变量的基本使用"><a href="#2-2-Scala变量的基本使用" class="headerlink" title="2.2 Scala变量的基本使用"></a>2.2 Scala变量的基本使用</h2><h3 id="2-2-1-快速入门"><a href="#2-2-1-快速入门" class="headerlink" title="2.2.1 快速入门"></a>2.2.1 快速入门</h3><pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> VarDemo01 <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h2 id="2-2-Scala变量的基本使用"><a href="#2-2-Scala变量的基本使用" class="headerlink" title="2.2 Scala变量的基本使用"></a>2.2 Scala变量的基本使用</h2><h3 id="2-2-1-快速入门"><a href="#2-2-1-快速入门" class="headerlink" title="2.2.1 快速入门"></a>2.2.1 快速入门</h3><pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> VarDemo01 <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
     <span class="token keyword">var</span> sal<span class="token operator">:</span> <span class="token builtin">Double</span> <span class="token operator">=</span> <span class="token number">10.9</span>
     <span class="token keyword">var</span> isPass<span class="token operator">:</span> <span class="token builtin">Boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span>
@@ -582,7 +585,7 @@ object printDemo &#123;
     <span class="token keyword">var</span> score<span class="token operator">:</span> <span class="token builtin">Float</span> <span class="token operator">=</span> <span class="token number">70.9f</span>
     println<span class="token punctuation">(</span>age<span class="token punctuation">,</span> sal<span class="token punctuation">)</span>
     print<span class="token punctuation">(</span>s<span class="token string">"$age, $sal"</span><span class="token punctuation">)</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="2-3-Scala变量使用说明"><a href="#2-3-Scala变量使用说明" class="headerlink" title="2.3 Scala变量使用说明"></a>2.3 Scala变量使用说明</h2><h3 id="2-3-1-变量声明基本语法"><a href="#2-3-1-变量声明基本语法" class="headerlink" title="2.3.1 变量声明基本语法"></a>2.3.1 变量声明基本语法</h3><blockquote>
 <p>val | var 变量名 [: 变量类型] = 变量值</p>
@@ -596,8 +599,8 @@ object printDemo &#123;
 </ol>
 <pre class=" language-scala"><code class="language-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>chapter01<span class="token punctuation">.</span>vars
 
-<span class="token keyword">object</span> VarDemo02 <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">object</span> VarDemo02 <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 类型推导</span>
     <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
     <span class="token comment" spellcheck="true">// 方式一：可以利用idea的提示来证明</span>
@@ -628,15 +631,15 @@ object printDemo &#123;
     <span class="token comment" spellcheck="true">// dog = new Dog // Reassignment to val</span>
     dog<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">90</span>
     dog<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小黑"</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">class</span> Dog <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> Dog <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 声明一个age</span>
   <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
   <span class="token comment" spellcheck="true">// 声明名字</span>
   <span class="token keyword">var</span> name<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">""</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                 
@@ -857,6 +860,269 @@ object printDemo &#123;
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'cjNxygVAkg7pbgW131J41ikP-gzGzoHsz',
+        appKey: '09jOA6VILcNPFvnqXculM7o3',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '你是我一生只会遇见一次的惊喜...'
+    });
+</script>
 
     
 
@@ -1138,7 +1404,7 @@ object printDemo &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.9k</span>&nbsp;字
+                class="white-color">15.6k</span>&nbsp;字
             
             
             
@@ -1358,6 +1624,14 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ页面丢失了",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ又好了哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+
+
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
@@ -1408,6 +1682,7 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
 
 </body>
 
