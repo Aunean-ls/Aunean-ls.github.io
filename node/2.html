@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="Scala学习, Aunean&#39;s Blog">
+    <meta name="keywords" content="Hadoop搭建, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Scala学习 | Aunean&#39;s Blog</title>
+    <title>Hadoop搭建 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Scala学习</h1>
+                    <h1 class="description center-align post-title">Hadoop搭建</h1>
                 </div>
             </div>
         </div>
@@ -434,9 +434,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hadoop/">
+                                <span class="chip bg-color">Hadoop</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -448,21 +452,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2021-03-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2021-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    6.1k
                 </div>
                 
 
@@ -479,169 +483,1720 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>{ “$oid”: “5c09f1e5aeb04b22f8460965” }</p>
-<h1 id="第一章-Scala的概述"><a href="#第一章-Scala的概述" class="headerlink" title="第一章  Scala的概述"></a>第一章  Scala的概述</h1><ul>
-<li><p>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。</p>
-</li>
-<li><p>Scala 运行在 Java 虚拟机上，并兼容现有的 Java 程序。</p>
-</li>
-<li><p>Scala 源代码被编译成 Java 字节码，所以它可以运行于 JVM 之上，并可以调用现有的 Java 类库。</p>
-</li>
-</ul>
-<h2 id="1-1-Scala-和-Java-以及-JVM的关系分析图"><a href="#1-1-Scala-和-Java-以及-JVM的关系分析图" class="headerlink" title="1.1 Scala 和 Java 以及 JVM的关系分析图"></a>1.1 Scala 和 Java 以及 JVM的关系分析图</h2><p><img src="https://i.loli.net/2021/04/16/PIcb6EWZSiMXgCy.png" alt="关系图"></p>
-<h2 id="1-2-Scala语言的特点"><a href="#1-2-Scala语言的特点" class="headerlink" title="1.2 Scala语言的特点"></a>1.2 Scala语言的特点</h2><h3 id="1-2-1-面向对象特性"><a href="#1-2-1-面向对象特性" class="headerlink" title="1.2.1 面向对象特性"></a>1.2.1 面向对象特性</h3><p>Scala是一种纯面向对象的语言，每个值都是对象。对象的数据类型以及行为由类和特质描述。</p>
-<p>类抽象机制的扩展有两种途径：一种途径是子类继承，另一种途径是灵活的混入机制。这两种途径能避免多重继承的种种问题。</p>
-<h3 id="1-2-2-函数式编程"><a href="#1-2-2-函数式编程" class="headerlink" title="1.2.2 函数式编程"></a>1.2.2 函数式编程</h3><p>Scala也是一种函数式语言，其函数也能当成值来使用。Scala提供了轻量级的语法用以定义匿名函数，支持高阶函数，允许嵌套多层函数，并支持柯里化。Scala的case class及其内置的模式匹配相当于函数式编程语言中常用的代数类型。</p>
-<p>更进一步，程序员可以利用Scala的模式匹配，编写类似正则表达式的代码处理XML数据。</p>
-<h3 id="1-2-3-静态类型"><a href="#1-2-3-静态类型" class="headerlink" title="1.2.3 静态类型"></a>1.2.3 静态类型</h3><p>Scala具备类型系统，通过编译时检查，保证代码的安全性和一致性。类型系统具体支持以下特性：</p>
-<ul>
-<li>泛型类</li>
-<li>协变和逆变</li>
-<li>标注</li>
-<li>类型参数的上下限约束</li>
-<li>把类别和抽象类型作为对象成员</li>
-<li>复合类型</li>
-<li>引用自己时显式指定类型</li>
-<li>视图</li>
-<li>多态方法</li>
-</ul>
-<h3 id="1-2-4-扩展性"><a href="#1-2-4-扩展性" class="headerlink" title="1.2.4 扩展性"></a>1.2.4 扩展性</h3><p>Scala的设计秉承一项事实，即在实践中，某个领域特定的应用程序开发往往需要特定于该领域的语言扩展。Scala提供了许多独特的语言机制，可以以库的形式轻易无缝添加新的语言结构：</p>
-<ul>
-<li>任何方法可用作前缀或后缀操作符</li>
-<li>可以根据预期类型自动构造闭包。</li>
-</ul>
-<h3 id="1-2-5-并发性"><a href="#1-2-5-并发性" class="headerlink" title="1.2.5 并发性"></a>1.2.5 并发性</h3><p>Scala使用Actor作为其并发模型，Actor是类似线程的实体，通过邮箱发收消息。Actor可以复用线程，因此可以在程序中可以使用数百万个Actor,而线程只能创建数千个。在2.10之后的版本中，使用Akka作为其默认Actor实现。</p>
-<h2 id="1-3-Scala程序开发注意事项"><a href="#1-3-Scala程序开发注意事项" class="headerlink" title="1.3 Scala程序开发注意事项"></a>1.3 Scala程序开发注意事项</h2><ol>
-<li>Scala源文件以 .scala 为扩展名</li>
-<li>Scala程序的执行入口是 main() 函数</li>
-<li>Scala语言严格区分大小写</li>
-<li>Scala方法由一条条语句构成,每个语句后不需要分号</li>
-<li>如果在同一行有多条语句,除了最后一条语句不需要分号,其他语句需要分号</li>
-</ol>
-<h2 id="1-4-Scala语言转义字符"><a href="#1-4-Scala语言转义字符" class="headerlink" title="1.4 Scala语言转义字符"></a>1.4 Scala语言转义字符</h2><table>
+                <h1 id="Hadoop配置文件讲解"><a href="#Hadoop配置文件讲解" class="headerlink" title="Hadoop配置文件讲解"></a>Hadoop配置文件讲解</h1><table>
 <thead>
 <tr>
-<th>符号</th>
-<th>含义</th>
+<th>配置文件</th>
+<th>功能描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>\t</td>
-<td>制表符</td>
+<td>hadoop-env.sh</td>
+<td>配置 Hadoop 运行所需的环境变量</td>
 </tr>
 <tr>
-<td>\n</td>
-<td>换行符</td>
+<td>yarn-env.sh</td>
+<td>配置 YARN 运行所需的环境变量</td>
 </tr>
 <tr>
-<td>\</td>
-<td>一个 \</td>
+<td>core-site.xml</td>
+<td>Hadoop 核心全局配置文件，可在其他配置文件中引用改文件</td>
 </tr>
 <tr>
-<td>"</td>
-<td>一个 “</td>
+<td>hdfs-site.xml</td>
+<td>HDFS 配置文件，继承 core-site.xml 配置文件</td>
 </tr>
 <tr>
-<td>\r</td>
-<td>一个回车</td>
+<td>mapred-site.xml</td>
+<td>MapReduce 配置文件，继承 core-site.xml 配置文件</td>
+</tr>
+<tr>
+<td>yarn-site.xml</td>
+<td>YARN 配置文件，继承 core-site.xml 配置文件</td>
 </tr>
 </tbody></table>
-<h2 id="1-5-Scala三种输出方式"><a href="#1-5-Scala三种输出方式" class="headerlink" title="1.5 Scala三种输出方式"></a>1.5 Scala三种输出方式</h2><pre><code>package com.atguigu.chapter01
+<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/current/">官方文档</a></p>
+<h2 id="1-core-site-xml-常用参数"><a href="#1-core-site-xml-常用参数" class="headerlink" title="1.core-site.xml 常用参数"></a>1.core-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://node:9000</value>
+    <description>HDFS的URI，设定namenode的主机名及端口</description>
+</property>
 
-object printDemo {
-  def main(args: Array[String]): Unit = {
-    var str1: String = "hello"
-    val str2 = " world!"
-    println(str1 + str2)
+<property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/src/hadoop-2.7.2/tmp</value>
+    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
+</property>
+</configuration>
 
-    val name = "Tom"
-    val age = 10
-    val sal: Float = 10.56f
-    val height: Double = 180.15
-    // 格式化输出
-    printf("名字是=%s 年龄是%d 薪水是%.2f 身高是%.3f", name, age, sal, height)
+<property>
+    <name>fs.trash.interval</name>
+    <value>1440</value>
+    <description>开启hdfs的垃圾桶机制，删除掉的数据可以从垃圾桶中回收，单位分钟</description>
+</property>
 
-    // scala支持使用$输出内容，编译器回去解析$对应的变量
-    println(s"\n个人信息如下：\n名字$name \n年龄$age \n薪水$sal")
-    // 如果在字符串中出现类似${age + 10}则表示{}是一个表达式
-    println(s"\n个人信息如下2：\n名字${name} \n年龄${age+10} \n薪水${sal*10}")
-  }
-}
+<property>
+    <name>fs.trash.checkpoint.interval</name>
+    <value>0</value>
+</property>
 
-{ "$oid": "5c09f1e5aeb04b22f8460965" }
+<property>
+    <name>io.file.buffer.size</name>
+    <value>4096</value>
+    <description>缓冲区大小，实际工作中根据服务器性能动态调整</description>
+</property>
 </code></pre>
-<h1 id="第二章-变量"><a href="#第二章-变量" class="headerlink" title="第二章 变量"></a>第二章 变量</h1><h2 id="2-1-变量的介绍"><a href="#2-1-变量的介绍" class="headerlink" title="2.1 变量的介绍"></a>2.1 变量的介绍</h2><h3 id="2-1-1-概念"><a href="#2-1-1-概念" class="headerlink" title="2.1.1 概念"></a>2.1.1 概念</h3><blockquote>
-<p>变量相当于内存中一个数据存储空间的表示,可以把变量看作是一个房间门牌号,通过门派号我们可以找到房间,而通过变量名可以访问到变量值</p>
-</blockquote>
-<h3 id="2-1-2-变量使用的基本步骤"><a href="#2-1-2-变量使用的基本步骤" class="headerlink" title="2.1.2 变量使用的基本步骤"></a>2.1.2 变量使用的基本步骤</h3><ol>
-<li>声明/定义变量(Scala 要求变量声明时初始化)</li>
-<li>使用</li>
-</ol>
-<h2 id="2-2-Scala变量的基本使用"><a href="#2-2-Scala变量的基本使用" class="headerlink" title="2.2 Scala变量的基本使用"></a>2.2 Scala变量的基本使用</h2><h3 id="2-2-1-快速入门"><a href="#2-2-1-快速入门" class="headerlink" title="2.2.1 快速入门"></a>2.2.1 快速入门</h3><pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> VarDemo01 <span class="token punctuation">{</span>
-  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
-    <span class="token keyword">var</span> sal<span class="token operator">:</span> <span class="token builtin">Double</span> <span class="token operator">=</span> <span class="token number">10.9</span>
-    <span class="token keyword">var</span> isPass<span class="token operator">:</span> <span class="token builtin">Boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span>
-    <span class="token comment" spellcheck="true">// 在Scala中，小数默认为Double，整数默认为Int</span>
-    <span class="token keyword">var</span> score<span class="token operator">:</span> <span class="token builtin">Float</span> <span class="token operator">=</span> <span class="token number">70.9f</span>
-    println<span class="token punctuation">(</span>age<span class="token punctuation">,</span> sal<span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span>s<span class="token string">"$age, $sal"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
+<h2 id="2-hdfs-site-xml-常用参数"><a href="#2-hdfs-site-xml-常用参数" class="headerlink" title="2.hdfs-site.xml 常用参数"></a>2.hdfs-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/usr/local/src/hdfs/name</value>
+    <description>namenode上存储hdfs名字空间元数据 </description>
+</property>
+
+<property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/usr/local/src/hdfs/data</value>
+    <description>datanode上数据块的物理存储位置</description>
+</property>
+
+<property>
+    <name>dfs.replication</name>
+    <value>2</value>
+    <description>副本个数，默认是3,应小于datanode机器数量</description>
+</property>
+
+<property>
+    <name>dfs.blocksize</name>
+    <value>134217728</value>
+    <description>文件存储的block块大小</description>
+</property>
 </code></pre>
-<h2 id="2-3-Scala变量使用说明"><a href="#2-3-Scala变量使用说明" class="headerlink" title="2.3 Scala变量使用说明"></a>2.3 Scala变量使用说明</h2><h3 id="2-3-1-变量声明基本语法"><a href="#2-3-1-变量声明基本语法" class="headerlink" title="2.3.1 变量声明基本语法"></a>2.3.1 变量声明基本语法</h3><blockquote>
-<p>val | var 变量名 [: 变量类型] = 变量值</p>
-</blockquote>
-<h3 id="2-3-2-注意事项"><a href="#2-3-2-注意事项" class="headerlink" title="2.3.2 注意事项"></a>2.3.2 注意事项</h3><ol>
-<li>声明变量时,类型可以省略(编译器自动推导,即类型推导)</li>
-<li>类型确定后,就不能修改,说明Scala是强语言类型语言</li>
-<li>在声明/定义一个变量时，可以使用 var 或者 val 来修饰，var 修饰的变量可以改变，val 修饰的变量不可以改</li>
-<li>val修饰的变量在编译后,等同于加上final</li>
-<li>声明变量时,需要初始值</li>
-</ol>
-<pre class=" language-scala"><code class="language-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>chapter01<span class="token punctuation">.</span>vars
+<h2 id="3-mapred-site-xml-常用参数"><a href="#3-mapred-site-xml-常用参数" class="headerlink" title="3.mapred-site.xml 常用参数"></a>3.mapred-site.xml 常用参数</h2><pre class=" language-shelll"><code class="language-shelll"><property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+    <description>指定我们mapreduce运行在yarn集群上面</description>
+</property>
+    
+<property>
+    <name>mapreduce.job.ubertask.enable</name>
+    <value>true</value>
+    <description>开启mapreduce的小任务模式，用于调优</description>
+</property>
 
-<span class="token keyword">object</span> VarDemo02 <span class="token punctuation">{</span>
-  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 类型推导</span>
-    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
-    <span class="token comment" spellcheck="true">// 方式一：可以利用idea的提示来证明</span>
-    <span class="token comment" spellcheck="true">// 方式二：使用isInstanceOf[Int]判断</span>
-    println<span class="token punctuation">(</span>num<span class="token punctuation">.</span>isInstanceOf<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
 
-    <span class="token comment" spellcheck="true">// 类型确定后，就不能修改，说明Scala是强类型语言</span>
-    <span class="token comment" spellcheck="true">// num = 2.3</span>
+<property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>node:10020</value>
+    <description>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况</description>
+</property>
 
-    <span class="token comment" spellcheck="true">// 在声明/定义一个变量时，可以使用 var 或者 val 来修饰，</span>
-    <span class="token comment" spellcheck="true">// var 修饰的变量可以改变，val 修饰的变量不可以改</span>
-    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">10</span>
-    age <span class="token operator">=</span> <span class="token number">30</span>
-    <span class="token comment" spellcheck="true">// val 修饰的变量在编译后，等同于加上了 final</span>
-    <span class="token keyword">val</span> num2 <span class="token operator">=</span> <span class="token number">30</span>
-    <span class="token comment" spellcheck="true">// num2 = 23 //val 修饰的变量不可以改</span>
-    println<span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true">/*
-      Scala设计者为什么设计 var 和 val？
-      1.在实际编程中，我们更多的需求是获取/创建一个对象后，读取该对象的属性，
-      或者是修改对象的属性值，很少去改变这个对象本身，这时，我们就可以使用 val。
-      2.val 没有线程安全问题，因此效率高，Scala的设计者推荐使用 val。
-      3.如果对象需要改变，则使用 var
-     */</span>
-
-    <span class="token keyword">val</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> Dog
-    <span class="token comment" spellcheck="true">// dog = new Dog // Reassignment to val</span>
-    dog<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">90</span>
-    dog<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"小黑"</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> Dog <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// 声明一个age</span>
-  <span class="token keyword">var</span> age<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
-  <span class="token comment" spellcheck="true">// 声明名字</span>
-  <span class="token keyword">var</span> name<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">""</span>
-<span class="token punctuation">}</span>
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>node:19888</value>
+    <description>配置mapreduce的jobhistory的访问地址</description>
+</property>
 </code></pre>
+<h2 id="4-yarn-site-xml-常用参数"><a href="#4-yarn-site-xml-常用参数" class="headerlink" title="4.yarn-site.xml 常用参数"></a>4.yarn-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>node</value>
+    <description>指定resourcemanager所在的hostname，
+    即指定yarn的老大即ResourceManger的地址</description>
+</property>
+
+<property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>NodeManager上运行的附属服务。
+    指定NodeManager获取数据的方式是shuffle
+    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
+</property>
+
+<property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+    <description>日志的聚合功能，方便我们查看任务执行完成之后的日志记录</description>
+</property>
+    
+<property>
+    <name>yarn.log-aggregation.retain-seconds</name>
+    <value>604800</value>
+    <description>聚合日志的保存时长，这里的值不要设置的太小</description>
+</property>
+
+<property>
+    <name>yarn.log.server.url</name>
+    <value>http://node:19888/jobhistory.logs</value>
+    <description>配置日志服务器的地址,node节点使用</description>
+</property>
+
+<property>
+    <name>yarn.nodemanager.log-dirs</name>    
+    <value>/tmp/yarn/userlogs</value>
+</property>
+</code></pre>
+<h1 id="设置环境只对当前用户有效"><a href="#设置环境只对当前用户有效" class="headerlink" title="设置环境只对当前用户有效"></a>设置环境只对当前用户有效</h1><pre class=" language-shell"><code class="language-shell">vi .bash_profile
+
+1.每次进入完全分布式有些命令未找到都必须要source一下
+解决办法：
+- 在~/.bashrc里面加一句source /etc/profile
+
+hadoop dfsadmin -safemode leave 关闭安全模式
+</code></pre>
+<h1 id="配置yarn的历史服务器及日志产看功能"><a href="#配置yarn的历史服务器及日志产看功能" class="headerlink" title="配置yarn的历史服务器及日志产看功能"></a>配置yarn的历史服务器及日志产看功能</h1><pre><code>vi mapred-site.xml
+&lt;property&gt;
+    &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+    &lt;value&gt;node:10020&lt;/value&gt;
+    &lt;description&gt;配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况&lt;/description&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+    &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+    &lt;value&gt;node:19888&lt;/value&gt;
+    &lt;description&gt;配置mapreduce的jobhistory的访问地址&lt;/description&gt;
+&lt;/property&gt;
+
+
+vi yarn-site.xml
+&lt;property&gt;
+    &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;
+    &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+    &lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;
+    &lt;value&gt;604800&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+    &lt;name&gt;yarn.log.server.url&lt;/name&gt;
+    &lt;value&gt;http://node:19888/jobhistory.logs&lt;/value&gt;
+&lt;/property&gt;
+
+# 启动 
+mr-jobhistory-daemon.sh start historyserver
+</code></pre>
+<h1 id="伪分布式搭建"><a href="#伪分布式搭建" class="headerlink" title="伪分布式搭建"></a>伪分布式搭建</h1><h2 id="1-修改-IP-地址"><a href="#1-修改-IP-地址" class="headerlink" title="1.修改 IP 地址"></a>1.修改 IP 地址</h2><pre class=" language-shell"><code class="language-shell">vi /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre>
+<h2 id="2-配置其中文件"><a href="#2-配置其中文件" class="headerlink" title="2.配置其中文件"></a>2.配置其中文件</h2><pre class=" language-shell"><code class="language-shell">TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=static
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens33
+UUID=7397575d-294f-44ad-88a6-7476a5f27106
+DEVICE=ens33
+ONBOOT=yes
+IPADDR=192.168.136.220
+NETMASK=255.255.255.0
+GATEWAY=192.168.136.2
+DNS1=119.29.29.29
+</code></pre>
+<h2 id="3-重启网络"><a href="#3-重启网络" class="headerlink" title="3.重启网络"></a>3.重启网络</h2><pre class=" language-shell"><code class="language-shell">systemctl restart network
+</code></pre>
+<h2 id="4-修改主机名"><a href="#4-修改主机名" class="headerlink" title="4.修改主机名"></a>4.修改主机名</h2><pre class=" language-shell"><code class="language-shell">查看主机名
+hostname
+
+修改主机名
+hostnamectl set-hostname master1-1
+</code></pre>
+<h2 id="5-关闭防火墙"><a href="#5-关闭防火墙" class="headerlink" title="5.关闭防火墙"></a>5.关闭防火墙</h2><pre class=" language-shell"><code class="language-shell">关闭防火墙
+systemctl stop firewalld
+
+关闭防火墙自启动
+systemctl disable firewalld
+
+检查防火墙
+systemctl status firewalld
+
+关闭 selinux防火墙
+vi /etc/sysconfig/selinux
+把 SELINUX=enforcing 变为 SELINUX=disabled
+</code></pre>
+<h2 id="6-映射主机名和IP地址"><a href="#6-映射主机名和IP地址" class="headerlink" title="6.映射主机名和IP地址"></a>6.映射主机名和IP地址</h2><pre class=" language-shell"><code class="language-shell">vi /etc/hosts
+
+192.168.136.150 master1-1
+</code></pre>
+<h2 id="7-安装-rz，使用rz上传所需文件"><a href="#7-安装-rz，使用rz上传所需文件" class="headerlink" title="7.安装 rz，使用rz上传所需文件"></a>7.安装 rz，使用rz上传所需文件</h2><pre class=" language-shell"><code class="language-shell">yum -y install lrzsz
+</code></pre>
+<p>##8.解压JDK 安装包到‘/usr/local/src’路径，并配置环境变量</p>
+<pre class=" language-shell"><code class="language-shell">tar -zxvf *.tar -C /usr/local/src
+
+配置环境变量
+vi /etc/profile
+export JAVA_HOME=/usr/local/src/jdk1.8
+export PATH=$PATH:$JAVA_HOME/bin
+
+刷新环境变量
+source /etc/profile
+
+查看是否配置jdk成功
+java -version
+</code></pre>
+<p>##9.解压hadoop安装包到 ‘/usr/local/src’ 路径，并配置环境变量</p>
+<pre class=" language-shell"><code class="language-shell">tar -zxvf *.tar -C /usr/local/src
+
+配置环境变量
+vi /etc/profile
+export JAVA_HOME=/usr/local/src/jdk1.8
+export HADOOP_HOME=/usr/local/src/hadoop-2.7.2
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+刷新环境变量
+source /etc/profile
+
+查看是否配置jdk成功
+hadoop version
+</code></pre>
+<h2 id="10-修改Hadoop目录下的配置文件"><a href="#10-修改Hadoop目录下的配置文件" class="headerlink" title="10.修改Hadoop目录下的配置文件"></a>10.修改Hadoop目录下的配置文件</h2><pre class=" language-shell"><code class="language-shell">vi hadoop-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+
+vi core-site.xml
+<configuration>
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://master1-1:9000</value>
+    <description>HDFS的URI，设定namenode的主机名及端口</description>
+</property>
+<property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/src/hadoop-2.7.2/tmp</value>
+    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
+</property>
+</configuration>
+
+vi hdfs-site.xml
+<configuration>
+<property>
+    <name>dfs.replication</name>
+    <value>1</value>
+    <description>副本个数，默认是3,应小于datanode机器数量</description>
+</property>
+
+<property>
+    <name>dfs.namenode.secondary.http.address</name>
+    <value>master1-1:50090</value>
+</property>
+</configuration>
+
+mv mapred-site.xml.template mapred-site.xml
+vi mapred-site.xml
+<configuration>
+<property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+    <description>指定mapreduce使用yarn框架</description>
+</property>
+</configuration>
+
+vi yarn-site.xml
+<configuration>
+<property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>master1-1</value>
+    <description>指定resourcemanager所在的hostname，即指定yarn的老大即ResourceManger的地址</description>
+</property>
+<property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>NodeManager上运行的附属服务。指定NodeManager获取数据的方式是shuffle需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
+</property>
+</configuration>
+</code></pre>
+<h2 id="11-配置完成后，格式化-DFS"><a href="#11-配置完成后，格式化-DFS" class="headerlink" title="11.配置完成后，格式化 DFS"></a>11.配置完成后，格式化 DFS</h2><pre class=" language-shell"><code class="language-shell">hdfs namenode -format
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201109184901549.png" alt="image-20201109184901549"></p>
+<h2 id="12-创建shh密匙实现免密"><a href="#12-创建shh密匙实现免密" class="headerlink" title="12.创建shh密匙实现免密"></a>12.创建shh密匙实现免密</h2><pre class=" language-shell"><code class="language-shell"># 安装openssh，在centos7中ssh服务默认是已经被安装了的。通过命令rpm -qa | grep openssh 查看是否安装了ssh服务
+yum install openssh
+
+ssh-keygen -t rsa  # 然后按三次回车
+cd /root/.ssh
+ssh-copy-id master1-1  # 将本机的公钥复制到远程机器的authorized_key文件中，然后实现免密登录
+more authorized_keys
+</code></pre>
+<h1 id="完全分布式搭建"><a href="#完全分布式搭建" class="headerlink" title="完全分布式搭建"></a>完全分布式搭建</h1><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201109193940212.png" alt="image-20201109193940212"></p>
+<h2 id="1-配置三台IP"><a href="#1-配置三台IP" class="headerlink" title="1.配置三台IP"></a>1.配置三台IP</h2><pre class=" language-shell"><code class="language-shell">vi /etc/sysconfig/network-scripts/ifcfg-ens33
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=static
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=ens33
+DEVICE=ens33
+ONBOOT=yes
+IPADDR=192.168.136.150
+NETMASK=255.255.255.0
+GATEWAY=192.168.136.2
+DNS1=119.29.29.29
+
+# 重启网络
+systemctl restart network
+</code></pre>
+<h2 id="2-关闭三台防火墙"><a href="#2-关闭三台防火墙" class="headerlink" title="2.关闭三台防火墙"></a>2.关闭三台防火墙</h2><pre class=" language-shell"><code class="language-shell">systemctl stop firewalld  # 关闭防火墙
+systemctl disable firewalld  # 关闭防火墙开机自启
+systemctl status firewalld  # 检查防火墙
+
+vi /etc/sysconfig/selinux   # 关闭selinux防火墙
+SELINUX=disabled
+</code></pre>
+<h2 id="3-修改三台主机名和映射主机名和IP地址"><a href="#3-修改三台主机名和映射主机名和IP地址" class="headerlink" title="3.修改三台主机名和映射主机名和IP地址"></a>3.修改三台主机名和映射主机名和IP地址</h2><pre><code>hostnamectl set-hostname master1-1
+
+vi /etc/hosts
+192.168.136.150 master1-1
+192.168.136.151 slave1-1
+192.168.136.152 slave1-2
+</code></pre>
+<h2 id="4-安装-rz，使用rz上传所需文件"><a href="#4-安装-rz，使用rz上传所需文件" class="headerlink" title="4.安装 rz，使用rz上传所需文件"></a>4.安装 rz，使用rz上传所需文件</h2><pre class=" language-shell"><code class="language-shell">yum -y install lrzsz
+</code></pre>
+<h2 id="5-安装Hadoop和JDK，并配置好环境"><a href="#5-安装Hadoop和JDK，并配置好环境" class="headerlink" title="5.安装Hadoop和JDK，并配置好环境"></a>5.安装Hadoop和JDK，并配置好环境</h2><pre class=" language-shell"><code class="language-shell"># 使用 tar 命令解压
+tar -zxvf *.gz -C /usr/local/src
+
+vi /etc/profile
+export JAVA_HOME=/usr/local/src/jdk1.8
+export HADOOP_HOME=/usr/local/src/hadoop-2.7.2
+PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+# 刷新环境配置文件
+source /etc/profile
+
+# 查看Hadoop和JDK是否安装成功
+java -version
+hadoop version
+
+# 可以先配置好主节点，然后使用 scp 命令分发给从节点，从而节约时间
+scp -r /etc/profile slave1-1:/etc/
+scp -r /etc/profile slave1-2:/etc/
+</code></pre>
+<h2 id="6-在三台同时同步时间"><a href="#6-在三台同时同步时间" class="headerlink" title="6.在三台同时同步时间"></a>6.在三台同时同步时间</h2><pre class=" language-shell"><code class="language-shell"># 安装NTP服务
+yum install ntp
+# 手动同步时间
+ntpdate -u ntp1.aliyun.com
+# 查看时间
+date
+</code></pre>
+<h2 id="7-在三个节点删除原有目录，重新生成密匙对"><a href="#7-在三个节点删除原有目录，重新生成密匙对" class="headerlink" title="7.在三个节点删除原有目录，重新生成密匙对"></a>7.在三个节点删除原有目录，重新生成密匙对</h2><pre class=" language-shell"><code class="language-shell"># 删除原有.ssh目录
+rm -rf /root/.ssh
+# 重新生成迷密匙对，然后回车三次
+ssh-keygen -t rsa
+# 在各节点的.ssh目录下将公钥复制到主节点
+cd /root/.ssh
+ssh-copy-id master1-1
+# 查看主节点的 authorized_keys 文件
+more authorized_keys
+# 将主节点上的 authorized_keys 文件远程拷贝到从节点。
+scp -r authorized_keys slave1-1:~/.ssh/authorized_keys
+</code></pre>
+<h2 id="8-在主节点中配置Hadoop目录中的配置文件"><a href="#8-在主节点中配置Hadoop目录中的配置文件" class="headerlink" title="8.在主节点中配置Hadoop目录中的配置文件"></a>8.在主节点中配置Hadoop目录中的配置文件</h2><pre class=" language-shell"><code class="language-shell">cd /usr/local/src/hadoop-2.6.0/etc/hadoop
+
+vi hadoop-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+
+vi core-site.xml
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://node:9000</value>
+    <description>HDFS的URI，设定namenode的主机名及端口</description>
+</property>
+<property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/src/tmp</value>
+    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
+</property>
+
+vi hdfs-site.xml
+<property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/export/server/hdfs/name</value>
+    <description>namenode上存储hdfs名字空间元数据 </description>
+</property>
+<property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/export/server/hdfs/data</value>
+    <description>datanode上数据块的物理存储位置</description>
+</property>
+<property>
+    <name>dfs.replication</name>
+    <value>2</value>
+    <description>副本个数，默认是3,应小于datanode机器数量</description>
+</property>
+
+vi mapred-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+
+vi mapred-site.xml
+<property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+    <description>指定mapreduce使用yarn框架</description>
+</property>
+
+vi yarn-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+
+vi yarn-site.xml
+<property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>node</value>
+    <description>指定resourcemanager所在的hostname，
+    即指定yarn的老大即ResourceManger的地址</description>
+</property>
+<property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>NodeManager上运行的附属服务。
+    指定NodeManager获取数据的方式是shuffle
+    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
+</property>
+
+vi slaves
+slave1-1
+slave1-2
+
+# 将主节点上的配置文件分发到两个从节点
+scp -r /usr/local/src/hadoop-2.7.2/etc/hadoop node1:/url/local/src/hadoop-2.7.2/etc/
+scrp -r /usr/local/src/hadoop-2.7.2/etc/hadoop node2:/url/local/src/hadoop-2.7.2/etc/
+</code></pre>
+<h2 id="9-在主节点上格式化-HDFS"><a href="#9-在主节点上格式化-HDFS" class="headerlink" title="9.在主节点上格式化 HDFS"></a>9.在主节点上格式化 HDFS</h2><pre class=" language-shell"><code class="language-shell">hdfs namenode -format
+</code></pre>
+<h2 id="10-启动节点"><a href="#10-启动节点" class="headerlink" title="10.启动节点"></a>10.启动节点</h2><pre class=" language-shel"><code class="language-shel">start-all.sh
+</code></pre>
+<h1 id="zookeeper集群搭建"><a href="#zookeeper集群搭建" class="headerlink" title="zookeeper集群搭建"></a>zookeeper集群搭建</h1><h2 id="1-在完全分布式的基础上搭建"><a href="#1-在完全分布式的基础上搭建" class="headerlink" title="1.在完全分布式的基础上搭建"></a>1.在完全分布式的基础上搭建</h2><p>检查完全分布式集群，没有问题就可以直接搭建了</p>
+<p>这里我们可以在主节点配置，然后分发给从节点，再修改从节点的myid</p>
+<h2 id="2-解压到某个文件夹"><a href="#2-解压到某个文件夹" class="headerlink" title="2.解压到某个文件夹"></a>2.解压到某个文件夹</h2><pre class=" language-shell"><code class="language-shell">tar -zxvf zookeeper* -C /usr/local/src/
+</code></pre>
+<h2 id="3-进入到zookeeper文件夹"><a href="#3-进入到zookeeper文件夹" class="headerlink" title="3.进入到zookeeper文件夹"></a>3.进入到zookeeper文件夹</h2><pre class=" language-shell"><code class="language-shell">创建一个目录，这里叫 data
+mkdir data
+cd data
+echo 1 > myid
+
+cd conf
+mv zoo_sample.cfg zoo.cfg    # 修改名字
+
+vi zoo.cfg
+
+tickTime=2000  # tickTime：Client和Server通信心跳数。单位：毫秒
+# Zookeeper服务器之间或客户端与服务器之间维持心跳的时间间隔，也就是每隔tickTime的时间就会发送一个心跳。tickTime以毫秒为单位
+
+initLimit=10  # LF初始通信时限。
+# 集群中的follower服务器(F)与leader服务器(L)之间初始连接时能容忍的最多心跳数（tickTime的数量)。
+
+syncLimit=5  # LF同步通信时限。
+# 集群中的follower服务器与leader服务器之间请求和应答之间能容忍的最多心跳数（tickTime的数量)。
+
+dataDir=/tmp/zookeeper  # 数据文件目录。
+# Zookeeper保存数据的目录，默认情况下，Zookeeper将写数据的日志文件也保存在这个目录里。
+
+clientPort=2181  # 客户端连接端口。
+# 客户端连接Zookeeper服务器的端口，Zookeeper会监听这个端口，接受客户端的访问请求。
+
+maxClientCnxns=60  # 客服端最大连接数
+# 默认值是60，一个客户端能够连接到同一个服务器上的最大连接数，根据IP来区分。如果设置为0，表示没有任何限制。设置该值一方面是为了防止DoS攻击。
+
+# Be sure to read the maintenance section of the
+# administrator guide before turning on autopurge.
+#
+# http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+#
+# The number of snapshots to retain in dataDir
+#autopurge.snapRetainCount=3
+# Purge task interval in hours
+# Set to "0" to disable auto purge feature
+#autopurge.purgeInterval=1
+dataDir=/export/server/zookeeper-3.4.8/data
+server.1=node:2888:3888
+server.2=node1:2888:3888
+server.3=node2:2888:3888
+</code></pre>
+<h2 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4.配置环境变量"></a>4.配置环境变量</h2><pre class=" language-shell"><code class="language-shell">vi /etc/profile
+
+export ZOOKEEPER_HOME=/usr/local/src/zookeeper-3.4.5
+export PATH=$PATH:$ZOOKEEPER_HOME/bin
+export CLASSPATH=.:$ZOOKEEPER_HOME/lib/dt.jar:$ZOOKEEPER_HOME/lib/tools.jar
+</code></pre>
+<h2 id="5-远程分发"><a href="#5-远程分发" class="headerlink" title="5.远程分发"></a>5.远程分发</h2><pre><code>scp -r /etc/profile node1:/etc/
+scp -r /etc/profile node2:/etc/
+
+scp -r /usr/local/src/zookeeper-3.4.5 node1:/usr/local/src/
+scp -r /usr/local/src/zookeeper-3.4.5 node2:/usr/local/src/
+</code></pre>
+<h2 id="6-修改其他节点的myid"><a href="#6-修改其他节点的myid" class="headerlink" title="6.修改其他节点的myid"></a>6.修改其他节点的myid</h2><pre><code>cd /usr/local/src/zookeeper-3.4.5/data
+vi myid
+</code></pre>
+<h1 id="高可用搭建"><a href="#高可用搭建" class="headerlink" title="高可用搭建"></a>高可用搭建</h1><h2 id="HDFS-HA-环境搭建"><a href="#HDFS-HA-环境搭建" class="headerlink" title="HDFS HA 环境搭建"></a>HDFS HA 环境搭建</h2><h3 id="1-在完成zookeeper的基础上搭建"><a href="#1-在完成zookeeper的基础上搭建" class="headerlink" title="1.在完成zookeeper的基础上搭建"></a>1.在完成zookeeper的基础上搭建</h3><h3 id="2-在完全分布式集群的主节点上修改配置文件"><a href="#2-在完全分布式集群的主节点上修改配置文件" class="headerlink" title="2.在完全分布式集群的主节点上修改配置文件"></a>2.在完全分布式集群的主节点上修改配置文件</h3><pre class=" language-shell"><code class="language-shell">cd /usr/local/src/hadoop-2.6.0/etc/hadoop
+
+核心配置文件
+core-site.xml -> 修改
+
+HDFS配置文件
+hadoop-env.sh -> 不变
+hdfs-site.xml -> 修改
+
+MapReduce配置文件
+mapred-env.sh -> 不变
+mapred-site.xml -> 不变
+
+slaves -> 修改
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">vi core-site.xml
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://mycluster</value>
+    <description>把两个NameNode的地址组装成一个集群mycluster</description>
+</property>
+
+# 这里的路径默认是NameNode、DataNode、JournalNode等存放数据的公共目录。用户也可以自己单独指定这三类节点的目录
+<property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/src/hadoop-2.6.0/data/ha/tmp</value>
+    <description>指定hadoop运行时产生文件的存储目录</description>
+</property>
+
+<property>
+    <name>ha.zookeeper.quorum</name>
+    <value>node:2181,node1:2181,node2:2181</value>
+    <description>指定ZKFC故障自动切换转移</description>
+</property>
+
+
+
+
+
+vi hdfs-site.xml
+<property>
+    <name>dfs.replication</name>
+    <value>2</value>
+    <description>设置dsf副本数，默认3个</description>
+</property>
+
+<property>
+    <name>dfs.nameservices</name>
+    <value>mycluster</value>
+    <description>完全分布式集群名称</description>
+</property>
+
+<property>
+    <name>dfs.ha.namenodes.mycluster</name>
+    <value>nn1,nn2</value>
+    <description>集群中NameNode节点都有哪些</description>
+</property>
+
+<property>
+    <name>dfs.namenode.rpc-address.mycluster.nn1</name>
+    <value>node:8020</value>
+    <description>nn1的RPC通信地址</description>
+</property>
+
+<property>
+    <name>dfs.namenode.rpc-address.mycluster.nn2</name>
+    <value>node1:8020</value>
+    <description>nn2的RPC通信地址</description>
+</property>
+
+<property>
+    <name>dfs.namenode.http-address.mycluster.nn1</name>
+    <value>node:50070</value>
+    <description>nn1的http通信地址</description>
+</property>
+
+<property>
+    <name>dfs.namenode.http-address.mycluster.nn2</name>
+    <value>node1:50070</value>
+    <description>nn2的http通信地址</description>
+</property>
+
+<property>
+    <name>dfs.namenode.shared.edits.dir</name>
+    <value>qjournal://node:8485;node1:8485;node2:8485/mycluster</value>
+    <description>指定NameNode元数据在JournalNode上的存放位置</description>
+</property>
+
+<property>
+    <name>dfs.ha.fencing.methods</name>
+    <value>
+    sshfence
+    shell(/bin/true)
+    </value>
+    <description>配置隔离机制，即同一时刻只能由一台服务器对外响应</description>
+</property>
+
+<property>
+    <name>dfs.ha.fencing.ssh.private-key-files</name>
+    <value>/root/.ssh/id_rsa</value>
+    <description>使用隔离机制时需要ssh无密钥登录</description>
+</property>
+
+<property>
+    <name>dfs.journalnode.edits.dir</name>
+    <value>/usr/local/src/hadoop-2.6.0/data/ha/jn</value>
+    <description>声明journalnode服务器存储目录</description>
+</property>
+
+<property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+    <description>关闭权限检查</description>
+</property>
+
+<property>
+    <name>dfs.client.failover.proxy.provider.mycluster</name>                                         <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    <description>指定mycluster出现故障时，负责执行故障切换的类</description>
+</property>
+
+<property>
+    <name>dfs.ha.automatic-failover.enabled</name>
+    <value>true</value>
+    <description>配置自动故障转移</description>
+</property>　
+
+
+vi slaves
+node
+node1
+node2
+</code></pre>
+<h3 id="3-将主节点的配置文件分发给从节点"><a href="#3-将主节点的配置文件分发给从节点" class="headerlink" title="3.将主节点的配置文件分发给从节点"></a>3.将主节点的配置文件分发给从节点</h3><pre class=" language-shell"><code class="language-shell"># 怎么分发要看所在文件夹位置和安装位置
+scp -r ../hadoop node1:/$HADOOP_HOME/etc
+scp -r hadoop node2:/usr/local/src/hadoop-2.6.0/etc
+</code></pre>
+<h3 id="4-关闭集群，启动-zookeeper"><a href="#4-关闭集群，启动-zookeeper" class="headerlink" title="4.关闭集群，启动 zookeeper"></a>4.关闭集群，启动 zookeeper</h3><pre class=" language-shell"><code class="language-shell"># 在主节点输入，服务关闭的就不用管了
+stop-all.sh
+
+# 在所有节点输入
+zkServer.sh start
+zkServer.sh status  # 查看状态，正确的状态只有一台机器时leader，其余为follower
+# 用jpa查看的进程时QuorumPeerMain
+</code></pre>
+<h3 id="5-在主节点上格式化-zookeeper"><a href="#5-在主节点上格式化-zookeeper" class="headerlink" title="5.在主节点上格式化 zookeeper"></a>5.在主节点上格式化 zookeeper</h3><pre class=" language-shell"><code class="language-shell">hdfs zkfc -formatZK  # 目的是在Zookeeper集群上建立HA响应节点
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129145030669.png" alt="image-20201129145030669"></p>
+<h3 id="6-启动-JournalNode-集群"><a href="#6-启动-JournalNode-集群" class="headerlink" title="6.启动 JournalNode 集群"></a>6.启动 JournalNode 集群</h3><pre class=" language-shell"><code class="language-shell"># 在所有节点输入
+hadoop-daemon.sh start journalnode  # 启动JournalNode是为了创建/data/ha/jn,此时jn里面是空的
+</code></pre>
+<h3 id="7-格式化NameNode"><a href="#7-格式化NameNode" class="headerlink" title="7.格式化NameNode"></a>7.格式化NameNode</h3><pre class=" language-shell"><code class="language-shell"># 格式化集群的一个NameNode节点，可以在nn1和nn2任选一个格式化。这里选nn1即主节点
+hdfs namenode -format
+# 格式化NameNode，此里面jn会产生集群等ID等信息，/data/ha/tmp也会产生相关信息。
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129161912555.png" alt="image-20201129161912555"></p>
+<h3 id="8-启动-NameNode，并同步到备用-NameNode"><a href="#8-启动-NameNode，并同步到备用-NameNode" class="headerlink" title="8.启动 NameNode，并同步到备用 NameNode"></a>8.启动 NameNode，并同步到备用 NameNode</h3><pre class=" language-shell"><code class="language-shell"># 在nn1即node（主节点）节点单独启动namenode进程：
+hadoop-daemon.sh start namenode
+
+# 将格式化的namenode节点信息同步到备用的NameNode（nn2即node1节点），并启动namenode进程：
+# 在 node1 节点输入
+hdfs namenode -bootstrapStandby
+hadoop-daemon.sh start namenode
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129162043423.png" alt="image-20201129162043423"></p>
+<h3 id="9-启动所有的-DataNode"><a href="#9-启动所有的-DataNode" class="headerlink" title="9.启动所有的 DataNode"></a>9.启动所有的 DataNode</h3><pre class=" language-shell"><code class="language-shell"># DataNode 是在 slaves 文件中配置的，所以在 nn1 即 node 节点上启动所有的 datanode 进程。
+hadoop-daemons.sh start datanode
+</code></pre>
+<h3 id="10-启动-ZKFailoverCotroller"><a href="#10-启动-ZKFailoverCotroller" class="headerlink" title="10.启动 ZKFailoverCotroller"></a>10.启动 ZKFailoverCotroller</h3><pre class=" language-shell"><code class="language-shell"># 在 node 和 node1 上分别启动 ZkFailoverCotroller（主备切换控制器），
+# 是 NameNode 机器 上一个独立的进程（进程名为 zkfc）。
+hadoop-daemon.sh start zkfc
+</code></pre>
+<h3 id="11-到此就可以使用-jps-命令查看进程"><a href="#11-到此就可以使用-jps-命令查看进程" class="headerlink" title="11.到此就可以使用 jps 命令查看进程"></a>11.到此就可以使用 jps 命令查看进程</h3><pre class=" language-shell"><code class="language-shell">node  六个
+node1 六个
+node2 四个
+
+查看NameNode的节点状态
+hdfs haadmin -getServiceState nn1
+hdfs haadmin -getServiceState nn2
+
+关于故障转移机制无效，下载插件
+yum install psmisc
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163831937.png" alt="image-20201129163831937"><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163841569.png" alt="image-20201129163841569"></p>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163858300.png" alt="image-20201129163858300"></p>
+<h2 id="Yarn-HA-环境搭建"><a href="#Yarn-HA-环境搭建" class="headerlink" title="Yarn HA 环境搭建"></a>Yarn HA 环境搭建</h2><h3 id="1-在完成-HDFS-HA-的基础上安装"><a href="#1-在完成-HDFS-HA-的基础上安装" class="headerlink" title="1.在完成 HDFS HA 的基础上安装"></a>1.在完成 HDFS HA 的基础上安装</h3><pre><code>关闭所有进程。
+</code></pre>
+<h3 id="2-同样在hadoop目录下修改配置文件"><a href="#2-同样在hadoop目录下修改配置文件" class="headerlink" title="2.同样在hadoop目录下修改配置文件"></a>2.同样在hadoop目录下修改配置文件</h3><pre class=" language-shell"><code class="language-shell">vi yarn-site.xml
+
+<property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>NodeManager上运行的附属服务。
+    指定NodeManager获取数据的方式是shuffle
+    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.ha.enabled</name>
+    <value>true</value>
+    <description>启用resourcemanager ha</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.cluster-id</name>
+    <value>rmCluster</value>
+    <description>指定resourcemanager的cluster-id</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.ha.rm-ids</name>
+    <value>rm1,rm2</value>
+    <description>声明两台resourcemanager的名字</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.hostname.rm1</name>
+    <value>node</value>
+    <description>指定第一台resourcemanager的地址</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.hostname.rm2</name>
+    <value>node1</value>
+    <description>指定第二台resourcemanager的地址</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.zk-address</name>
+    <value>node:2181,node1:2181,node2:2181</value>
+    <description>指定zookeeper集群的地址</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.recovery.enabled</name>
+    <value>true</value>
+    <description>启用自动恢复</description>
+</property>
+
+<property>
+    <name>yarn.resourcemanager.store.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
+    <description>指定resourcemanager的状态信息存储在zookeeper集群地址</description>
+</property>
+</code></pre>
+<h3 id="3-远程分发"><a href="#3-远程分发" class="headerlink" title="3.远程分发"></a>3.远程分发</h3><pre class=" language-shell"><code class="language-shell">scp -r yarn-site.xml node1:/usr/local/src/hadoop-2.6.0/etc/hadoop/
+scp -r yarn-site.xml node2:/usr/local/src/hadoop-2.6.0/etc/hadoop/
+
+# 查看两个ResourceManager的节点状态
+yarn rmadmin -getServiceState rm1
+yarn rmadmin -getServiceState rm2
+
+yarn rmadmin -transitionToStandby rm1
+
+port:8088
+</code></pre>
+<h3 id="4-启动-Hadoop-HA-集群"><a href="#4-启动-Hadoop-HA-集群" class="headerlink" title="4.启动 Hadoop HA 集群"></a>4.启动 Hadoop HA 集群</h3><p>(1).在三个节点上启动 ZooKeeper。zkServer.sh start</p>
+<p>(2).在 node 和 node1 上启动 zkfc。hadoop-daemon.sh start zkfc</p>
+<p>(3).在 node 上启动 hadoop 集群。start-all.sh</p>
+<p>(4).在 node1 上启动 resourcemanager。yarn-daemon.sh start resourcemanager</p>
+<p><strong>注：全部启动后。节点数分别为</strong> <strong>8 8 5</strong></p>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129171717556.png" alt="image-20201129171717556"></p>
+<h1 id="MySQL的安装部署"><a href="#MySQL的安装部署" class="headerlink" title="MySQL的安装部署"></a>MySQL的安装部署</h1><h2 id="1-安装-wget"><a href="#1-安装-wget" class="headerlink" title="1.安装 wget"></a>1.安装 wget</h2><pre class=" language-shell"><code class="language-shell">yum -y install wget
+</code></pre>
+<h2 id="2-下载-rpm-安装文件"><a href="#2-下载-rpm-安装文件" class="headerlink" title="2.下载 rpm 安装文件"></a>2.下载 rpm 安装文件</h2><pre class=" language-shell"><code class="language-shell">wget http://repo.mysql.com/mysql-community-release-el7-7.noarch.rpm
+</code></pre>
+<h2 id="3-安装下载的-mysql-community-release-el7-7-noarch-rpm-文件"><a href="#3-安装下载的-mysql-community-release-el7-7-noarch-rpm-文件" class="headerlink" title="3.安装下载的 mysql-community-release-el7-7.noarch.rpm 文件"></a>3.安装下载的 mysql-community-release-el7-7.noarch.rpm 文件</h2><pre class=" language-shell"><code class="language-shell"># 安装下载的 mysql-community-release-el7-7.noarch.rpm 文件
+rpm -ivh mysql-community-release-el7-7.noarch.rpm
+</code></pre>
+<h2 id="4-配置-MySQL-安装源信息"><a href="#4-配置-MySQL-安装源信息" class="headerlink" title="4.配置 MySQL 安装源信息"></a>4.配置 MySQL 安装源信息</h2><pre class=" language-shell"><code class="language-shell">vi /etc/yum.repos.d/mysql-community.repo
+启用5.7的版本
+# enabled 是否启用 1 启用，0 关闭
+# gpgchenk 是否检查
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130085639398.png" alt="image-20201130085639398"></p>
+<h2 id="5-进行-MySQL-安装"><a href="#5-进行-MySQL-安装" class="headerlink" title="5.进行 MySQL 安装"></a>5.进行 MySQL 安装</h2><pre class=" language-shell"><code class="language-shell">yum install mysql-community-server
+</code></pre>
+<h2 id="6-配置MySQL"><a href="#6-配置MySQL" class="headerlink" title="6.配置MySQL"></a>6.配置MySQL</h2><pre class=" language-shell"><code class="language-shell"># 启用mysql
+systemctl start mysqld
+
+# 设为开机自启
+systemctl enable mysqld
+systemctl daemon-reload
+</code></pre>
+<h2 id="7-查看-mysql-5-7-数据库初始化root密码"><a href="#7-查看-mysql-5-7-数据库初始化root密码" class="headerlink" title="7.查看 mysql 5.7 数据库初始化root密码"></a>7.查看 mysql 5.7 数据库初始化root密码</h2><pre class=" language-shell"><code class="language-shell">grep 'temporary password' /var/log/mysqld.log
+
+mysql -uroot -p
+# 回车，然后把复制的密码粘贴进去
+</code></pre>
+<h2 id="8-登录后修改MySQL密码"><a href="#8-登录后修改MySQL密码" class="headerlink" title="8.登录后修改MySQL密码"></a>8.登录后修改MySQL密码</h2><pre class=" language-shell"><code class="language-shell">set global validate_password_policy=LOW;
+set global validate_password_length=6;
+alter user 'root'@'localhost' identified by '123456';
+</code></pre>
+<h2 id="9-开放远程连接"><a href="#9-开放远程连接" class="headerlink" title="9.开放远程连接"></a>9.开放远程连接</h2><pre class=" language-shell"><code class="language-shell"># 进入 mysql 数据库
+use mysql;
+
+update user set host='%' where user='root' and host='localhost';
+</code></pre>
+<h2 id="10-刷新设置"><a href="#10-刷新设置" class="headerlink" title="10.刷新设置"></a>10.刷新设置</h2><pre class=" language-shell"><code class="language-shell">flush privileges;
+</code></pre>
+<h1 id="hive的安装部署"><a href="#hive的安装部署" class="headerlink" title="hive的安装部署"></a>hive的安装部署</h1><h2 id="1-解压"><a href="#1-解压" class="headerlink" title="1.解压"></a>1.解压</h2><pre class=" language-shell"><code class="language-shell">tar -zxvf apache-hive* -C /usr/local/src/
+</code></pre>
+<h2 id="2-进入hive目录并改名"><a href="#2-进入hive目录并改名" class="headerlink" title="2.进入hive目录并改名"></a>2.进入hive目录并改名</h2><h2 id="3-修改环境配置"><a href="#3-修改环境配置" class="headerlink" title="3.修改环境配置"></a>3.修改环境配置</h2><pre class=" language-shell"><code class="language-shell"># 使环境变量只对当前用户生效
+vi .bash_profile
+export HIVE_HOME=/usr/local/src/hive
+export PATH=$PATH:$HIVE_HOME/bin
+source .bash_profile
+
+# 对所有用户有效
+vi /etc/profile
+export HIVE_HOME=/usr/local/src/hive
+export PATH=$PATH:$HIVE_HOME/bin
+source /etc/profile
+</code></pre>
+<h2 id="4-修改hive配置文件"><a href="#4-修改hive配置文件" class="headerlink" title="4.修改hive配置文件"></a>4.修改hive配置文件</h2><pre class=" language-shell"><code class="language-shell"># 进入到hive配置文件目录
+cd /usr/local/src/hive/conf
+
+cp hive-env.sh.tamplate hive-env.sh
+vi hive-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+export HADOOP_HOME=/usr/local/src/hadoop-2.6.0
+export HIVE_HOME=/usr/local/src/hive
+
+vi hive-site.xml    # 这个配置文件是我们自己创建的
+<configuration>
+<property>
+    <name>javax.jdo.option.ConnectionURL</name>
+     <value>jdbc:mysql://node:3306/hiveDB?createDatabaseIfNotExist=true</value>
+     <description>数据库连接地址</description>
+</property>
+<property>
+     <name>javax.jdo.option.ConnectionDriverName</name>
+     <value>com.mysql.jdbc.Driver</value>
+     <description>数据库连接驱动</description>
+</property>
+<property>
+     <name>javax.jdo.option.ConnectionUserName</name>
+     <value>root</value>
+     <description>数据库连接用户名</description>
+</property>
+<property>
+     <name>javax.jdo.option.ConnectionPassword</name>
+     <value>123456</value>
+     <description>数据库连接密码</description>
+</property>
+</configuration>
+</code></pre>
+<h2 id="5-将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下"><a href="#5-将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下" class="headerlink" title="5.将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下"></a>5.将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下</h2><p> <a href="..........%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6%5Cmysql-connector-java-5.1.27.jar">mysql-connector-java-5.1.27.jar</a> </p>
+<h2 id="6-jar包修改"><a href="#6-jar包修改" class="headerlink" title="6.jar包修改"></a>6.jar包修改</h2><pre class=" language-shell"><code class="language-shell"># 将 hive 的 bin 目录下的 jline-2.12.jar 文件发送到 hadoop 的 share/hadoop/yarn/lib/ 目录下
+cp jline-2.12.jar /usr/local/src/hadoop-2.6.0/share/hadoop/yarn/lib/
+
+# 删除 hadoop 中的 jline-0.9.94.jar 文件
+cd /usr/local/src/hadoop-2.6.0/share/hadoop/yarn/lib/
+rm -rf jline-0.9.94.jar
+</code></pre>
+<h2 id="7-初始化"><a href="#7-初始化" class="headerlink" title="7.初始化"></a>7.初始化</h2><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130165822284.png" alt="image-20201130165822284"></p>
+<pre class=" language-shell"><code class="language-shell"># 在hive的bin目录下进行初始化
+schematool -dbType mysql -initSchema
+
+# 启动集群
+start-all.sh
+
+# 打开hive
+hive
+
+# 若是出现safemode的报错而导致进入不了hive，可以输入
+hdfs dfsadmin -safemode leave
+</code></pre>
+<h1 id="sqoop的安装部署"><a href="#sqoop的安装部署" class="headerlink" title="sqoop的安装部署"></a>sqoop的安装部署</h1><p><a target="_blank" rel="noopener" href="https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html">官方文档</a></p>
+<h2 id="一、sqoop的安装"><a href="#一、sqoop的安装" class="headerlink" title="一、sqoop的安装"></a>一、sqoop的安装</h2><p>==<strong>sqoop要配合MySQL或其他数据库使用</strong>==</p>
+<p>==<strong>这里配合MySQL使用。要开放MySQL远程连接。</strong>==</p>
+<h3 id="1-解压、改名"><a href="#1-解压、改名" class="headerlink" title="1.解压、改名"></a>1.解压、改名</h3><pre class=" language-shell"><code class="language-shell">tar -zxvf sqoop* -C /usr/local/src/
+</code></pre>
+<h3 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h3><pre class=" language-shell"><code class="language-shell">vi /etc/profile
+export SQOOP_HOME=/usr/local/src/sqoop-1.4
+export PATH=$PATH:$SQOOP_HOME/bin
+source /etc/profile
+
+vi .bash_profile
+export SQOOP_HOME=/usr/local/src/sqoop-1.4
+export PATH=$PATH:$SQOOP_HOME/bin
+source .bash_profile
+</code></pre>
+<h3 id="3-验证"><a href="#3-验证" class="headerlink" title="3.验证"></a>3.验证</h3><pre><code>sqoop version
+</code></pre>
+<h3 id="4-拷贝数据库驱动到-sqoop-的-lib-目录下"><a href="#4-拷贝数据库驱动到-sqoop-的-lib-目录下" class="headerlink" title="4.拷贝数据库驱动到 sqoop 的 lib 目录下"></a>4.拷贝数据库驱动到 sqoop 的 lib 目录下</h3><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130201136679.png" alt="image-20201130201136679"></p>
+<h3 id="5-配置-sqoop-env-sh"><a href="#5-配置-sqoop-env-sh" class="headerlink" title="5.配置 sqoop-env.sh"></a>5.配置 sqoop-env.sh</h3><ul>
+<li>改名</li>
+</ul>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130201224530.png" alt="image-20201130201224530"></p>
+<pre class=" language-shell"><code class="language-shell">vi sqoop-env.sh
+
+export HADOOP_COMMON_HOME=/usr/local/src/hadoop-2.6.0
+export HADOOP_MAPRED_HOME=/usr/local/src/hadoop-2.6.0
+export ZOOCFGDIR=/usr/local/src/zookeeper-3.4.5/conf
+export ZOOKEEPER_HOME=/usr/local/src/zookeeper-3.4.5
+export HIVE_HOME=/usr/local/src/hive
+export HIVE_CONF_DIR=/usr/local/src/hive/conf
+export HBASE_HOME=/usr/local/src/hbase
+</code></pre>
+<ul>
+<li>验证： sqoop help</li>
+</ul>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130201450868.png" alt="image-20201130201450868"></p>
+<p>##二、sqoop的使用</p>
+<p><a target="_blank" rel="noopener" href="https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html">官方文档</a></p>
+<ul>
+<li>公用参数：数据库连接</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-connect</td>
+<td>连接关系型数据库的URL</td>
+</tr>
+<tr>
+<td>-connection-manager</td>
+<td>指定要使用的连接管道类</td>
+</tr>
+<tr>
+<td>-driver</td>
+<td>Hadoop的根目录</td>
+</tr>
+<tr>
+<td>-help</td>
+<td>打印帮助信息</td>
+</tr>
+<tr>
+<td>-password</td>
+<td>数据库连接密码</td>
+</tr>
+<tr>
+<td>-username</td>
+<td>数据库的连接用户名</td>
+</tr>
+<tr>
+<td>-verbose</td>
+<td>在控制台打印出详细信息</td>
+</tr>
+</tbody></table>
+<ul>
+<li>公用参数：import</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-enclosed-by <char></char></td>
+<td>给字段值前加上指定的字符。</td>
+</tr>
+<tr>
+<td>-escaped-by <char></char></td>
+<td>对字段中的双引号加转义符。</td>
+</tr>
+<tr>
+<td>-fields-terminated-by <char></char></td>
+<td>设定每个字段是以什么符号为结束，默认为逗号。</td>
+</tr>
+<tr>
+<td>-lines-terminated-by <char></char></td>
+<td>设定每行记录之间的分隔符，默认是 \n。</td>
+</tr>
+<tr>
+<td>-mysql-delimiters</td>
+<td>MySQL默认的分隔符设置，字段之间以逗号分隔，行之间以 \n 分隔，默认转义符是 \ ，字段值以单引号包裹。</td>
+</tr>
+<tr>
+<td>-optionally-enclosed-by <char></char></td>
+<td>给带有双引号或单引号的字段值前后加上指定字符。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>公用参数：export</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-input-enclosed-by <char></char></td>
+<td>对字段值前后加上指定字符</td>
+</tr>
+<tr>
+<td>–input-escaped-by <char></char></td>
+<td>对含有转义字符的字段做转义处理</td>
+</tr>
+<tr>
+<td>–input-fields-terminated-by <char></char></td>
+<td>字段之间的分隔符</td>
+</tr>
+<tr>
+<td>–input-lines-terminated-by <char></char></td>
+<td>行之间的分隔符</td>
+</tr>
+<tr>
+<td>–input-optionally-enclosed-by <char></char></td>
+<td>给带有双引号或单引号的字段前后加上指定字符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>公用参数：hive</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>–hive-delims-replacement <arg></arg></td>
+<td>用自定义的字符串替换掉数据中的\r\n和\013 \010等字符</td>
+</tr>
+<tr>
+<td>-hive-drop-import-delims</td>
+<td>在导入数据到hive时，去掉数据中的\r\n\013\010这样的字符</td>
+</tr>
+<tr>
+<td>–map-column-hive <arg></arg></td>
+<td>生成hive表时，可以更改生成字段的数据类型</td>
+</tr>
+<tr>
+<td>–hive-partition-key</td>
+<td>创建分区，后面直接跟分区名，分区字段的默认类型为string</td>
+</tr>
+<tr>
+<td>–hive-partition-value <v></v></td>
+<td>导入数据时，指定某个分区的值</td>
+</tr>
+<tr>
+<td>–hive-home <dir></dir></td>
+<td>hive的安装目录，可以通过该参数覆盖之前默认配置的目录</td>
+</tr>
+<tr>
+<td>–hive-import</td>
+<td>将数据从关系数据库中导入到hive表中</td>
+</tr>
+<tr>
+<td>–hive-overwrite</td>
+<td>覆盖掉在hive表中已经存在的数据</td>
+</tr>
+<tr>
+<td>–create-hive-table</td>
+<td>默认是false，即，如果目标表已经存在了，那么创建任务失败</td>
+</tr>
+<tr>
+<td>–hive-table</td>
+<td>后面接要创建的hive表,默认使用MySQL的表名</td>
+</tr>
+<tr>
+<td>-table</td>
+<td>指定关系数据库的表名</td>
+</tr>
+</tbody></table>
+<h3 id="1-测试连接到MySQL数据库，列出MySQL中的所有数据库"><a href="#1-测试连接到MySQL数据库，列出MySQL中的所有数据库" class="headerlink" title="1.测试连接到MySQL数据库，列出MySQL中的所有数据库"></a>1.测试连接到MySQL数据库，列出MySQL中的所有数据库</h3><pre class=" language-shell"><code class="language-shell"># -
+sqoop list-databases --connect jdbc:mysql://node:3306/ --username root -password 123456
+
+# 查看dsj库下的所有表
+sqoop list-tables --connect jdbc:mysql://node:3306/dsj --username root -password 123456
+</code></pre>
+<h3 id="2-在MySQL中建库、建表"><a href="#2-在MySQL中建库、建表" class="headerlink" title="2.在MySQL中建库、建表"></a>2.在MySQL中建库、建表</h3><pre class=" language-mysql"><code class="language-mysql">create database dsj;
+
+create table t_daochu(
+    id int not null primary key,
+    name varchar(8) not null,
+    sex varchar(8) not null,
+    age int
+    );
+create table uv_info(
+    id int not null primary key,
+    name varchar(8) not null,
+    sex varchar(8) not null,
+    age int
+    );
+
+insert into t values(1,'xiaohong','girl',11),(2,'xiaoli','girl',12),(3,'xiaoming','boy',12),(4,'xiaojun','boy',14);
+</code></pre>
+<p>###3.mysql 数据 导入、导出 hdfs </p>
+<pre class=" language-shell"><code class="language-shell">例题1：
+# 使用sqoop将表中数据导入到HDFS。
+sqoop import --connect jdbc:mysql://node:3306/dsj --username root --table t -password 123456 --target-dir /sqoop -m 1
+# jdbc:mysql 驱动
+# node:3306 主机名:端口
+# --target-dir /sqoop 目标文件
+# -m 1  map任务数
+# sqoop import 或 sqoop-import
+
+# sqoop-export 操作与 sqoop-import 的操作是相反的，即把 HDFS、hive、hbase 中的文件或数据导出到 RDBMS 数据库中，RDBMS 表必须存在，否则 sqoop-export 操作执行出错。
+例题2：
+将例题1中的文件  part-m-00000 导出到 MySQL 数据库 t_daochu 表。
+sqoop export --connect jdbc:mysql://node:3306/dsj --table t_daochu --columns "id,name,sex,age" --username root -password 123456 --export-dir /sqoop
+</code></pre>
+<h3 id="4-查看"><a href="#4-查看" class="headerlink" title="4.查看"></a>4.查看</h3><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130214119569.png" alt="image-20201130214119569"></p>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130214210459.png" alt="image-20201130214210459"></p>
+<ul>
+<li>例题二，先删除我们不需要的文件</li>
+</ul>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130220116651.png" alt="image-20201130220116651"></p>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130220621277.png" alt="image-20201130220621277"></p>
+<h3 id="5-关系型数据的表结构复制到-hive-中"><a href="#5-关系型数据的表结构复制到-hive-中" class="headerlink" title="5.关系型数据的表结构复制到 hive 中"></a>5.关系型数据的表结构复制到 hive 中</h3><pre class=" language-shell"><code class="language-shell">sqoop create-hive-table --connect jdbc:mysql://node1:3306/company --table staff --username root --password 123456 --hive-table test
+</code></pre>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201201085506565.png" alt="image-20201201085506565"></p>
+<ul>
+<li>出现了报错，解决方法</li>
+</ul>
+<pre><code># 第一种方法。在 /etc/profile 中写入
+export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$HIVE_HOME/lib/*
+
+# 第二种方法。将hive 里面的lib下的hive-exec-**.jar 放到sqoop 的lib 下
+</code></pre>
+<h3 id="6-关系型数据库和hive的使用"><a href="#6-关系型数据库和hive的使用" class="headerlink" title="6.关系型数据库和hive的使用"></a>6.关系型数据库和hive的使用</h3><pre class=" language-shell"><code class="language-shell"># 将MySQL dsj库中 t表中的数据传入到hive中
+sqoop import --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table t --hive-import --fields-terminated-by '\t'
+
+# 将hive中的数据传入到MySQL中
+sqoop export --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table uv_info --export-dir /user/hive/warehouse/t --input-fields-terminated-by '\t'
+</code></pre>
+<p>###注：</p>
+<ul>
+<li>每个 RDBMS 表中只有一个单独列作为主键，即不能是多个列 R合键作为主键。</li>
+<li>执行导入操作时，每个 RDBMS 表的所有列列都将被导入到 HDFS 上。</li>
+<li>不能在 RDBMS 表上附加任何诸如 WHERE 条件的子句。</li>
+</ul>
+<h3 id="1-1-导入数据"><a href="#1-1-导入数据" class="headerlink" title="1.1 导入数据"></a>1.1 导入数据</h3><p>####1.1.1 RDBMS 到 HDFS</p>
+<pre class=" language-shell"><code class="language-shell">create database company;
+create table company.staff(
+id int(4) primary key not null auto_increment,  
+name varchar(255), 
+sex varchar(255)
+);
+insert into company.staff(name, sex) values('Thomas', 'Male');
+insert into company.staff(name, sex) values('Catalina', 'FeMale');
+
+# 全部导入
+sqoop import --connect jdbc:mysql://master:3306/company --username root --password 123456 --table staff --target-dir /usr/company --delete-target-dir -m 1 --fields-terminated-by '\t'
+
+# 查询导入
+sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--target-dir /user/company \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by "\t" \
+--query 'select name,sex from staff where id <=1 and $CONDITIONS;'
+
+sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--target-dir /user/company \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by "\t" \
+--query "select name,sex from staff where id <=2 and \$CONDITIONS;"
+
+# 导入指定列
+sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--table staff \
+--columns id,sex \
+--target-dir /user/company \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by "\t"
+# 提示：columns 中如果涉及到多列，用逗号分隔，分隔时不要添加空格
+
+# 使用 sqoop 关键字筛选查询导入数据
+sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--target-dir /user/company \
+--delete-target-dir \
+--m 1 \
+--fields-terminated-by '\t' \
+--table staff \
+--where id='1'
+
+
+sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--target-dir /user/company \
+--delete-target-dir \
+--num-mappers 1 \
+--fields-terminated-by "\t" \
+--table staff \
+--columns id,sex \
+--where "id=1"
+</code></pre>
+<h4 id="1-1-2-RDBMS-到-Hive"><a href="#1-1-2-RDBMS-到-Hive" class="headerlink" title="1.1.2 RDBMS 到 Hive"></a>1.1.2 RDBMS 到 Hive</h4><pre class=" language-shell"><code class="language-shell">sqoop import \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--table staff \
+--num-mappers 1 \
+--hive-import \
+--fields-terminated-by "\t" \
+--hive-overwrite \
+--hive-table staff_hive
+
+sqoop import --connect jdbc:mysql://node:3306/dsj
+--username root
+--password 123456
+--table t
+--hive-import
+--fields-terminated-by '\t'
+</code></pre>
+<p>####1.1.3 RDBMS 到 Hbase</p>
+<pre class=" language-shell"><code class="language-shell">sqoop import \
+--connect jdbc:mysql://hadoop102:3306/company \
+--username root \
+--password 000000 \
+--table company \
+--columns "id,name,sex" \
+--column-family "info" \
+--hbase-create-table \
+--hbase-row-key "id" \
+--hbase-table "hbase_company" \
+--num-mappers 1 \
+--split-by id
+</code></pre>
+<h3 id="1-2-导出数据"><a href="#1-2-导出数据" class="headerlink" title="1.2 导出数据"></a>1.2 导出数据</h3><h4 id="1-2-1-HDFS-到-RDBMS"><a href="#1-2-1-HDFS-到-RDBMS" class="headerlink" title="1.2.1 HDFS 到 RDBMS"></a>1.2.1 HDFS 到 RDBMS</h4><pre class=" language-SHELL"><code class="language-SHELL">sqoop export --connect jdbc:mysql://node:3306/dsj --table t_daochu --columns "id,name,sex,age" --username root -password 123456 --export-dir /sqoop
+
+sqoop export \
+--connect jdbc:mysql://node1:3306/company \
+--username root \
+--password 123456 \
+--table staff \
+--num-mappers 1 \
+--export-dir /user/hive/warehouse/staff_hive \
+--input-fields-terminated-by "\t"
+</code></pre>
+<p>####1.2.2 Hive 到 RDBMS</p>
+<pre class=" language-shell"><code class="language-shell">sqoop export --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table uv_info --export-dir /user/hive/warehouse/t --input-fields-terminated-by '\t'
+</code></pre>
+<h3 id="1-3-脚本打包"><a href="#1-3-脚本打包" class="headerlink" title="1.3 脚本打包"></a>1.3 脚本打包</h3><pre class=" language-shell"><code class="language-shell"># 使用 opt 格式的文件打包
+# 1.创建一个 .opt 文件
+mkdir job
+cd job
+vi sqb.opt
+
+# 2.编写一个 sqoop 脚本
+export
+--connect
+jdbc:mysql://node1:3306/company
+--username
+root
+--password
+123456
+--table
+staff
+--num-mappers
+1
+--export-dir
+/user/hive/warehouse/staff_hive
+--input-fields-terminated-by
+"\t"
+
+# 3.执行该脚本
+sqoop --options-file job/sqp.opt
+</code></pre>
+<h1 id="spark的安装部署"><a href="#spark的安装部署" class="headerlink" title="spark的安装部署"></a>spark的安装部署</h1><p><a target="_blank" rel="noopener" href="http://spark.apache.org/docs/latest/monitoring.html">官方文档</a></p>
+<h2 id="spark的安装"><a href="#spark的安装" class="headerlink" title="spark的安装"></a>spark的安装</h2><h3 id="1-上传文件，解压"><a href="#1-上传文件，解压" class="headerlink" title="1.上传文件，解压"></a>1.上传文件，解压</h3><pre><code>tar -zxvf spark* /usr/local/src/
+</code></pre>
+<h3 id="2-修改文件名"><a href="#2-修改文件名" class="headerlink" title="2.修改文件名"></a>2.修改文件名</h3><pre><code>mv spark-2.0.0-bin-hadoop2.6 spark-2.0
+</code></pre>
+<h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3.修改配置文件"></a>3.修改配置文件</h3><pre class=" language-shell"><code class="language-shell"># 进入到spark的conf目录
+mv spark-env.sh.template spark-env.sh
+vi spark-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+export SPARK_MASTER_HOST=node
+export SPARK_MASTER_PORT=7077
+
+# spark高可用配置
+export JAVA_HOME=/usr/local/src/jdk1.8
+export HADOOP_CONF_DIR=/usr/local/src/hadoop-2.6.0/etc/hadoop
+export SPARK_DAEMON_JAVA_OPTS="-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=node,node1,node2 -Dspark.deploy.zookeeper.dir=/spark"
+export SPARK_MASTER_PORT=7077
+export SPARK_WORKER_CORES=2
+export SPARK_WORKER_MEMORY=1g
+
+cp slaves.template slaves
+vi slaves
+node
+node1
+node2
+</code></pre>
+<h3 id="4-配置-HistoryServer"><a href="#4-配置-HistoryServer" class="headerlink" title="4.配置 HistoryServer"></a>4.配置 HistoryServer</h3><pre class=" language-shell"><code class="language-shell"># 下面可不配置
+1.默认情况下,Spark程序运行完毕后,就无法再查看运行记录的Web UT了,通过HistoryServer可以提供一个服务,通过读取日志文件,使得我们可以在程序运行结束后，依然能够查看运行过程
+
+2.复制spark-defaults.conf,以供修改
+cd /export/servers/spark /conf
+cp spark-defaults.conf.template spark-defaults.confvi spark-defaults.conf
+
+3.将以下内容复制到 "spark-defaults.conf" 末尾处,通过这段配置,可以指定Spark将日志输入到HDFS中
+cp spark-defaults.conf.template spark-defaults.conf
+vi spark-defaults.conf
+spark.eventLog.enabled    true
+spark.eventLog.dir        hdfs://node:8020/spark_log
+spark.eventLog.compress    true
+
+4.将以下内容复制到"spark-env.sh"的末尾,配置HistoryServer启动参数,使得HistoryServer在启动的时候读取 HDFS 中写入的 Spark 日志
+#指定Spark History运行参数
+export SPARK_HISTORY_OPTS="-Dspark.history.ui.port=18080 -Dspark.history.retainedApplications=3 -Dspark.history.fs.logDirectory=hdfs://node:8020/spark_log"
+
+5.为 Spark 创建HDFS中的日志目录
+hdfs dfs -mkdir -p /spark_log
+</code></pre>
+<h3 id="5-配置环境变量"><a href="#5-配置环境变量" class="headerlink" title="5.配置环境变量"></a>5.配置环境变量</h3><pre class=" language-shell"><code class="language-shell">vi /etc/profile
+export SPARK_HOME=/usr/local/src/spark-2.0
+export PATH=$PATH:$SPARK_HOME/bin
+</code></pre>
+<h3 id="6-分发给从节点"><a href="#6-分发给从节点" class="headerlink" title="6.分发给从节点"></a>6.分发给从节点</h3><h3 id="7-查看webUI界面"><a href="#7-查看webUI界面" class="headerlink" title="7.查看webUI界面"></a>7.查看webUI界面</h3><pre class=" language-shell"><code class="language-shell"># 首先启动，在spark目录下输入
+# 在主节点输入
+sbin/start-all.sh
+# node1节点输入
+sbin/start-master.sh
+# 开启zookeeper
+zkServer.sh start
+
+# 在spark bin 目录下输入，进入shell
+./spark-shell
+
+# 在浏览器输入 主机名:端口号
+192.168.136.150:8080
+</code></pre>
+<h1 id="scala的安装部署"><a href="#scala的安装部署" class="headerlink" title="scala的安装部署"></a>scala的安装部署</h1><h2 id="1-上传文件、解压、改名"><a href="#1-上传文件、解压、改名" class="headerlink" title="1.上传文件、解压、改名"></a>1.上传文件、解压、改名</h2><h2 id="2-配置环境"><a href="#2-配置环境" class="headerlink" title="2.配置环境"></a>2.配置环境</h2><pre class=" language-shell"><code class="language-shell">export SCALA_HOME=/usr/local/src/scala
+export PATH=$PATH:$SCALA_HOME/bin
+</code></pre>
+<h2 id="3-验证-1"><a href="#3-验证-1" class="headerlink" title="3.验证"></a>3.验证</h2><pre class=" language-shell"><code class="language-shell"># 直接在命令行输入scala即可
+</code></pre>
+<h1 id="kafka的安装部署"><a href="#kafka的安装部署" class="headerlink" title="kafka的安装部署"></a>kafka的安装部署</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>kafka需要配置好zookeeper</strong></p>
+<h3 id="1-上传-tar-包，解压，改名"><a href="#1-上传-tar-包，解压，改名" class="headerlink" title="1.上传 tar 包，解压，改名"></a>1.上传 tar 包，解压，改名</h3><h3 id="2-配置环境变量-1"><a href="#2-配置环境变量-1" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h3><pre class=" language-shell"><code class="language-shell">vi /etc/profile
+export KAFKA_HOME=/usr/local/src/kafka
+export PATH=$PATH:$KAFKA_HOME/bin
+source /etc/profile
+</code></pre>
+<h3 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3.配置文件"></a>3.配置文件</h3><pre class=" language-shell"><code class="language-shell"># 进入kafka的config目录
+vi server.properties
+log.dirs=/usr/local/src/kafka/data
+zookeeper.connect=node:2181,node1:2181,node2:2181
+</code></pre>
+<h3 id="4-分发"><a href="#4-分发" class="headerlink" title="4.分发"></a>4.分发</h3><pre class=" language-shell"><code class="language-shell">scp -r kafka node1:/usr/local/src/
+scp -r /etc/profile node1:/etc/
+
+scp -r kafka node2:/usr/local/src/
+scp -r /etc/profile node2:/etc/
+</code></pre>
+<p>###5.修改其余两个server.properties</p>
+<pre class=" language-shell"><code class="language-shell"># 把node1中的改为1、node2中的改为2
+broker.id=1
+broker.id=2
+</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="1-kafka简单使用"><a href="#1-kafka简单使用" class="headerlink" title="1.kafka简单使用"></a>1.kafka简单使用</h3><pre class=" language-shell"><code class="language-shell">/usr/local/src/kafka/bin/kafka-server-start.sh -daemon /usr/local/src/kafka/config/server.properties
+
+kafka-server-stop.sh
+
+bin/kafka-topics.sh --list --zookeeper node:2181
+
+# 三台输入
+# bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start.sh -daemon config/server.properties
+
+# 输入（若找不到命令：yum -y install net-tools）
+netstat -tunlp|egrep "(2181|9092)"
+# 创建一个生产者
+bin/kafka-topics.sh --create --zookeeper node:2181 --replication-factor 2 --partitions 2 --topic test2
+# 启动生产者
+bin/kafka-console-producer.sh --broker-list node:9092 --topic test
+
+# 启动消费者
+kafka-console-consumer.sh --bootstrap-server node1:9092 --topic test --
+kafka-console-consumer.sh --bootstrap-server node2:9092 --topic test --
+# 然后就可以在第二台输入信息，第三台会接收信息。
+</code></pre>
+<h3 id="2-kafka启动脚本"><a href="#2-kafka启动脚本" class="headerlink" title="2.kafka启动脚本"></a>2.kafka启动脚本</h3><pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+case $1 in
+"start"){
+    for i in node node1 node2
+    do
+        echo "************$i*************"
+        ssh $i "kafka-server-start.sh -daemon /usr/local/src/kafka/config/server.properties"
+    done
+};;
+
+"stop"){
+    for i in node node1 node2
+    do
+        echo "************$i*************"
+        ssh $i "/usr/local/src/kafka/bin/kafka-server-stop.sh"
+    done
+};;
+
+esac
+</code></pre>
+<h3 id="3-kafka命令行操作"><a href="#3-kafka命令行操作" class="headerlink" title="3.kafka命令行操作"></a>3.kafka命令行操作</h3><pre class=" language-shell"><code class="language-shell">bin/kafka-server-start.sh -daemon config/server.properties
+
+1.查看当前服务器中的所有 topic
+kafka-topics.sh --zookeeper node:2181 --list
+
+2.创建 topic 
+kafka-topics.sh --zookeeper node:2181 --create --replication-factor 2 --partitions 3 --topic first2
+# replicat 的数量不能超过集群节点数量
+# partition 可以有多个，但同一个节点不能出现相同的分区
+
+3.查看某个 topic 的详情
+kafka-topics.sh --zookeeper node:2181 --describe --topic first
+
+4.修改分区数
+kafka-topics.sh --zookeeper node:2181 --alter --topic first --partitions 6
+
+5.删除 topic
+kafka-topics.sh --zookeeper node:2181 --delete --topic first
+
+6.发送消息
+kafka-console-producer.sh --broker-list node:9092 --topic first
+7.接收消息
+# 老版本
+kafka-console-consumer.sh --zookeeper node:2181 --topic first
+kafka-console-consumer.sh --zookeeper node:2181 --topic first --from-beginning
+# 新版本
+kafka-console-consumer.sh --bootstrap-server node:9092 --topic first
+kafka-console-consumer.sh --bootstrap-server node:9092 --topic first --from-beginning
+</code></pre>
+<h1 id="flume的安装部署"><a href="#flume的安装部署" class="headerlink" title="flume的安装部署"></a>flume的安装部署</h1><p><a target="_blank" rel="noopener" href="http://flume.apache.org/releases/content/1.6.0/FlumeUserGuide.html">官方文档</a></p>
+<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><h3 id="1-上传并解压，改名"><a href="#1-上传并解压，改名" class="headerlink" title="1.上传并解压，改名"></a>1.上传并解压，改名</h3><p>###2.配置文件</p>
+<pre class=" language-shell"><code class="language-shell"># 进入到 flume 目录下的 conf
+mv flume-env.sh.template flume-env.sh
+vi flume-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+</code></pre>
+<p>###3.配置环境变量</p>
+<pre class=" language-shell"><code class="language-shell">vi /etc/profile
+export FLUME_HOME=/usr/local/src/flume
+export PATH=$PATH:$FLUME_HOME/bin
+source /etc/profile
+
+# 验证
+flume-ng version
+</code></pre>
+<p>##使用</p>
+<p>###1.监听端口号</p>
+<pre class=" language-shell"><code class="language-shell">vi flume-netcat-logger.conf
+
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = netcat
+a1.sources.r1.bind = node
+a1.sources.r1.port = 44444
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+
+bin/flume-ng agent -c conf/ -n a1 -f job/flume-netcat-logger.conf -Dflume.root.logger=INFO,console
+
+bin/flume-ng agent --conf conf/ --conf-file job/flume-netcat-logger.conf --name a1 -Dflume.root.logger=INFO,console
+
+yum -y install nc
+服务端 nc -lk 44444
+客户端 nc node 44444
+</code></pre>
+<p>###2.实时监控本地文件（单个）</p>
+<pre class=" language-shell"><code class="language-shell">vi file-flume-logger.conf
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -f /tmp/root/hive.log
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+
+bin/flume-ng agent -c conf/ -f job/file-flume-logger.conf -n a1 -Dflume.root.logger=INFO,console
+</code></pre>
+<ul>
+<li><strong>将数据输出到 HDFS，要有Hadoop相关 jar 包</strong></li>
+</ul>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Ccommons-configuration-1.6.jar">commons-configuration-1.6.jar</a> </p>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Ccommons-io-2.4.jar">commons-io-2.4.jar</a> </p>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Chadoop-auth-2.7.2.jar">hadoop-auth-2.7.2.jar</a> </p>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Chadoop-common-2.7.2.jar">hadoop-common-2.7.2.jar</a> </p>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Chadoop-hdfs-2.7.2.jar">hadoop-hdfs-2.7.2.jar</a> </p>
+<p> <a href="..........%5Clearning%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%B5%84%E6%96%99%5C%E5%A4%A7%E6%95%B0%E6%8D%AE-%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6%5Cflume%5C%E6%BA%90%E7%A0%81%E7%AC%94%E8%AE%B0%E8%B5%84%E6%96%99%5C2.%E8%B5%84%E6%96%99%5C01_jar%E5%8C%85%5Cflume-hadoop-jar%5Chtrace-core-3.1.0-incubating.jar">htrace-core-3.1.0-incubating.jar</a> </p>
+<pre class=" language-shell"><code class="language-shell">vi file-flume-hdfs.conf
+# Name the components on this agent 
+a2.sources = r2 
+a2.sinks = k2 
+a2.channels = c2 
+
+# Describe/configure the source 
+a2.sources.r2.type = exec 
+# 大写 F 但监控失败时会重试，f 不会
+# a2.sources.r2.command = tail -F /tmp/root/hive.log 
+a2.sources.r2.command = tail -f /tmp/root/hive.log 
+# a2.sources.r2.shell = /bin/bash -c 
+
+# Describe the sink 
+a2.sinks.k2.type = hdfs 
+a2.sinks.k2.hdfs.path = hdfs://node:9000/flume/upload/%Y%m%d/%H 
+#上传文件的前缀 
+a2.sinks.k2.hdfs.filePrefix = logs- 
+#是否按照时间滚动文件夹 
+a2.sinks.k2.hdfs.round = true 
+#重新定义时间单位 
+a2.sinks.k2.hdfs.roundUnit = hour /second/minute
+#多少时间单位创建一个新的文件夹 
+a2.sinks.k2.hdfs.roundValue = 1 
+#是否使用本地时间戳 
+a2.sinks.k2.hdfs.useLocalTimeStamp = true 
+#积攒多少个 Event 才 flush 到 HDFS 一次 
+a2.sinks.k2.hdfs.batchSize = 1000 
+#设置文件类型，可支持压缩 
+a2.sinks.k2.hdfs.fileType = DataStream 
+#多久生成一个新的文件 秒
+a2.sinks.k2.hdfs.rollInterval = 30 
+#设置每个文件的滚动大小 
+a2.sinks.k2.hdfs.rollSize = 134217700 
+#文件的滚动与 Event 数量无关 
+a2.sinks.k2.hdfs.rollCount = 0 
+
+# Use a channel which buffers events in memory 
+a2.channels.c2.type = memory
+a2.channels.c2.capacity = 1000
+a2.channels.c2.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a2.sources.r2.channels = c2
+a2.sinks.k2.channel = c2 
+
+bin/flume-ng agent -c conf/ -f job/file-flume-hdfs.conf -n a2
+</code></pre>
+<p>###3.实时监控目录下多个新文件</p>
+<pre class=" language-shell"><code class="language-shell">vi dir-flume-hdfs.conf
+# Name the components on this agent
+a3.sources = r3 
+a3.sinks = k3 
+a3.channels = c3 
+
+# Describe/configure the source 
+a3.sources.r3.type = spooldir 
+a3.sources.r3.spoolDir = /usr/local/src/flume/upload
+a3.sources.r3.fileSuffix = .COMPLETED 
+#忽略所有以.tmp 结尾的文件，不上传 
+a3.sources.r3.ignorePattern = ([^ ]*\.tmp) 
+
+# Describe the sink 
+a3.sinks.k3.type = hdfs 
+a3.sinks.k3.hdfs.path = hdfs://node:9000/flume/uploads/%Y%m%d/%H 
+#上传文件的前缀 
+a3.sinks.k3.hdfs.filePrefix = upload- 
+#是否按照时间滚动文件夹 
+a3.sinks.k3.hdfs.round = true 
+#多少时间单位创建一个新的文件夹 
+a3.sinks.k3.hdfs.roundValue = 1 
+#重新定义时间单位 
+a3.sinks.k3.hdfs.roundUnit = hour 
+#是否使用本地时间戳 
+a3.sinks.k3.hdfs.useLocalTimeStamp = true 
+#积攒多少个 Event 才 flush 到 HDFS 一次 
+a3.sinks.k3.hdfs.batchSize = 100
+#设置文件类型，可支持压缩 
+a3.sinks.k3.hdfs.fileType = DataStream 
+#多久生成一个新的文件 
+a3.sinks.k3.hdfs.rollInterval = 60 
+#设置每个文件的滚动大小大概是 128M 
+a3.sinks.k3.hdfs.rollSize = 134217700 
+#文件的滚动与 Event 数量无关 
+a3.sinks.k3.hdfs.rollCount = 0 
+#执行HDFS操作的超时时间（毫秒）
+a3.sinks.k3.hdfs.callTimeout = 40000
+
+# Use a channel which buffers events in memory 
+a3.channels.c3.type = memory 
+a3.channels.c3.capacity = 1000 
+a3.channels.c3.transactionCapacity = 100 
+
+# Bind the source and sink to the channel 
+a3.sources.r3.channels = c3 
+a3.sinks.k3.channel = c3 
+
+bin/flume-ng agent -c conf/ -f job/dir-flume-hdfs.conf -n a3
+</code></pre>
+<h1 id="hbase的安装部署"><a href="#hbase的安装部署" class="headerlink" title="hbase的安装部署"></a>hbase的安装部署</h1><h2 id="1-上传安装包，解压，改名"><a href="#1-上传安装包，解压，改名" class="headerlink" title="1.上传安装包，解压，改名"></a>1.上传安装包，解压，改名</h2><h2 id="2-配置环境变量-2"><a href="#2-配置环境变量-2" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><pre class=" language-shell"><code class="language-shell">vi /etc/profile
+export HBASE_HOME=/usr/local/src/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+</code></pre>
+<h2 id="3-进入hbase目录下的conf目录"><a href="#3-进入hbase目录下的conf目录" class="headerlink" title="3.进入hbase目录下的conf目录"></a>3.进入hbase目录下的conf目录</h2><pre class=" language-shell"><code class="language-shell">vi hbase-env.sh
+export JAVA_HOME=/usr/local/src/jdk1.8
+export HBASE_MANAGES_ZK=false
+
+
+vi hbase-site.xml
+<property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://node:9000/hbase</value>
+</property>
+<property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+</property>
+<property>
+        <name>hbase.master</name>
+        <value>node:60000</value>
+        <description>指定hbase的master节点</description>
+</property>
+<property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>node,node1,node2</value>
+        <description>指定zookeeper集群</description>
+</property>
+<property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/export/server/zookeeper-3.4.5/data</value>
+        <description>这个路径要与zoo.cfg设置一致</description>
+</property>
+
+
+vi regionservers
+node1
+node2
+</code></pre>
+<h2 id="hbase和-hadoop-的版本问题"><a href="#hbase和-hadoop-的版本问题" class="headerlink" title="hbase和 hadoop 的版本问题"></a>hbase和 hadoop 的版本问题</h2><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201202191842683.png" alt="image-20201202191842683"></p>
+<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201202191851277.png" alt="image-20201202191851277"></p>
 
                 
             </div>
@@ -705,7 +2260,11 @@ object printDemo {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Hadoop/">
+                                    <span class="chip bg-color">Hadoop</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1136,18 +2695,62 @@ object printDemo {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/node/1.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="数据采集笔记">
+                        
+                        <span class="card-title">数据采集笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Aunean
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">python爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/node/2.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Scala学习">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hadoop搭建">
                         
-                        <span class="card-title">Scala学习</span>
+                        <span class="card-title">Hadoop搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1158,7 +2761,7 @@ object printDemo {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
                             </span>
                         <span class="publish-author">
                             
@@ -1170,41 +2773,12 @@ object printDemo {
                 </div>
 
                 
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/node/16107.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python">
-                        
-                        <span class="card-title">python</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Aunean
-                            
-                        </span>
-                    </div>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hadoop/">
+                        <span class="chip bg-color">Hadoop</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1405,7 +2979,7 @@ object printDemo {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">44k</span>&nbsp;字
             
             
             

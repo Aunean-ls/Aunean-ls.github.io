@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Aunean&#39;s Blog">
+    <meta name="keywords" content="HBase笔记, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Aunean&#39;s Blog</title>
+    <title>HBase笔记 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">HBase笔记</h1>
                 </div>
             </div>
         </div>
@@ -448,21 +448,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-04-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2021-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    1.1k
                 </div>
                 
 
@@ -479,22 +479,196 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h1 id="1-HBase-shell"><a href="#1-HBase-shell" class="headerlink" title="1.HBase shell"></a>1.HBase shell</h1><h2 id="1-1-HBase-shell操作"><a href="#1-1-HBase-shell操作" class="headerlink" title="1.1 HBase shell操作"></a>1.1 HBase shell操作</h2><h3 id="1-1-1-创建表"><a href="#1-1-1-创建表" class="headerlink" title="1.1.1 创建表"></a>1.1.1 创建表</h3><ul>
+<li>HBase是没有schema的，就是在创建表的时候不需要指定表中有哪些列，只需要指定有多少个列族</li>
+</ul>
+<p>语法：</p>
+<pre class=" language-mysql"><code class="language-mysql">create '表名','列族名'...
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>注意：</p>
+<ul>
+<li>create要写成小写</li>
+<li>一个表可以包含若干个列族</li>
+<li>命令解析，调用hbase提供的ruby脚本的create方法，传递两个字符串参数</li>
+</ul>
+<h3 id="1-1-2-删除表"><a href="#1-1-2-删除表" class="headerlink" title="1.1.2 删除表"></a>1.1.2 删除表</h3><h5 id="1-1-2-1-禁用表"><a href="#1-1-2-1-禁用表" class="headerlink" title="1.1.2.1 禁用表"></a>1.1.2.1 禁用表</h5><pre class=" language-ruby"><code class="language-ruby">disable <span class="token string">"表名"</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<h5 id="1-1-2-2-删除表"><a href="#1-1-2-2-删除表" class="headerlink" title="1.1.2.2  删除表"></a>1.1.2.2  删除表</h5><pre class=" language-ruby"><code class="language-ruby">drop <span class="token string">"表名"</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<h3 id="1-1-3-put插入数据"><a href="#1-1-3-put插入数据" class="headerlink" title="1.1.3 put插入数据"></a>1.1.3 put插入数据</h3><p>语法：</p>
+<pre class=" language-ruby"><code class="language-ruby">put <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"ROWKEY"</span><span class="token punctuation">,</span><span class="token string">"列族名：列名"</span><span class="token punctuation">,</span><span class="token string">"值"</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<pre class=" language-scala"><code class="language-scala"><span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f1e5aeb04b22f8460965"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"足球"</span><span class="token punctuation">,</span> <span class="token string">"篮球"</span><span class="token punctuation">,</span> <span class="token string">"橄榄球"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"zhangsan@itcast.cn"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f236aeb04b22f8460967"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"足球"</span><span class="token punctuation">,</span> <span class="token string">"篮球"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"lisi@itcast.cn"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"654321"</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f267aeb04b22f8460968"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"王五"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"敲代码"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"wangwu@itcast.cn"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f294aeb04b22f8460969"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"赵六"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"吃饭"</span><span class="token punctuation">,</span> <span class="token string">"睡觉"</span><span class="token punctuation">,</span> <span class="token string">"打豆豆"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"zhaoliu@itcast.cn"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f2b6aeb04b22f846096a"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"王二麻子"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"吃饭"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"wangermazi@itcast.cn"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> <span class="token string">"_id"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"$oid"</span><span class="token operator">:</span> <span class="token string">"5c09f2d9aeb04b22f846096b"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"狗蛋"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token string">"hobbies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"打豆豆"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">"goudan@163.com"</span><span class="token punctuation">,</span> <span class="token string">"password"</span><span class="token operator">:</span> <span class="token string">"123456"</span> <span class="token punctuation">}</span>
+<h3 id="1-1-4-查询数据"><a href="#1-1-4-查询数据" class="headerlink" title="1.1.4 查询数据"></a>1.1.4 查询数据</h3><ul>
+<li>get是查询一行的数据</li>
+</ul>
+<p>查找指定行键：</p>
+<pre class=" language-ruby"><code class="language-ruby">get <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span>
 </code></pre>
-<p>scala</p>
+<p>要将数据中的中文正确显示</p>
+<pre class=" language-ruby"><code class="language-ruby">get <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="1-1-5-更新操作-新增数据"><a href="#1-1-5-更新操作-新增数据" class="headerlink" title="1.1.5 更新操作/新增数据"></a>1.1.5 更新操作/新增数据</h3><p>使用put进行更新操作</p>
+<pre class=" language-ruby"><code class="language-ruby">put <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token string">"列族：列名"</span><span class="token punctuation">,</span><span class="token string">"更新的值"</span>
+</code></pre>
+<h3 id="1-1-6-删除数据"><a href="#1-1-6-删除数据" class="headerlink" title="1.1.6 删除数据"></a>1.1.6 删除数据</h3><ul>
+<li>删除数据的时候，其实HBasse不是真的直接把数据删除掉，而是给某个列设置一个标志，然后查询数据的时候，有这个标志的数据，就不显示出来。</li>
+</ul>
+<h4 id="1-1-6-1-delete命令"><a href="#1-1-6-1-delete命令" class="headerlink" title="1.1.6.1 delete命令"></a>1.1.6.1 delete命令</h4><blockquote>
+<p>执行delete的时候</p>
+<ul>
+<li>如果表中某个列有对应的几次修改，它会删除最近的一次修改</li>
+</ul>
+</blockquote>
+<p>使用delete将一个单元格的数据删除(删除指定的列)：</p>
+<pre class=" language-ruby"><code class="language-ruby">delete <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token string">"列族:列"</span>
+</code></pre>
+<h4 id="1-1-6-2-deleteall命令"><a href="#1-1-6-2-deleteall命令" class="headerlink" title="1.1.6.2 deleteall命令"></a>1.1.6.2 deleteall命令</h4><p>删除整行数据:</p>
+<pre class=" language-ruby"><code class="language-ruby">deleteall <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键"</span>
+</code></pre>
+<h3 id="1-1-7-简单scan扫描操作"><a href="#1-1-7-简单scan扫描操作" class="headerlink" title="1.1.7 简单scan扫描操作"></a>1.1.7 简单scan扫描操作</h3><p>1.查询表中的所有数据（慎用，效率低）：</p>
+<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">}</span>
+</code></pre>
+<p>2.查询表中的数据（显示前三条）：</p>
+<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">}</span>
+</code></pre>
+<p>3.查询表中的数据指定列族，并且显示三条数据：</p>
+<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token constant">COLUMS</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">'列族：列'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre>
+<p>4.使用scan来根据rowkey查询数据，也是查询指定列的数据:</p>
+<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">ROWPREFIXFILTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"rowkey"</span> <span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token constant">COLUMS</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">'列族：列'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre>
+<h1 id="2-HBase-Java编程"><a href="#2-HBase-Java编程" class="headerlink" title="2.HBase Java编程"></a>2.HBase Java编程</h1><h2 id="2-1-创建表"><a href="#2-1-创建表" class="headerlink" title="2.1 创建表"></a>2.1 创建表</h2><p>==在同一个类里面完成创建表，删除表，插入数据，get数据，删除数据等操作时，只要实例化一次Configuration==</p>
+<ol>
+<li><p>实例化Configuration对象，进行HBase数据库的参数配置对象</p>
+<pre class=" language-java"><code class="language-java">Configuration conf<span class="token operator">=</span>HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.zookeeper.quorum"</span><span class="token punctuation">,</span><span class="token string">"node,node1,node2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//最主要的配置项，找到集群</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.rootdir"</span><span class="token punctuation">,</span><span class="token string">"hdfs://node:90000/hbase"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.master"</span><span class="token punctuation">,</span><span class="token string">"node:60000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.zookeeper.property.clientPort"</span><span class="token punctuation">,</span><span class="token string">"2181"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>创建连接，Admin类对象</p>
+<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Admin admin<span class="token operator">=</span>conn<span class="token punctuation">.</span><span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//HBase表的管理对象，负责数据库表的创建，列族结构的管理，删除表</span>
+</code></pre>
+</li>
+<li><p>创建表</p>
+<p>3.1 表名</p>
+<pre class=" language-java"><code class="language-java">TableName tableName <span class="token operator">=</span> TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>talename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>3.2 表描述对象TableDescriptor</p>
+<pre class=" language-java"><code class="language-java">TableDescriptorBuilder tdb <span class="token operator">=</span> TableDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>3.3 列族描述对象ColumnFamilyDescriptor</p>
+<pre class=" language-java"><code class="language-java">ColumnFamilyDescriptorBuilder cfdb <span class="token operator">=</span> ColumnFamilyDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ColumnFamilyDescriptor cfd <span class="token operator">=</span> cfdb<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tdb<span class="token punctuation">.</span><span class="token function">setColumnFamily</span><span class="token punctuation">(</span>cfd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+tdb<span class="token punctuation">.</span><span class="token function">setColumnFamily</span><span class="token punctuation">(</span>ColumnFamilyDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第二种方法</span>
+</code></pre>
+</li>
+<li><p>创建表</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span><span class="token function">tableExists</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    admin<span class="token punctuation">.</span><span class="token function">disableTable</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先disable</span>
+    admin<span class="token punctuation">.</span><span class="token function">deleteTable</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//再删除表            </span>
+<span class="token punctuation">}</span>
+admin<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span>tdb<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建表</span>
+</code></pre>
+</li>
+<li><p>释放资源</p>
+<pre><code>admin.close();
+conn.closee();
+</code></pre>
+</li>
+</ol>
+<h2 id="2-2-插入数据"><a href="#2-2-插入数据" class="headerlink" title="2.2 插入数据"></a>2.2 插入数据</h2><ol>
+<li><p>实例化Configuration类</p>
+<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>创建连接，实例化Table类</p>
+<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Table table  <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"tablename"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>实例化Put类</p>
+<pre class=" language-Java"><code class="language-Java">Put put = new Put("row1".getBytes());//row1为行键，在行键为row1的地方插入数据对象
+</code></pre>
+</li>
+<li><p>构造待插入数据</p>
+<pre class=" language-java"><code class="language-java">put<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">"列族"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"值"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>插入数据</p>
+<pre class=" language-Java"><code class="language-Java">table.put(put);//每次插入一行数据，table为步骤二里面实例化的Table类
+</code></pre>
+</li>
+<li><p>释放资源</p>
+<pre class=" language-java"><code class="language-java">conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="2-3-get数据"><a href="#2-3-get数据" class="headerlink" title="2.3 get数据"></a>2.3 get数据</h2><ol>
+<li><p>实例化Configuration</p>
+<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>创建连接，实例化Table类</p>
+<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Table table <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"tablename"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>实例化Get类</p>
+<pre class=" language-java"><code class="language-java">Get get <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Get</span><span class="token punctuation">(</span><span class="token string">"row1"</span><span class="token punctuation">.</span>getBytes<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//row1为行键，在行键为row1的地方插入数据对象</span>
+</code></pre>
+</li>
+<li><p>获取数据</p>
+<pre class=" language-java"><code class="language-java">Result rs <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>get<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>输出结果</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取的结果要变成String类型才能看懂</span>
+String 列 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span>Bytes<span class="token punctuation">.</span><span class="token function">toBytes</span><span class="token punctuation">(</span><span class="token string">"列族名"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"值:"</span><span class="token operator">+</span>值<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>释放资源</p>
+<pre class=" language-java"><code class="language-java">table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="2-4-删除数据"><a href="#2-4-删除数据" class="headerlink" title="2.4 删除数据"></a>2.4 删除数据</h2><ol>
+<li><p>实例化Configuration</p>
+<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>创建连接，实例化Table类</p>
+<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Table table <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"表名"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>删除行，列</p>
+<pre class=" language-java"><code class="language-java">
+Delete delete <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Delete</span><span class="token punctuation">(</span><span class="token string">"行键"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//删除行</span>
+table<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>delete<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//删除列</span>
+delete<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">"列族"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+table<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>delete<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>释放资源</p>
+<pre class=" language-java"><code class="language-java">table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
 
                 
             </div>
@@ -521,7 +695,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shiyiri.top/node/16107.html">https://www.shiyiri.top/node/16107.html</a>
+                    <a href="https://www.shiyiri.top/node/3.html">https://www.shiyiri.top/node/3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -993,13 +1167,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/node/1.html">
+                <a href="/node/4.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="数据采集">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hive笔记">
                         
-                        <span class="card-title">数据采集</span>
+                        <span class="card-title">Hive笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1010,7 +1184,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
                         </span>
                         <span class="publish-author">
                             
@@ -1027,16 +1201,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node/16107.html">
+                <a href="/node/1.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="数据采集笔记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">数据采集笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1047,7 +1221,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
                             </span>
                         <span class="publish-author">
                             
@@ -1057,7 +1231,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">python爬虫</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1257,7 +1438,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">44k</span>&nbsp;字
             
             
             

@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="数据采集, Aunean&#39;s Blog">
+    <meta name="keywords" content="数据采集笔记, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据采集 | Aunean&#39;s Blog</title>
+    <title>数据采集笔记 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据采集</h1>
+                    <h1 class="description center-align post-title">数据采集笔记</h1>
                 </div>
             </div>
         </div>
@@ -434,9 +434,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">python爬虫</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -455,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-12
+                    2021-04-19
                 </div>
                 
 
@@ -582,8 +586,7 @@
 <p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201116210501159.png" alt="image-20201116210501159"></p>
 <p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201116210517596.png" alt="image-20201116210517596"></p>
 <h2 id="1-2-爬虫的基本原理"><a href="#1-2-爬虫的基本原理" class="headerlink" title="1.2 爬虫的基本原理"></a>1.2 爬虫的基本原理</h2><p>我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。把网的节点比作一个个网页，爬虫爬到这就相当于访问了该页面，获取了其信息。可以把节点间的连线比作网页与网页之间的链接关系，这样蜘蛛通过一个节点后，可以顺着节点连线继续爬行到达下一个节点，即通个网页继续获取后续的网页，这样整个网的节点便可以被蜘蛛全部爬行到，网站的数据就可以被抓取下来了。</p>
-<p>###1.2.1 爬虫概述</p>
-<p>简单来说，爬虫就是获取网页并提取和保存信息的自动 程序，下面概要介绍一下</p>
+<h3 id="1-2-1-爬虫概述"><a href="#1-2-1-爬虫概述" class="headerlink" title="1.2.1 爬虫概述"></a>1.2.1 爬虫概述</h3><p>简单来说，爬虫就是获取网页并提取和保存信息的自动 程序，下面概要介绍一下</p>
 <ol>
 <li>获取网页<ul>
 <li>爬虫首先要做的工作就是获取网页，这里就是获取网页的源代码 源代码里包含了网页的部分有用信息 ，所以只要把源代码获取下来，就可以从中提取想要的信息了。</li>
@@ -856,8 +859,7 @@ result <span class="token operator">=</span> urlparse<span class="token punctuat
 <span class="token comment" spellcheck="true"># 标准的链接格式</span>
 <span class="token comment" spellcheck="true"># scheme://netloc/path;params?query#fragment</span>
 </code></pre>
-<h2 id="2-2-使用-requests"><a href="#2-2-使用-requests" class="headerlink" title="2.2 使用 requests"></a>2.2 使用 requests</h2><p>###2.2.1 基本用法</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<h2 id="2-2-使用-requests"><a href="#2-2-使用-requests" class="headerlink" title="2.2 使用 requests"></a>2.2 使用 requests</h2><h3 id="2-2-1-基本用法"><a href="#2-2-1-基本用法" class="headerlink" title="2.2.1 基本用法"></a>2.2.1 基本用法</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
@@ -1016,8 +1018,7 @@ response <span class="token operator">=</span> requests<span class="token punctu
 <span class="token comment" spellcheck="true"># response = requests.get('https://www.taobao.com', proxies=proxies)</span>
 <span class="token comment" spellcheck="true"># print(response)</span>
 </code></pre>
-<h2 id="2-3-正则表达式"><a href="#2-3-正则表达式" class="headerlink" title="2.3 正则表达式"></a>2.3 正则表达式</h2><p>###2.3.1 常用的匹配规则</p>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201124104319661.png" alt="image-20201124104319661"></p>
+<h2 id="2-3-正则表达式"><a href="#2-3-正则表达式" class="headerlink" title="2.3 正则表达式"></a>2.3 正则表达式</h2><h3 id="2-3-1-常用的匹配规则"><a href="#2-3-1-常用的匹配规则" class="headerlink" title="2.3.1 常用的匹配规则"></a>2.3.1 常用的匹配规则</h3><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201124104319661.png" alt="image-20201124104319661"></p>
 <p>###2.3.2 match()</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> re
 content <span class="token operator">=</span> <span class="token string">'Hello 123 4567 World_This is a Regex Demo'</span>
@@ -1205,8 +1206,7 @@ book_name <span class="token operator">=</span> tree<span class="token punctuati
 book_name <span class="token operator">=</span> tree<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">"//book[price=39.95]/title/text()"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>book_name<span class="token punctuation">)</span>
 </code></pre>
-<p>###3.1.2 所有节点</p>
-<p>例：html.xpath(‘//*’)</p>
+<h3 id="3-1-2-所有节点"><a href="#3-1-2-所有节点" class="headerlink" title="3.1.2 所有节点"></a>3.1.2 所有节点</h3><p>例：html.xpath(‘//*’)</p>
 <h3 id="3-1-3-子节点"><a href="#3-1-3-子节点" class="headerlink" title="3.1.3 子节点"></a>3.1.3 子节点</h3><p>例：html.xpath(‘//li/a’)</p>
 <h3 id="3-1-4-子孙节点"><a href="#3-1-4-子孙节点" class="headerlink" title="3.1.4 子孙节点"></a>3.1.4 子孙节点</h3><p>例：html.xpath(‘//li//a’)</p>
 <h3 id="3-1-5-父节点"><a href="#3-1-5-父节点" class="headerlink" title="3.1.5 父节点"></a>3.1.5 父节点</h3><p>选中 href 属性为 link4.html 节点，然后再获取其父节点，然后再获取其 class 属性，相关代码如下：</p>
@@ -1388,8 +1388,7 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
 <span class="token comment" spellcheck="true"># next_sibling 和 previous_sibling 分别获取节点的下一个和上一个兄弟元素，</span>
 <span class="token comment" spellcheck="true"># next_siblings 和 previous_siblings 分别返回所有前面和后面的兄弟节点的生成器。</span>
 </code></pre>
-<p>###3.2.4 方法选择器</p>
-<ul>
+<h3 id="3-2-4-方法选择器"><a href="#3-2-4-方法选择器" class="headerlink" title="3.2.4 方法选择器"></a>3.2.4 方法选择器</h3><ul>
 <li>find_all()</li>
 </ul>
 <p>查询所有符合条件的元素</p>
@@ -1898,8 +1897,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
     url <span class="token operator">=</span> <span class="token string">'https://movie.douban.com/j/search_subjects?'</span>
     response_url<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
 </code></pre>
-<p>##3.爬取小说</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+<h2 id="3-爬取小说"><a href="#3-爬取小说" class="headerlink" title="3.爬取小说"></a>3.爬取小说</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
 <span class="token keyword">import</span> parsel
 <span class="token keyword">import</span> requests
 
@@ -2089,8 +2087,7 @@ data_list <span class="token operator">=</span> <span class="token punctuation">
     writer<span class="token punctuation">.</span>writeheader<span class="token punctuation">(</span><span class="token punctuation">)</span>
     writer<span class="token punctuation">.</span>writerows<span class="token punctuation">(</span>data_list<span class="token punctuation">)</span>
 </code></pre>
-<p>##6.爬取图片（使用xpath）</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<h2 id="6-爬取图片（使用xpath）"><a href="#6-爬取图片（使用xpath）" class="headerlink" title="6.爬取图片（使用xpath）"></a>6.爬取图片（使用xpath）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> os
 <span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
 
@@ -2132,8 +2129,7 @@ data_list <span class="token operator">=</span> <span class="token punctuation">
                 f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>img_data<span class="token punctuation">)</span>
                 <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{img_name} 下载成功'</span><span class="token punctuation">)</span>
 </code></pre>
-<p>##7.爬取招聘信息（xpath,base64）</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<h2 id="7-爬取招聘信息（xpath-base64）"><a href="#7-爬取招聘信息（xpath-base64）" class="headerlink" title="7.爬取招聘信息（xpath,base64）"></a>7.爬取招聘信息（xpath,base64）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> base64
 <span class="token keyword">import</span> csv
 <span class="token keyword">import</span> pymysql
@@ -2312,7 +2308,7 @@ data_list <span class="token operator">=</span> <span class="token punctuation">
     detail_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
 ```
 
-<span class="token comment" spellcheck="true">##8.爬取美团酒店信息</span>
+<span class="token comment" spellcheck="true">## 8.爬取美团酒店信息</span>
 
 <span class="token operator">~</span><span class="token operator">~</span><span class="token operator">~</span>python
 <span class="token keyword">import</span> requests
@@ -2399,7 +2395,7 @@ data_list <span class="token operator">=</span> <span class="token punctuation">
 <span class="token comment" spellcheck="true">#     writer.writerows(data_list)</span>
 <span class="token operator">~</span><span class="token operator">~</span><span class="token operator">~</span>
 
-<span class="token comment" spellcheck="true">##9.爬取求是网（xpath)</span>
+<span class="token comment" spellcheck="true">## 9.爬取求是网（xpath)</span>
 
 <span class="token operator">~</span><span class="token operator">~</span><span class="token operator">~</span>python
 <span class="token keyword">import</span> requests
@@ -2707,7 +2703,11 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">python爬虫</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -3142,13 +3142,13 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/node/57683.html">
+                <a href="/node/3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="数据分析">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="HBase笔记">
                         
-                        <span class="card-title">数据分析</span>
+                        <span class="card-title">HBase笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -3159,7 +3159,7 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
                         </span>
                         <span class="publish-author">
                             
@@ -3179,13 +3179,13 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node/16107.html">
+                <a href="/node/2.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hadoop搭建">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Hadoop搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -3196,7 +3196,7 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
                             </span>
                         <span class="publish-author">
                             
@@ -3205,6 +3205,14 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hadoop/">
+                        <span class="chip bg-color">Hadoop</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -3405,7 +3413,7 @@ sql <span class="token operator">=</span> <span class="token string">"load data 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.6k</span>&nbsp;字
+                class="white-color">44k</span>&nbsp;字
             
             
             
