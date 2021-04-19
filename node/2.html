@@ -32,8 +32,8 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
+</head>
 
 
 
@@ -466,7 +466,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.1k
+                    6k
                 </div>
                 
 
@@ -641,35 +641,35 @@
 
 hadoop dfsadmin -safemode leave 关闭安全模式
 </code></pre>
-<h1 id="配置yarn的历史服务器及日志产看功能"><a href="#配置yarn的历史服务器及日志产看功能" class="headerlink" title="配置yarn的历史服务器及日志产看功能"></a>配置yarn的历史服务器及日志产看功能</h1><pre><code>vi mapred-site.xml
-&lt;property&gt;
-    &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
-    &lt;value&gt;node:10020&lt;/value&gt;
-    &lt;description&gt;配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况&lt;/description&gt;
-&lt;/property&gt;
+<h1 id="配置yarn的历史服务器及日志产看功能"><a href="#配置yarn的历史服务器及日志产看功能" class="headerlink" title="配置yarn的历史服务器及日志产看功能"></a>配置yarn的历史服务器及日志产看功能</h1><pre class=" language-shell"><code class="language-shell">vi mapred-site.xml
+<property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>node:10020</value>
+    <description>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况</description>
+</property>
 
-&lt;property&gt;
-    &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
-    &lt;value&gt;node:19888&lt;/value&gt;
-    &lt;description&gt;配置mapreduce的jobhistory的访问地址&lt;/description&gt;
-&lt;/property&gt;
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>node:19888</value>
+    <description>配置mapreduce的jobhistory的访问地址</description>
+</property>
 
 
 vi yarn-site.xml
-&lt;property&gt;
-    &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;
-    &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
+<property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+</property>
 
-&lt;property&gt;
-    &lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;
-    &lt;value&gt;604800&lt;/value&gt;
-&lt;/property&gt;
+<property>
+    <name>yarn.log-aggregation.retain-seconds</name>
+    <value>604800</value>
+</property>
 
-&lt;property&gt;
-    &lt;name&gt;yarn.log.server.url&lt;/name&gt;
-    &lt;value&gt;http://node:19888/jobhistory.logs&lt;/value&gt;
-&lt;/property&gt;
+<property>
+    <name>yarn.log.server.url</name>
+    <value>http://node:19888/jobhistory.logs</value>
+</property>
 
 # 启动 
 mr-jobhistory-daemon.sh start historyserver
@@ -737,8 +737,7 @@ source /etc/profile
 查看是否配置jdk成功
 java -version
 </code></pre>
-<p>##9.解压hadoop安装包到 ‘/usr/local/src’ 路径，并配置环境变量</p>
-<pre class=" language-shell"><code class="language-shell">tar -zxvf *.tar -C /usr/local/src
+<h2 id="9-解压hadoop安装包到-‘-usr-local-src’-路径，并配置环境变量"><a href="#9-解压hadoop安装包到-‘-usr-local-src’-路径，并配置环境变量" class="headerlink" title="9.解压hadoop安装包到 ‘/usr/local/src’ 路径，并配置环境变量"></a>9.解压hadoop安装包到 ‘/usr/local/src’ 路径，并配置环境变量</h2><pre class=" language-shell"><code class="language-shell">tar -zxvf *.tar -C /usr/local/src
 
 配置环境变量
 vi /etc/profile
@@ -1620,8 +1619,7 @@ create table uv_info(
 
 insert into t values(1,'xiaohong','girl',11),(2,'xiaoli','girl',12),(3,'xiaoming','boy',12),(4,'xiaojun','boy',14);
 </code></pre>
-<p>###3.mysql 数据 导入、导出 hdfs </p>
-<pre class=" language-shell"><code class="language-shell">例题1：
+<h3 id="3-mysql-数据-导入、导出-hdfs"><a href="#3-mysql-数据-导入、导出-hdfs" class="headerlink" title="3.mysql 数据 导入、导出 hdfs"></a>3.mysql 数据 导入、导出 hdfs</h3><pre class=" language-shell"><code class="language-shell">例题1：
 # 使用sqoop将表中数据导入到HDFS。
 sqoop import --connect jdbc:mysql://node:3306/dsj --username root --table t -password 123456 --target-dir /sqoop -m 1
 # jdbc:mysql 驱动
@@ -1659,14 +1657,12 @@ sqoop import --connect jdbc:mysql://node:3306/dsj --username root --password 123
 # 将hive中的数据传入到MySQL中
 sqoop export --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table uv_info --export-dir /user/hive/warehouse/t --input-fields-terminated-by '\t'
 </code></pre>
-<p>###注：</p>
-<ul>
+<h3 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h3><ul>
 <li>每个 RDBMS 表中只有一个单独列作为主键，即不能是多个列 R合键作为主键。</li>
 <li>执行导入操作时，每个 RDBMS 表的所有列列都将被导入到 HDFS 上。</li>
 <li>不能在 RDBMS 表上附加任何诸如 WHERE 条件的子句。</li>
 </ul>
-<h3 id="1-1-导入数据"><a href="#1-1-导入数据" class="headerlink" title="1.1 导入数据"></a>1.1 导入数据</h3><p>####1.1.1 RDBMS 到 HDFS</p>
-<pre class=" language-shell"><code class="language-shell">create database company;
+<h3 id="1-1-导入数据"><a href="#1-1-导入数据" class="headerlink" title="1.1 导入数据"></a>1.1 导入数据</h3><h4 id="1-1-1-RDBMS-到-HDFS"><a href="#1-1-1-RDBMS-到-HDFS" class="headerlink" title="1.1.1 RDBMS 到 HDFS"></a>1.1.1 RDBMS 到 HDFS</h4><pre class=" language-shell"><code class="language-shell">create database company;
 create table company.staff(
 id int(4) primary key not null auto_increment,  
 name varchar(255), 
@@ -1755,8 +1751,7 @@ sqoop import --connect jdbc:mysql://node:3306/dsj
 --hive-import
 --fields-terminated-by '\t'
 </code></pre>
-<p>####1.1.3 RDBMS 到 Hbase</p>
-<pre class=" language-shell"><code class="language-shell">sqoop import \
+<h4 id="1-1-3-RDBMS-到-Hbase"><a href="#1-1-3-RDBMS-到-Hbase" class="headerlink" title="1.1.3 RDBMS 到 Hbase"></a>1.1.3 RDBMS 到 Hbase</h4><pre class=" language-shell"><code class="language-shell">sqoop import \
 --connect jdbc:mysql://hadoop102:3306/company \
 --username root \
 --password 000000 \
@@ -1780,8 +1775,7 @@ sqoop export \
 --export-dir /user/hive/warehouse/staff_hive \
 --input-fields-terminated-by "\t"
 </code></pre>
-<p>####1.2.2 Hive 到 RDBMS</p>
-<pre class=" language-shell"><code class="language-shell">sqoop export --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table uv_info --export-dir /user/hive/warehouse/t --input-fields-terminated-by '\t'
+<h4 id="1-2-2-Hive-到-RDBMS"><a href="#1-2-2-Hive-到-RDBMS" class="headerlink" title="1.2.2 Hive 到 RDBMS"></a>1.2.2 Hive 到 RDBMS</h4><pre class=" language-shell"><code class="language-shell">sqoop export --connect jdbc:mysql://node:3306/dsj --username root --password 123456 --table uv_info --export-dir /user/hive/warehouse/t --input-fields-terminated-by '\t'
 </code></pre>
 <h3 id="1-3-脚本打包"><a href="#1-3-脚本打包" class="headerlink" title="1.3 脚本打包"></a>1.3 脚本打包</h3><pre class=" language-shell"><code class="language-shell"># 使用 opt 格式的文件打包
 # 1.创建一个 .opt 文件
@@ -1974,14 +1968,12 @@ kafka-console-consumer.sh --bootstrap-server node:9092 --topic first
 kafka-console-consumer.sh --bootstrap-server node:9092 --topic first --from-beginning
 </code></pre>
 <h1 id="flume的安装部署"><a href="#flume的安装部署" class="headerlink" title="flume的安装部署"></a>flume的安装部署</h1><p><a target="_blank" rel="noopener" href="http://flume.apache.org/releases/content/1.6.0/FlumeUserGuide.html">官方文档</a></p>
-<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><h3 id="1-上传并解压，改名"><a href="#1-上传并解压，改名" class="headerlink" title="1.上传并解压，改名"></a>1.上传并解压，改名</h3><p>###2.配置文件</p>
-<pre class=" language-shell"><code class="language-shell"># 进入到 flume 目录下的 conf
+<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><h3 id="1-上传并解压，改名"><a href="#1-上传并解压，改名" class="headerlink" title="1.上传并解压，改名"></a>1.上传并解压，改名</h3><h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><pre class=" language-shell"><code class="language-shell"># 进入到 flume 目录下的 conf
 mv flume-env.sh.template flume-env.sh
 vi flume-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 </code></pre>
-<p>###3.配置环境变量</p>
-<pre class=" language-shell"><code class="language-shell">vi /etc/profile
+<h3 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h3><pre class=" language-shell"><code class="language-shell">vi /etc/profile
 export FLUME_HOME=/usr/local/src/flume
 export PATH=$PATH:$FLUME_HOME/bin
 source /etc/profile
@@ -1989,9 +1981,7 @@ source /etc/profile
 # 验证
 flume-ng version
 </code></pre>
-<p>##使用</p>
-<p>###1.监听端口号</p>
-<pre class=" language-shell"><code class="language-shell">vi flume-netcat-logger.conf
+<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><h3 id="1-监听端口号"><a href="#1-监听端口号" class="headerlink" title="1.监听端口号"></a>1.监听端口号</h3><pre class=" language-shell"><code class="language-shell">vi flume-netcat-logger.conf
 
 # Name the components on this agent
 a1.sources = r1
@@ -2023,8 +2013,7 @@ yum -y install nc
 服务端 nc -lk 44444
 客户端 nc node 44444
 </code></pre>
-<p>###2.实时监控本地文件（单个）</p>
-<pre class=" language-shell"><code class="language-shell">vi file-flume-logger.conf
+<h3 id="2-实时监控本地文件（单个）"><a href="#2-实时监控本地文件（单个）" class="headerlink" title="2.实时监控本地文件（单个）"></a>2.实时监控本地文件（单个）</h3><pre class=" language-shell"><code class="language-shell">vi file-flume-logger.conf
 # Name the components on this agent
 a1.sources = r1
 a1.sinks = k1
@@ -2105,8 +2094,7 @@ a2.sinks.k2.channel = c2
 
 bin/flume-ng agent -c conf/ -f job/file-flume-hdfs.conf -n a2
 </code></pre>
-<p>###3.实时监控目录下多个新文件</p>
-<pre class=" language-shell"><code class="language-shell">vi dir-flume-hdfs.conf
+<h3 id="3-实时监控目录下多个新文件"><a href="#3-实时监控目录下多个新文件" class="headerlink" title="3.实时监控目录下多个新文件"></a>3.实时监控目录下多个新文件</h3><pre class=" language-shell"><code class="language-shell">vi dir-flume-hdfs.conf
 # Name the components on this agent
 a3.sources = r3 
 a3.sinks = k3 
@@ -2979,7 +2967,7 @@ node2
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44k</span>&nbsp;字
+                class="white-color">43.9k</span>&nbsp;字
             
             
             
