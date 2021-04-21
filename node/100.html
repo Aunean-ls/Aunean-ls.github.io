@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="HBase笔记, Aunean&#39;s Blog">
+    <meta name="keywords" content="猫眼字体处理, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HBase笔记 | Aunean&#39;s Blog</title>
+    <title>猫眼字体处理 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HBase笔记</h1>
+                    <h1 class="description center-align post-title">猫眼字体处理</h1>
                 </div>
             </div>
         </div>
@@ -434,9 +434,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                                <span class="chip bg-color">数据采集</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -448,21 +452,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-04-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    930
                 </div>
                 
 
@@ -479,196 +483,171 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-HBase-shell"><a href="#1-HBase-shell" class="headerlink" title="1.HBase shell"></a>1.HBase shell</h1><h2 id="1-1-HBase-shell操作"><a href="#1-1-HBase-shell操作" class="headerlink" title="1.1 HBase shell操作"></a>1.1 HBase shell操作</h2><h3 id="1-1-1-创建表"><a href="#1-1-1-创建表" class="headerlink" title="1.1.1 创建表"></a>1.1.1 创建表</h3><ul>
-<li>HBase是没有schema的，就是在创建表的时候不需要指定表中有哪些列，只需要指定有多少个列族</li>
-</ul>
-<p>语法：</p>
-<pre class=" language-mysql"><code class="language-mysql">create '表名','列族名'...
-</code></pre>
-<p>注意：</p>
-<ul>
-<li>create要写成小写</li>
-<li>一个表可以包含若干个列族</li>
-<li>命令解析，调用hbase提供的ruby脚本的create方法，传递两个字符串参数</li>
-</ul>
-<h3 id="1-1-2-删除表"><a href="#1-1-2-删除表" class="headerlink" title="1.1.2 删除表"></a>1.1.2 删除表</h3><h5 id="1-1-2-1-禁用表"><a href="#1-1-2-1-禁用表" class="headerlink" title="1.1.2.1 禁用表"></a>1.1.2.1 禁用表</h5><pre class=" language-ruby"><code class="language-ruby">disable <span class="token string">"表名"</span>
-</code></pre>
-<h5 id="1-1-2-2-删除表"><a href="#1-1-2-2-删除表" class="headerlink" title="1.1.2.2  删除表"></a>1.1.2.2  删除表</h5><pre class=" language-ruby"><code class="language-ruby">drop <span class="token string">"表名"</span>
-</code></pre>
-<h3 id="1-1-3-put插入数据"><a href="#1-1-3-put插入数据" class="headerlink" title="1.1.3 put插入数据"></a>1.1.3 put插入数据</h3><p>语法：</p>
-<pre class=" language-ruby"><code class="language-ruby">put <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"ROWKEY"</span><span class="token punctuation">,</span><span class="token string">"列族名：列名"</span><span class="token punctuation">,</span><span class="token string">"值"</span>
-</code></pre>
-<h3 id="1-1-4-查询数据"><a href="#1-1-4-查询数据" class="headerlink" title="1.1.4 查询数据"></a>1.1.4 查询数据</h3><ul>
-<li>get是查询一行的数据</li>
-</ul>
-<p>查找指定行键：</p>
-<pre class=" language-ruby"><code class="language-ruby">get <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span>
-</code></pre>
-<p>要将数据中的中文正确显示</p>
-<pre class=" language-ruby"><code class="language-ruby">get <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">}</span>
-</code></pre>
-<h3 id="1-1-5-更新操作-新增数据"><a href="#1-1-5-更新操作-新增数据" class="headerlink" title="1.1.5 更新操作/新增数据"></a>1.1.5 更新操作/新增数据</h3><p>使用put进行更新操作</p>
-<pre class=" language-ruby"><code class="language-ruby">put <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token string">"列族：列名"</span><span class="token punctuation">,</span><span class="token string">"更新的值"</span>
-</code></pre>
-<h3 id="1-1-6-删除数据"><a href="#1-1-6-删除数据" class="headerlink" title="1.1.6 删除数据"></a>1.1.6 删除数据</h3><ul>
-<li>删除数据的时候，其实HBasse不是真的直接把数据删除掉，而是给某个列设置一个标志，然后查询数据的时候，有这个标志的数据，就不显示出来。</li>
-</ul>
-<h4 id="1-1-6-1-delete命令"><a href="#1-1-6-1-delete命令" class="headerlink" title="1.1.6.1 delete命令"></a>1.1.6.1 delete命令</h4><blockquote>
-<p>执行delete的时候</p>
-<ul>
-<li>如果表中某个列有对应的几次修改，它会删除最近的一次修改</li>
-</ul>
+                <p><strong>本次爬取<a target="_blank" rel="noopener" href="https://maoyan.com/board/1">猫眼的票房榜数据</a>，打开检查工具可以看到，票房的数据都进行了加密</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421224933334.png"></p>
+<h4 id="1-首先查看网页的源代码，Ctrl-f-输入-woff"><a href="#1-首先查看网页的源代码，Ctrl-f-输入-woff" class="headerlink" title="1.首先查看网页的源代码，Ctrl+f 输入 woff"></a>1.首先查看网页的源代码，Ctrl+f 输入 woff</h4><blockquote>
+<p>//vfile.meituan.net/colorstone/f0a30a4dda64b4f8f344858115f54fc92296.woff</p>
+<p>可以选中这段复制到搜索框中回车，发现可以另存为一个文件，我们需要的就是这个，下载完直接打开发现是乱码，对此还需要处理。</p>
 </blockquote>
-<p>使用delete将一个单元格的数据删除(删除指定的列)：</p>
-<pre class=" language-ruby"><code class="language-ruby">delete <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键名"</span><span class="token punctuation">,</span><span class="token string">"列族:列"</span>
-</code></pre>
-<h4 id="1-1-6-2-deleteall命令"><a href="#1-1-6-2-deleteall命令" class="headerlink" title="1.1.6.2 deleteall命令"></a>1.1.6.2 deleteall命令</h4><p>删除整行数据:</p>
-<pre class=" language-ruby"><code class="language-ruby">deleteall <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token string">"行键"</span>
-</code></pre>
-<h3 id="1-1-7-简单scan扫描操作"><a href="#1-1-7-简单scan扫描操作" class="headerlink" title="1.1.7 简单scan扫描操作"></a>1.1.7 简单scan扫描操作</h3><p>1.查询表中的所有数据（慎用，效率低）：</p>
-<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">}</span>
-</code></pre>
-<p>2.查询表中的数据（显示前三条）：</p>
-<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">}</span>
-</code></pre>
-<p>3.查询表中的数据指定列族，并且显示三条数据：</p>
-<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token constant">COLUMS</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">'列族：列'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
-</code></pre>
-<p>4.使用scan来根据rowkey查询数据，也是查询指定列的数据:</p>
-<pre class=" language-ruby"><code class="language-ruby">scan <span class="token string">"表名"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token constant">ROWPREFIXFILTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"rowkey"</span> <span class="token constant">FORMATTER</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"toString"</span><span class="token punctuation">,</span><span class="token constant">LIMIT</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token constant">COLUMS</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">'列族：列'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
-</code></pre>
-<h1 id="2-HBase-Java编程"><a href="#2-HBase-Java编程" class="headerlink" title="2.HBase Java编程"></a>2.HBase Java编程</h1><h2 id="2-1-创建表"><a href="#2-1-创建表" class="headerlink" title="2.1 创建表"></a>2.1 创建表</h2><p>==在同一个类里面完成创建表，删除表，插入数据，get数据，删除数据等操作时，只要实例化一次Configuration==</p>
-<ol>
-<li><p>实例化Configuration对象，进行HBase数据库的参数配置对象</p>
-<pre class=" language-java"><code class="language-java">Configuration conf<span class="token operator">=</span>HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.zookeeper.quorum"</span><span class="token punctuation">,</span><span class="token string">"node,node1,node2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//最主要的配置项，找到集群</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.rootdir"</span><span class="token punctuation">,</span><span class="token string">"hdfs://node:90000/hbase"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.master"</span><span class="token punctuation">,</span><span class="token string">"node:60000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hbase.zookeeper.property.clientPort"</span><span class="token punctuation">,</span><span class="token string">"2181"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>创建连接，Admin类对象</p>
-<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Admin admin<span class="token operator">=</span>conn<span class="token punctuation">.</span><span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//HBase表的管理对象，负责数据库表的创建，列族结构的管理，删除表</span>
-</code></pre>
-</li>
-<li><p>创建表</p>
-<p>3.1 表名</p>
-<pre class=" language-java"><code class="language-java">TableName tableName <span class="token operator">=</span> TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>talename<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>3.2 表描述对象TableDescriptor</p>
-<pre class=" language-java"><code class="language-java">TableDescriptorBuilder tdb <span class="token operator">=</span> TableDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>3.3 列族描述对象ColumnFamilyDescriptor</p>
-<pre class=" language-java"><code class="language-java">ColumnFamilyDescriptorBuilder cfdb <span class="token operator">=</span> ColumnFamilyDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-ColumnFamilyDescriptor cfd <span class="token operator">=</span> cfdb<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-tdb<span class="token punctuation">.</span><span class="token function">setColumnFamily</span><span class="token punctuation">(</span>cfd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421225924696.png" alt="image-20210421225924696"></p>
+<h4 id="2-使用re下载woff文件，并用TTFont库进行处理"><a href="#2-使用re下载woff文件，并用TTFont库进行处理" class="headerlink" title="2. 使用re下载woff文件，并用TTFont库进行处理"></a>2. 使用re下载woff文件，并用TTFont库进行处理</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> fontTools<span class="token punctuation">.</span>ttLib <span class="token keyword">import</span> TTFont <span class="token comment" spellcheck="true"># 导入TTFont库，处理woff文件</span>
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> requests
 
-tdb<span class="token punctuation">.</span><span class="token function">setColumnFamily</span><span class="token punctuation">(</span>ColumnFamilyDescriptorBuilder<span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第二种方法</span>
-</code></pre>
-</li>
-<li><p>创建表</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span><span class="token function">tableExists</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    admin<span class="token punctuation">.</span><span class="token function">disableTable</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先disable</span>
-    admin<span class="token punctuation">.</span><span class="token function">deleteTable</span><span class="token punctuation">(</span>tablename<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//再删除表            </span>
+url <span class="token operator">=</span> <span class="token string">'https://maoyan.com/board/1'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'user-agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
-admin<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span>tdb<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//创建表</span>
-</code></pre>
-</li>
-<li><p>释放资源</p>
-<pre><code>admin.close();
-conn.closee();
-</code></pre>
-</li>
-</ol>
-<h2 id="2-2-插入数据"><a href="#2-2-插入数据" class="headerlink" title="2.2 插入数据"></a>2.2 插入数据</h2><ol>
-<li><p>实例化Configuration类</p>
-<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>创建连接，实例化Table类</p>
-<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Table table  <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"tablename"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>实例化Put类</p>
-<pre class=" language-Java"><code class="language-Java">Put put = new Put("row1".getBytes());//row1为行键，在行键为row1的地方插入数据对象
-</code></pre>
-</li>
-<li><p>构造待插入数据</p>
-<pre class=" language-java"><code class="language-java">put<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">"列族"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"值"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>插入数据</p>
-<pre class=" language-Java"><code class="language-Java">table.put(put);//每次插入一行数据，table为步骤二里面实例化的Table类
-</code></pre>
-</li>
-<li><p>释放资源</p>
-<pre class=" language-java"><code class="language-java">conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-</ol>
-<h2 id="2-3-get数据"><a href="#2-3-get数据" class="headerlink" title="2.3 get数据"></a>2.3 get数据</h2><ol>
-<li><p>实例化Configuration</p>
-<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>创建连接，实例化Table类</p>
-<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Table table <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"tablename"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
-</li>
-<li><p>实例化Get类</p>
-<pre class=" language-java"><code class="language-java">Get get <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Get</span><span class="token punctuation">(</span><span class="token string">"row1"</span><span class="token punctuation">.</span>getBytes<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//row1为行键，在行键为row1的地方插入数据对象</span>
-</code></pre>
-</li>
-<li><p>获取数据</p>
-<pre class=" language-java"><code class="language-java">Result rs <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>get<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>输出结果</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取的结果要变成String类型才能看懂</span>
-String 列 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span>Bytes<span class="token punctuation">.</span><span class="token function">toBytes</span><span class="token punctuation">(</span><span class="token string">"列族名"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"值:"</span><span class="token operator">+</span>值<span class="token punctuation">)</span>
-</code></pre>
-</li>
-<li><p>释放资源</p>
-<pre class=" language-java"><code class="language-java">table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-</ol>
-<h2 id="2-4-删除数据"><a href="#2-4-删除数据" class="headerlink" title="2.4 删除数据"></a>2.4 删除数据</h2><ol>
-<li><p>实例化Configuration</p>
-<pre class=" language-java"><code class="language-java">Configuration conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conf<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>创建连接，实例化Table类</p>
-<pre class=" language-java"><code class="language-java">Connection conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Table table <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"表名"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li><p>删除行，列</p>
-<pre class=" language-java"><code class="language-java">
-Delete delete <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Delete</span><span class="token punctuation">(</span><span class="token string">"行键"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//删除行</span>
-table<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>delete<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//删除列</span>
-delete<span class="token punctuation">.</span><span class="token function">addColumn</span><span class="token punctuation">(</span><span class="token string">"列族"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"列"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-table<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>delete<span class="token punctuation">)</span><span class="token punctuation">;</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+<span class="token comment" spellcheck="true"># 匹配到 //vfile.meituan.net/colorstone/f0a30a4dda64b4f8f344858115f54fc92296.woff</span>
+file_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"src:.*?,.*?url\('(.*?)'\) format\('woff'\);"</span><span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>file_url<span class="token punctuation">)</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+    content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content
+    fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+font <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">)</span>
+font<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.xml'</span><span class="token punctuation">)</span>
 </code></pre>
-</li>
-<li><p>释放资源</p>
-<pre class=" language-java"><code class="language-java">table<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p><strong>打开下载的文件进行查看</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231151211.png" alt="image-20210421231151211"></p>
+<blockquote>
+<p>据说这里可以看出数字的规律，但我没看出来（小声bb），所以我接下来借助一个网站对其进行解析</p>
+</blockquote>
+<h4 id="3-使用一个FontStore对其进行解析"><a href="#3-使用一个FontStore对其进行解析" class="headerlink" title="3.使用一个FontStore对其进行解析"></a>3.使用一个<a target="_blank" rel="noopener" href="https://font.qqe2.com/#">FontStore</a>对其进行解析</h4><p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231527573.png" alt="image-20210421231527573"></p>
+<p>**将之前我们下载好的文件打开 （maoyan_base1.woff），然后会出现如下的数字，记住它的排序，接下来我们需使用 **</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231639609.png" alt="image-20210421231639609"></p>
+<h4 id="4-构建代码"><a href="#4-构建代码" class="headerlink" title="4.构建代码"></a>4.构建代码</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">from</span> fontTools<span class="token punctuation">.</span>ttLib <span class="token keyword">import</span> TTFont
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+url <span class="token operator">=</span> <span class="token string">'https://maoyan.com/board/1'</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'user-agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+all_content <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">get_woff_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    file_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">"src:.*?,.*?url\('(.*?)'\) format\('woff'\);"</span><span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># print(file_url)</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">)</span><span class="token punctuation">.</span>content
+        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">)</span><span class="token punctuation">.</span>content
+        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">parse_font</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    font <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">)</span>
+    font<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.xml'</span><span class="token punctuation">)</span>
+    font_base_order <span class="token operator">=</span> font<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># print(font_base_order)</span>
+    <span class="token comment" spellcheck="true"># 根据第一次下载的文件写出对应</span>
+    map_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'6'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'5'</span><span class="token punctuation">]</span>
+
+    font_new <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.woff'</span><span class="token punctuation">)</span>
+    font_new<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.xml'</span><span class="token punctuation">)</span>
+    font_new_order <span class="token operator">=</span> font_new<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># print(font_new_order)</span>
+
+    base_flag_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    new_flag_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 得到两个二维列表，对里面没个一维列表进行内容的比对，得到对应的字体</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> j <span class="token keyword">in</span> zip<span class="token punctuation">(</span>font_base_order<span class="token punctuation">,</span> font_new_order<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        flag_base <span class="token operator">=</span> font<span class="token punctuation">[</span><span class="token string">'glyf'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>flags
+        flag_new <span class="token operator">=</span> font_new<span class="token punctuation">[</span><span class="token string">'glyf'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>flags
+        base_flag_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>flag_base<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        new_flag_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>flag_new<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    memory_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">for</span> index1<span class="token punctuation">,</span> x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>base_flag_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> index2<span class="token punctuation">,</span> y <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>new_flag_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> common<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                key <span class="token operator">=</span> font_new_order<span class="token punctuation">[</span>index2<span class="token punctuation">]</span>
+                key <span class="token operator">=</span> <span class="token string">'&amp;#x'</span> <span class="token operator">+</span> key<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'uni'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">';'</span>
+                memory_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> map_list<span class="token punctuation">[</span>index1<span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># print(memory_dict)</span>
+    <span class="token triple-quoted-string string">'''
+    {'&amp;#xf4ef;': '6', '&amp;#xf848;': '3', '&amp;#xf88a;': '7', '&amp;#xe7a1;': '9', '&amp;#xe343;': '1', '&amp;#xe137;': '8', 
+    '&amp;#xf489;': '0', '&amp;#xe5e2;': '4', '&amp;#xf19b;': '2', '&amp;#xe8cd;': '5'}
+    '''</span>
+    <span class="token keyword">return</span> memory_dict
+
+
+<span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>memory_dict<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 获取每一个dd标签中的数据</span>
+    pattern <span class="token operator">=</span> r<span class="token string">'&lt;dd>.*?&lt;i class="board-index board-index(.*?)&lt;/dd>'</span>
+    all_data <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> all_data<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 电影名</span>
+        title <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'title="(.*?)"'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># print(title)</span>
+        <span class="token comment" spellcheck="true"># 主演</span>
+        actor <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="star">主演：(.*?)&lt;/p>'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># print(actor)</span>
+        <span class="token comment" spellcheck="true"># 上映时间</span>
+        time <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="releasetime">上映时间：(.*?)&lt;/p>'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># print(time)</span>
+        <span class="token comment" spellcheck="true"># 实时票房</span>
+        realtimeBO <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="realtime">实时票房:.*?class="stonefont">(.*?)&lt;/span>&lt;/span>(.*?)&lt;/p>'</span><span class="token punctuation">,</span>
+                                data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        realtimeBoxOffice <span class="token operator">=</span> realtimeBO<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> memory_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 将 realtimeBoxOffice 加密数字 &amp;#xf4ef;&amp;#xf4ef;&amp;#xe137;.&amp;#xf848; 和 memory_dict 中的 key 进行匹配，解析出数据</span>
+            realtimeBoxOffice <span class="token operator">=</span> realtimeBoxOffice<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+        realtimeBoxOffice <span class="token operator">=</span> realtimeBoxOffice <span class="token operator">+</span> realtimeBO<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print(realtimeBoxOffice)</span>
+        <span class="token comment" spellcheck="true"># 总票房</span>
+        totalBO <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="total-boxoffice">总票房:.*?class="stonefont">(.*?)&lt;/span>&lt;/span>(.*?)&lt;/p>'</span><span class="token punctuation">,</span>
+                             data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        totalBoxOffice <span class="token operator">=</span> totalBO<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> memory_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            totalBoxOffice <span class="token operator">=</span> totalBoxOffice<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+        totalBoxOffice <span class="token operator">=</span> totalBoxOffice <span class="token operator">+</span> totalBO<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print(totalBoxOffice)</span>
+        content <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'title'</span><span class="token punctuation">:</span> title<span class="token punctuation">,</span>
+            <span class="token string">'actor'</span><span class="token punctuation">:</span> actor<span class="token punctuation">,</span>
+            <span class="token string">'time'</span><span class="token punctuation">:</span> time<span class="token punctuation">,</span>
+            <span class="token string">'realtimeBoxOffice'</span><span class="token punctuation">:</span> realtimeBoxOffice<span class="token punctuation">,</span>
+            <span class="token string">'totalBoxOffice'</span><span class="token punctuation">:</span> totalBoxOffice
+        <span class="token punctuation">}</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+        all_content<span class="token punctuation">.</span>append<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 存储数据</span>
+<span class="token keyword">def</span> <span class="token function">save_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token operator">=</span>all_content<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'actor'</span><span class="token punctuation">,</span> <span class="token string">'time'</span><span class="token punctuation">,</span> <span class="token string">'realtimeBoxOffice'</span><span class="token punctuation">,</span> <span class="token string">'totalBoxOffice'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">"maonyan.csv"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 进行数据对比以及保证数据的顺序</span>
+<span class="token keyword">def</span> <span class="token function">common</span><span class="token punctuation">(</span>list1<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    len1 <span class="token operator">=</span> len<span class="token punctuation">(</span>list1<span class="token punctuation">)</span>
+    len2 <span class="token operator">=</span> len<span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> len1 <span class="token operator">!=</span> len2<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len1<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> list1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> list2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+    <span class="token keyword">return</span> <span class="token boolean">True</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    get_woff_file<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    memory_dict <span class="token operator">=</span> parse_font<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    get_data<span class="token punctuation">(</span>memory_dict<span class="token punctuation">)</span>
+    save_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-</li>
-</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421232557991.png" alt="最终保存的票房数据"><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421224806981.png" alt="image-20210421224806981"></p>
 
                 
             </div>
@@ -695,7 +674,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shiyiri.top/node/3.html">https://www.shiyiri.top/node/3.html</a>
+                    <a href="https://www.shiyiri.top/node/100.html">https://www.shiyiri.top/node/100.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -732,7 +711,11 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                                    <span class="chip bg-color">数据采集</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1163,17 +1146,18 @@ conn<span class="token punctuation">.</span><span class="token function">close</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/node/4.html">
+                <a href="/node/100.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hive笔记">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="猫眼字体处理">
                         
-                        <span class="card-title">Hive笔记</span>
+                        <span class="card-title">猫眼字体处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1183,9 +1167,9 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1193,6 +1177,15 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                        <span class="chip bg-color">数据采集</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1204,13 +1197,13 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node/1.html">
+                <a href="/node/9.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="数据采集笔记">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Scrapy框架">
                         
-                        <span class="card-title">数据采集笔记</span>
+                        <span class="card-title">Scrapy框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1221,7 +1214,7 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
                             </span>
                         <span class="publish-author">
                             
@@ -1230,14 +1223,6 @@ conn<span class="token punctuation">.</span><span class="token function">close</
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">python爬虫</span>
-                    </a>
-                    
                 </div>
                 
             </div>
