@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="猫眼字体处理, Aunean&#39;s Blog">
+    <meta name="keywords" content="重大机密, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>猫眼字体处理 | Aunean&#39;s Blog</title>
+    <title>重大机密 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,7 +315,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '10a2c312a653bcd2c473b99517df534f7bf836a1b8157d18e27463293354726e';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -328,12 +328,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">猫眼字体处理</h1>
+                    <h1 class="description center-align post-title">重大机密</h1>
                 </div>
             </div>
         </div>
@@ -449,14 +449,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
-                                <span class="chip bg-color">数据采集</span>
+                            <a href="/tags/%E3%8A%99/">
+                                <span class="chip bg-color">㊙</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%9C%8B%E4%B8%8D%E5%88%B0%E5%90%A7%EF%BC%8C%E6%B0%94%E6%AD%BB%E4%BD%A0/">
+                                <span class="chip bg-color">看不到吧，气死你</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A7%81%E6%9C%89/" class="post-category">
+                                私有
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -465,21 +478,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-21
+                    2021-04-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-21
+                    2021-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    930
+                    8
                 </div>
                 
 
@@ -496,171 +509,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>本次爬取<a target="_blank" rel="noopener" href="https://maoyan.com/board/1">猫眼的票房榜数据</a>，打开检查工具可以看到，票房的数据都进行了加密</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421224933334.png"></p>
-<h4 id="1-首先查看网页的源代码，Ctrl-f-输入-woff"><a href="#1-首先查看网页的源代码，Ctrl-f-输入-woff" class="headerlink" title="1.首先查看网页的源代码，Ctrl+f 输入 woff"></a>1.首先查看网页的源代码，Ctrl+f 输入 woff</h4><blockquote>
-<p>//vfile.meituan.net/colorstone/f0a30a4dda64b4f8f344858115f54fc92296.woff</p>
-<p>可以选中这段复制到搜索框中回车，发现可以另存为一个文件，我们需要的就是这个，下载完直接打开发现是乱码，对此还需要处理。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421225924696.png" alt="image-20210421225924696"></p>
-<h4 id="2-使用re下载woff文件，并用TTFont库进行处理"><a href="#2-使用re下载woff文件，并用TTFont库进行处理" class="headerlink" title="2. 使用re下载woff文件，并用TTFont库进行处理"></a>2. 使用re下载woff文件，并用TTFont库进行处理</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> fontTools<span class="token punctuation">.</span>ttLib <span class="token keyword">import</span> TTFont <span class="token comment" spellcheck="true"># 导入TTFont库，处理woff文件</span>
-<span class="token keyword">import</span> re
-<span class="token keyword">import</span> requests
-
-url <span class="token operator">=</span> <span class="token string">'https://maoyan.com/board/1'</span>
-headers <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'user-agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-
-response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>text
-<span class="token comment" spellcheck="true"># 匹配到 //vfile.meituan.net/colorstone/f0a30a4dda64b4f8f344858115f54fc92296.woff</span>
-file_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"src:.*?,.*?url\('(.*?)'\) format\('woff'\);"</span><span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>file_url<span class="token punctuation">)</span>
-<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
-    content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content
-    fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-
-font <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">)</span>
-font<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.xml'</span><span class="token punctuation">)</span>
-</code></pre>
-<p><strong>打开下载的文件进行查看</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231151211.png" alt="image-20210421231151211"></p>
-<blockquote>
-<p>据说这里可以看出数字的规律，但我没看出来（小声bb），所以我接下来借助一个网站对其进行解析</p>
-</blockquote>
-<h4 id="3-使用一个FontStore对其进行解析"><a href="#3-使用一个FontStore对其进行解析" class="headerlink" title="3.使用一个FontStore对其进行解析"></a>3.使用一个<a target="_blank" rel="noopener" href="https://font.qqe2.com/#">FontStore</a>对其进行解析</h4><p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231527573.png" alt="image-20210421231527573"></p>
-<p>**将之前我们下载好的文件打开 （maoyan_base1.woff），然后会出现如下的数字，记住它的排序，接下来我们需使用 **</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421231639609.png" alt="image-20210421231639609"></p>
-<h4 id="4-构建代码"><a href="#4-构建代码" class="headerlink" title="4.构建代码"></a>4.构建代码</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
-<span class="token keyword">import</span> re
-<span class="token keyword">from</span> fontTools<span class="token punctuation">.</span>ttLib <span class="token keyword">import</span> TTFont
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-
-url <span class="token operator">=</span> <span class="token string">'https://maoyan.com/board/1'</span>
-headers <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'user-agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-all_content <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">def</span> <span class="token function">get_woff_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    file_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">"src:.*?,.*?url\('(.*?)'\) format\('woff'\);"</span><span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true"># print(file_url)</span>
-    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
-        content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">)</span><span class="token punctuation">.</span>content
-        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-
-    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.woff'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
-        content <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http:'</span> <span class="token operator">+</span> file_url<span class="token punctuation">)</span><span class="token punctuation">.</span>content
-        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-
-
-<span class="token keyword">def</span> <span class="token function">parse_font</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    font <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.woff'</span><span class="token punctuation">)</span>
-    font<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_base1.xml'</span><span class="token punctuation">)</span>
-    font_base_order <span class="token operator">=</span> font<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true"># print(font_base_order)</span>
-    <span class="token comment" spellcheck="true"># 根据第一次下载的文件写出对应</span>
-    map_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'6'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'5'</span><span class="token punctuation">]</span>
-
-    font_new <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.woff'</span><span class="token punctuation">)</span>
-    font_new<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'D:/temp/maoyan_new1.xml'</span><span class="token punctuation">)</span>
-    font_new_order <span class="token operator">=</span> font_new<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true"># print(font_new_order)</span>
-
-    base_flag_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    new_flag_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true"># 得到两个二维列表，对里面没个一维列表进行内容的比对，得到对应的字体</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> j <span class="token keyword">in</span> zip<span class="token punctuation">(</span>font_base_order<span class="token punctuation">,</span> font_new_order<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        flag_base <span class="token operator">=</span> font<span class="token punctuation">[</span><span class="token string">'glyf'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>flags
-        flag_new <span class="token operator">=</span> font_new<span class="token punctuation">[</span><span class="token string">'glyf'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>flags
-        base_flag_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>flag_base<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        new_flag_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>list<span class="token punctuation">(</span>flag_new<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    memory_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token keyword">for</span> index1<span class="token punctuation">,</span> x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>base_flag_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> index2<span class="token punctuation">,</span> y <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>new_flag_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> common<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                key <span class="token operator">=</span> font_new_order<span class="token punctuation">[</span>index2<span class="token punctuation">]</span>
-                key <span class="token operator">=</span> <span class="token string">'&amp;#x'</span> <span class="token operator">+</span> key<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'uni'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">';'</span>
-                memory_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> map_list<span class="token punctuation">[</span>index1<span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true"># print(memory_dict)</span>
-    <span class="token triple-quoted-string string">'''
-    {'&amp;#xf4ef;': '6', '&amp;#xf848;': '3', '&amp;#xf88a;': '7', '&amp;#xe7a1;': '9', '&amp;#xe343;': '1', '&amp;#xe137;': '8', 
-    '&amp;#xf489;': '0', '&amp;#xe5e2;': '4', '&amp;#xf19b;': '2', '&amp;#xe8cd;': '5'}
-    '''</span>
-    <span class="token keyword">return</span> memory_dict
-
-
-<span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>memory_dict<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 获取每一个dd标签中的数据</span>
-    pattern <span class="token operator">=</span> r<span class="token string">'&lt;dd>.*?&lt;i class="board-index board-index(.*?)&lt;/dd>'</span>
-    all_data <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> response<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
-
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> all_data<span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 电影名</span>
-        title <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'title="(.*?)"'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token comment" spellcheck="true"># print(title)</span>
-        <span class="token comment" spellcheck="true"># 主演</span>
-        actor <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="star">主演：(.*?)&lt;/p>'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token comment" spellcheck="true"># print(actor)</span>
-        <span class="token comment" spellcheck="true"># 上映时间</span>
-        time <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="releasetime">上映时间：(.*?)&lt;/p>'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token comment" spellcheck="true"># print(time)</span>
-        <span class="token comment" spellcheck="true"># 实时票房</span>
-        realtimeBO <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="realtime">实时票房:.*?class="stonefont">(.*?)&lt;/span>&lt;/span>(.*?)&lt;/p>'</span><span class="token punctuation">,</span>
-                                data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        realtimeBoxOffice <span class="token operator">=</span> realtimeBO<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> memory_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 将 realtimeBoxOffice 加密数字 &amp;#xf4ef;&amp;#xf4ef;&amp;#xe137;.&amp;#xf848; 和 memory_dict 中的 key 进行匹配，解析出数据</span>
-            realtimeBoxOffice <span class="token operator">=</span> realtimeBoxOffice<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
-        realtimeBoxOffice <span class="token operator">=</span> realtimeBoxOffice <span class="token operator">+</span> realtimeBO<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print(realtimeBoxOffice)</span>
-        <span class="token comment" spellcheck="true"># 总票房</span>
-        totalBO <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'&lt;p class="total-boxoffice">总票房:.*?class="stonefont">(.*?)&lt;/span>&lt;/span>(.*?)&lt;/p>'</span><span class="token punctuation">,</span>
-                             data<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        totalBoxOffice <span class="token operator">=</span> totalBO<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> memory_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            totalBoxOffice <span class="token operator">=</span> totalBoxOffice<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
-        totalBoxOffice <span class="token operator">=</span> totalBoxOffice <span class="token operator">+</span> totalBO<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># print(totalBoxOffice)</span>
-        content <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">'title'</span><span class="token punctuation">:</span> title<span class="token punctuation">,</span>
-            <span class="token string">'actor'</span><span class="token punctuation">:</span> actor<span class="token punctuation">,</span>
-            <span class="token string">'time'</span><span class="token punctuation">:</span> time<span class="token punctuation">,</span>
-            <span class="token string">'realtimeBoxOffice'</span><span class="token punctuation">:</span> realtimeBoxOffice<span class="token punctuation">,</span>
-            <span class="token string">'totalBoxOffice'</span><span class="token punctuation">:</span> totalBoxOffice
-        <span class="token punctuation">}</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-        all_content<span class="token punctuation">.</span>append<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 存储数据</span>
-<span class="token keyword">def</span> <span class="token function">save_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token operator">=</span>all_content<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'actor'</span><span class="token punctuation">,</span> <span class="token string">'time'</span><span class="token punctuation">,</span> <span class="token string">'realtimeBoxOffice'</span><span class="token punctuation">,</span> <span class="token string">'totalBoxOffice'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">"maonyan.csv"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 进行数据对比以及保证数据的顺序</span>
-<span class="token keyword">def</span> <span class="token function">common</span><span class="token punctuation">(</span>list1<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    len1 <span class="token operator">=</span> len<span class="token punctuation">(</span>list1<span class="token punctuation">)</span>
-    len2 <span class="token operator">=</span> len<span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> len1 <span class="token operator">!=</span> len2<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len1<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> list1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> list2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">False</span>
-    <span class="token keyword">return</span> <span class="token boolean">True</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    get_woff_file<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    memory_dict <span class="token operator">=</span> parse_font<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    get_data<span class="token punctuation">(</span>memory_dict<span class="token punctuation">)</span>
-    save_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421232557991.png" alt="最终保存的票房数据"><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210421224806981.png" alt="image-20210421224806981"></p>
+                <p><a target="_blank" rel="noopener" href="https://tool.oschina.net/encrypt?type=2">开源中国在线工具</a></p>
 
                 
             </div>
@@ -687,7 +536,7 @@ response <span class="token operator">=</span> requests<span class="token punctu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shiyiri.top/node/100.html">https://www.shiyiri.top/node/100.html</a>
+                    <a href="https://www.shiyiri.top/node/99.html">https://www.shiyiri.top/node/99.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -725,8 +574,12 @@ response <span class="token operator">=</span> requests<span class="token punctu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
-                                    <span class="chip bg-color">数据采集</span>
+                                <a href="/tags/%E3%8A%99/">
+                                    <span class="chip bg-color">㊙</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%9C%8B%E4%B8%8D%E5%88%B0%E5%90%A7%EF%BC%8C%E6%B0%94%E6%AD%BB%E4%BD%A0/">
+                                    <span class="chip bg-color">看不到吧，气死你</span>
                                 </a>
                             
                         </div>
@@ -1159,9 +1012,10 @@ response <span class="token operator">=</span> requests<span class="token punctu
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/node/99.html">
                     <div class="card-image">
@@ -1179,9 +1033,9 @@ response <span class="token operator">=</span> requests<span class="token punctu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1194,6 +1048,7 @@ response <span class="token operator">=</span> requests<span class="token punctu
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1216,13 +1071,13 @@ response <span class="token operator">=</span> requests<span class="token punctu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node/9.html">
+                <a href="/node/100.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Scrapy框架">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="猫眼字体处理">
                         
-                        <span class="card-title">Scrapy框架</span>
+                        <span class="card-title">猫眼字体处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1233,7 +1088,7 @@ response <span class="token operator">=</span> requests<span class="token punctu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
                             </span>
                         <span class="publish-author">
                             
@@ -1242,6 +1097,14 @@ response <span class="token operator">=</span> requests<span class="token punctu
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                        <span class="chip bg-color">数据采集</span>
+                    </a>
+                    
                 </div>
                 
             </div>
