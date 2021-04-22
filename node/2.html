@@ -458,6 +458,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -472,14 +481,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    7.1k
                 </div>
                 
 
@@ -529,124 +538,124 @@
 </tr>
 </tbody></table>
 <p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/current/">官方文档</a></p>
-<h2 id="1-core-site-xml-常用参数"><a href="#1-core-site-xml-常用参数" class="headerlink" title="1.core-site.xml 常用参数"></a>1.core-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://node:9000</value>
-    <description>HDFS的URI，设定namenode的主机名及端口</description>
-</property>
+<h2 id="1-core-site-xml-常用参数"><a href="#1-core-site-xml-常用参数" class="headerlink" title="1.core-site.xml 常用参数"></a>1.core-site.xml 常用参数</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://node:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>HDFS的URI，设定namenode的主机名及端口<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>hadoop.tmp.dir</name>
-    <value>/usr/local/src/hadoop-2.7.2/tmp</value>
-    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/usr/local/src/hadoop-2.7.2/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>节点上本地的hadoop临时文件夹，之前一定要先建立好<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>fs.trash.interval</name>
-    <value>1440</value>
-    <description>开启hdfs的垃圾桶机制，删除掉的数据可以从垃圾桶中回收，单位分钟</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.trash.interval<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1440<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>开启hdfs的垃圾桶机制，删除掉的数据可以从垃圾桶中回收，单位分钟<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>fs.trash.checkpoint.interval</name>
-    <value>0</value>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.trash.checkpoint.interval<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>io.file.buffer.size</name>
-    <value>4096</value>
-    <description>缓冲区大小，实际工作中根据服务器性能动态调整</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>io.file.buffer.size<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>4096<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>缓冲区大小，实际工作中根据服务器性能动态调整<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 </code></pre>
-<h2 id="2-hdfs-site-xml-常用参数"><a href="#2-hdfs-site-xml-常用参数" class="headerlink" title="2.hdfs-site.xml 常用参数"></a>2.hdfs-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
-    <name>dfs.namenode.name.dir</name>
-    <value>file:/usr/local/src/hdfs/name</value>
-    <description>namenode上存储hdfs名字空间元数据 </description>
-</property>
+<h2 id="2-hdfs-site-xml-常用参数"><a href="#2-hdfs-site-xml-常用参数" class="headerlink" title="2.hdfs-site.xml 常用参数"></a>2.hdfs-site.xml 常用参数</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.name.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/usr/local/src/hdfs/name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>namenode上存储hdfs名字空间元数据 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.datanode.data.dir</name>
-    <value>file:/usr/local/src/hdfs/data</value>
-    <description>datanode上数据块的物理存储位置</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.datanode.data.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/usr/local/src/hdfs/data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>datanode上数据块的物理存储位置<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.replication</name>
-    <value>2</value>
-    <description>副本个数，默认是3,应小于datanode机器数量</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>副本个数，默认是3,应小于datanode机器数量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.blocksize</name>
-    <value>134217728</value>
-    <description>文件存储的block块大小</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.blocksize<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>134217728<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>文件存储的block块大小<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 </code></pre>
-<h2 id="3-mapred-site-xml-常用参数"><a href="#3-mapred-site-xml-常用参数" class="headerlink" title="3.mapred-site.xml 常用参数"></a>3.mapred-site.xml 常用参数</h2><pre class=" language-shelll"><code class="language-shelll"><property>
-    <name>mapreduce.framework.name</name>
-    <value>yarn</value>
-    <description>指定我们mapreduce运行在yarn集群上面</description>
-</property>
+<h2 id="3-mapred-site-xml-常用参数"><a href="#3-mapred-site-xml-常用参数" class="headerlink" title="3.mapred-site.xml 常用参数"></a>3.mapred-site.xml 常用参数</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定我们mapreduce运行在yarn集群上面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
     
-<property>
-    <name>mapreduce.job.ubertask.enable</name>
-    <value>true</value>
-    <description>开启mapreduce的小任务模式，用于调优</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.job.ubertask.enable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>开启mapreduce的小任务模式，用于调优<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 
-<property>
-    <name>mapreduce.jobhistory.address</name>
-    <value>node:10020</value>
-    <description>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.jobhistory.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:10020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>mapreduce.jobhistory.webapp.address</name>
-    <value>node:19888</value>
-    <description>配置mapreduce的jobhistory的访问地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.jobhistory.webapp.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:19888<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置mapreduce的jobhistory的访问地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 </code></pre>
-<h2 id="4-yarn-site-xml-常用参数"><a href="#4-yarn-site-xml-常用参数" class="headerlink" title="4.yarn-site.xml 常用参数"></a>4.yarn-site.xml 常用参数</h2><pre class=" language-shell"><code class="language-shell"><property>
-    <name>yarn.resourcemanager.hostname</name>
-    <value>node</value>
-    <description>指定resourcemanager所在的hostname，
-    即指定yarn的老大即ResourceManger的地址</description>
-</property>
+<h2 id="4-yarn-site-xml-常用参数"><a href="#4-yarn-site-xml-常用参数" class="headerlink" title="4.yarn-site.xml 常用参数"></a>4.yarn-site.xml 常用参数</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定resourcemanager所在的hostname，
+    即指定yarn的老大即ResourceManger的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
-    <description>NodeManager上运行的附属服务。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>NodeManager上运行的附属服务。
     指定NodeManager获取数据的方式是shuffle
-    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
-</property>
+    需配置成mapreduce_shuffle，才可运行MapReduce程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.log-aggregation-enable</name>
-    <value>true</value>
-    <description>日志的聚合功能，方便我们查看任务执行完成之后的日志记录</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation-enable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>日志的聚合功能，方便我们查看任务执行完成之后的日志记录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
     
-<property>
-    <name>yarn.log-aggregation.retain-seconds</name>
-    <value>604800</value>
-    <description>聚合日志的保存时长，这里的值不要设置的太小</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation.retain-seconds<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>604800<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>聚合日志的保存时长，这里的值不要设置的太小<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.log.server.url</name>
-    <value>http://node:19888/jobhistory.logs</value>
-    <description>配置日志服务器的地址,node节点使用</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log.server.url<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>http://node:19888/jobhistory.logs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置日志服务器的地址,node节点使用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.nodemanager.log-dirs</name>    
-    <value>/tmp/yarn/userlogs</value>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.log-dirs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/tmp/yarn/userlogs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 </code></pre>
-<h1 id="设置环境只对当前用户有效"><a href="#设置环境只对当前用户有效" class="headerlink" title="设置环境只对当前用户有效"></a>设置环境只对当前用户有效</h1><pre class=" language-shell"><code class="language-shell">vi .bash_profile
+<h1 id="设置环境只对当前用户有效"><a href="#设置环境只对当前用户有效" class="headerlink" title="设置环境只对当前用户有效"></a>设置环境只对当前用户有效</h1><pre class=" language-xml"><code class="language-xml">vi .bash_profile
 
 1.每次进入完全分布式有些命令未找到都必须要source一下
 解决办法：
@@ -654,35 +663,35 @@
 
 hadoop dfsadmin -safemode leave 关闭安全模式
 </code></pre>
-<h1 id="配置yarn的历史服务器及日志产看功能"><a href="#配置yarn的历史服务器及日志产看功能" class="headerlink" title="配置yarn的历史服务器及日志产看功能"></a>配置yarn的历史服务器及日志产看功能</h1><pre class=" language-shell"><code class="language-shell">vi mapred-site.xml
-<property>
-    <name>mapreduce.jobhistory.address</name>
-    <value>node:10020</value>
-    <description>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况</description>
-</property>
+<h1 id="配置yarn的历史服务器及日志产看功能"><a href="#配置yarn的历史服务器及日志产看功能" class="headerlink" title="配置yarn的历史服务器及日志产看功能"></a>配置yarn的历史服务器及日志产看功能</h1><pre class=" language-xml"><code class="language-xml">vi mapred-site.xml
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.jobhistory.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:10020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置mapreduce的jobhistory，可以查看我们所有运行完成的任务的一些情况<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>mapreduce.jobhistory.webapp.address</name>
-    <value>node:19888</value>
-    <description>配置mapreduce的jobhistory的访问地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.jobhistory.webapp.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:19888<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置mapreduce的jobhistory的访问地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 
 vi yarn-site.xml
-<property>
-    <name>yarn.log-aggregation-enable</name>
-    <value>true</value>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation-enable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.log-aggregation.retain-seconds</name>
-    <value>604800</value>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation.retain-seconds<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>604800<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.log.server.url</name>
-    <value>http://node:19888/jobhistory.logs</value>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log.server.url<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>http://node:19888/jobhistory.logs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 # 启动 
 mr-jobhistory-daemon.sh start historyserver
@@ -764,64 +773,63 @@ source /etc/profile
 查看是否配置jdk成功
 hadoop version
 </code></pre>
-<h2 id="10-修改Hadoop目录下的配置文件"><a href="#10-修改Hadoop目录下的配置文件" class="headerlink" title="10.修改Hadoop目录下的配置文件"></a>10.修改Hadoop目录下的配置文件</h2><pre class=" language-shell"><code class="language-shell">vi hadoop-env.sh
+<h2 id="10-修改Hadoop目录下的配置文件"><a href="#10-修改Hadoop目录下的配置文件" class="headerlink" title="10.修改Hadoop目录下的配置文件"></a>10.修改Hadoop目录下的配置文件</h2><pre class=" language-xml"><code class="language-xml">vi hadoop-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 
 vi core-site.xml
-<configuration>
-<property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://master1-1:9000</value>
-    <description>HDFS的URI，设定namenode的主机名及端口</description>
-</property>
-<property>
-    <name>hadoop.tmp.dir</name>
-    <value>/usr/local/src/hadoop-2.7.2/tmp</value>
-    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://master1-1:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>HDFS的URI，设定namenode的主机名及端口<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/usr/local/src/hadoop-2.7.2/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>节点上本地的hadoop临时文件夹，之前一定要先建立好<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 
 vi hdfs-site.xml
-<configuration>
-<property>
-    <name>dfs.replication</name>
-    <value>1</value>
-    <description>副本个数，默认是3,应小于datanode机器数量</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>副本个数，默认是3,应小于datanode机器数量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.secondary.http.address</name>
-    <value>master1-1:50090</value>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.secondary.http.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>master1-1:50090<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 
 mv mapred-site.xml.template mapred-site.xml
 vi mapred-site.xml
-<configuration>
-<property>
-    <name>mapreduce.framework.name</name>
-    <value>yarn</value>
-    <description>指定mapreduce使用yarn框架</description>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定mapreduce使用yarn框架<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 
 vi yarn-site.xml
-<configuration>
-<property>
-    <name>yarn.resourcemanager.hostname</name>
-    <value>master1-1</value>
-    <description>指定resourcemanager所在的hostname，即指定yarn的老大即ResourceManger的地址</description>
-</property>
-<property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
-    <description>NodeManager上运行的附属服务。指定NodeManager获取数据的方式是shuffle需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>master1-1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定resourcemanager所在的hostname，即指定yarn的老大即ResourceManger的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>NodeManager上运行的附属服务。指定NodeManager获取数据的方式是shuffle需配置成mapreduce_shuffle，才可运行MapReduce程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 </code></pre>
 <h2 id="11-配置完成后，格式化-DFS"><a href="#11-配置完成后，格式化-DFS" class="headerlink" title="11.配置完成后，格式化 DFS"></a>11.配置完成后，格式化 DFS</h2><pre class=" language-shell"><code class="language-shell">hdfs namenode -format
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201109184901549.png" alt="image-20201109184901549"></p>
 <h2 id="12-创建shh密匙实现免密"><a href="#12-创建shh密匙实现免密" class="headerlink" title="12.创建shh密匙实现免密"></a>12.创建shh密匙实现免密</h2><pre class=" language-shell"><code class="language-shell"># 安装openssh，在centos7中ssh服务默认是已经被安装了的。通过命令rpm -qa | grep openssh 查看是否安装了ssh服务
 yum install openssh
 
@@ -830,8 +838,7 @@ cd /root/.ssh
 ssh-copy-id master1-1  # 将本机的公钥复制到远程机器的authorized_key文件中，然后实现免密登录
 more authorized_keys
 </code></pre>
-<h1 id="完全分布式搭建"><a href="#完全分布式搭建" class="headerlink" title="完全分布式搭建"></a>完全分布式搭建</h1><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201109193940212.png" alt="image-20201109193940212"></p>
-<h2 id="1-配置三台IP"><a href="#1-配置三台IP" class="headerlink" title="1.配置三台IP"></a>1.配置三台IP</h2><pre class=" language-shell"><code class="language-shell">vi /etc/sysconfig/network-scripts/ifcfg-ens33
+<h1 id="完全分布式搭建"><a href="#完全分布式搭建" class="headerlink" title="完全分布式搭建"></a>完全分布式搭建</h1><h2 id="1-配置三台IP"><a href="#1-配置三台IP" class="headerlink" title="1.配置三台IP"></a>1.配置三台IP</h2><pre class=" language-shell"><code class="language-shell">vi /etc/sysconfig/network-scripts/ifcfg-ens33
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
@@ -861,7 +868,7 @@ systemctl status firewalld  # 检查防火墙
 vi /etc/sysconfig/selinux   # 关闭selinux防火墙
 SELINUX=disabled
 </code></pre>
-<h2 id="3-修改三台主机名和映射主机名和IP地址"><a href="#3-修改三台主机名和映射主机名和IP地址" class="headerlink" title="3.修改三台主机名和映射主机名和IP地址"></a>3.修改三台主机名和映射主机名和IP地址</h2><pre><code>hostnamectl set-hostname master1-1
+<h2 id="3-修改三台主机名和映射主机名和IP地址"><a href="#3-修改三台主机名和映射主机名和IP地址" class="headerlink" title="3.修改三台主机名和映射主机名和IP地址"></a>3.修改三台主机名和映射主机名和IP地址</h2><pre class=" language-shell"><code class="language-shell">hostnamectl set-hostname master1-1
 
 vi /etc/hosts
 192.168.136.150 master1-1
@@ -908,67 +915,67 @@ more authorized_keys
 # 将主节点上的 authorized_keys 文件远程拷贝到从节点。
 scp -r authorized_keys slave1-1:~/.ssh/authorized_keys
 </code></pre>
-<h2 id="8-在主节点中配置Hadoop目录中的配置文件"><a href="#8-在主节点中配置Hadoop目录中的配置文件" class="headerlink" title="8.在主节点中配置Hadoop目录中的配置文件"></a>8.在主节点中配置Hadoop目录中的配置文件</h2><pre class=" language-shell"><code class="language-shell">cd /usr/local/src/hadoop-2.6.0/etc/hadoop
+<h2 id="8-在主节点中配置Hadoop目录中的配置文件"><a href="#8-在主节点中配置Hadoop目录中的配置文件" class="headerlink" title="8.在主节点中配置Hadoop目录中的配置文件"></a>8.在主节点中配置Hadoop目录中的配置文件</h2><pre class=" language-xml"><code class="language-xml">cd /usr/local/src/hadoop-2.6.0/etc/hadoop
 
 vi hadoop-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 
 vi core-site.xml
-<property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://node:9000</value>
-    <description>HDFS的URI，设定namenode的主机名及端口</description>
-</property>
-<property>
-    <name>hadoop.tmp.dir</name>
-    <value>/usr/local/src/tmp</value>
-    <description>节点上本地的hadoop临时文件夹，之前一定要先建立好</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://node:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>HDFS的URI，设定namenode的主机名及端口<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/usr/local/src/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>节点上本地的hadoop临时文件夹，之前一定要先建立好<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 vi hdfs-site.xml
-<property>
-    <name>dfs.namenode.name.dir</name>
-    <value>file:/export/server/hdfs/name</value>
-    <description>namenode上存储hdfs名字空间元数据 </description>
-</property>
-<property>
-    <name>dfs.datanode.data.dir</name>
-    <value>file:/export/server/hdfs/data</value>
-    <description>datanode上数据块的物理存储位置</description>
-</property>
-<property>
-    <name>dfs.replication</name>
-    <value>2</value>
-    <description>副本个数，默认是3,应小于datanode机器数量</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.name.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/export/server/hdfs/name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>namenode上存储hdfs名字空间元数据 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.datanode.data.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/export/server/hdfs/data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>datanode上数据块的物理存储位置<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>副本个数，默认是3,应小于datanode机器数量<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 vi mapred-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 
 vi mapred-site.xml
-<property>
-    <name>mapreduce.framework.name</name>
-    <value>yarn</value>
-    <description>指定mapreduce使用yarn框架</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定mapreduce使用yarn框架<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 vi yarn-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 
 vi yarn-site.xml
-<property>
-    <name>yarn.resourcemanager.hostname</name>
-    <value>node</value>
-    <description>指定resourcemanager所在的hostname，
-    即指定yarn的老大即ResourceManger的地址</description>
-</property>
-<property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
-    <description>NodeManager上运行的附属服务。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定resourcemanager所在的hostname，
+    即指定yarn的老大即ResourceManger的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>NodeManager上运行的附属服务。
     指定NodeManager获取数据的方式是shuffle
-    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
-</property>
+    需配置成mapreduce_shuffle，才可运行MapReduce程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 vi slaves
 slave1-1
@@ -1059,116 +1066,116 @@ mapred-site.xml -> 不变
 
 slaves -> 修改
 </code></pre>
-<pre class=" language-shell"><code class="language-shell">vi core-site.xml
-<property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://mycluster</value>
-    <description>把两个NameNode的地址组装成一个集群mycluster</description>
-</property>
+<pre class=" language-xml"><code class="language-xml">vi core-site.xml
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>把两个NameNode的地址组装成一个集群mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 # 这里的路径默认是NameNode、DataNode、JournalNode等存放数据的公共目录。用户也可以自己单独指定这三类节点的目录
-<property>
-    <name>hadoop.tmp.dir</name>
-    <value>/usr/local/src/hadoop-2.6.0/data/ha/tmp</value>
-    <description>指定hadoop运行时产生文件的存储目录</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/usr/local/src/hadoop-2.6.0/data/ha/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定hadoop运行时产生文件的存储目录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>ha.zookeeper.quorum</name>
-    <value>node:2181,node1:2181,node2:2181</value>
-    <description>指定ZKFC故障自动切换转移</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>ha.zookeeper.quorum<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:2181,node1:2181,node2:2181<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定ZKFC故障自动切换转移<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 
 
 
 
 vi hdfs-site.xml
-<property>
-    <name>dfs.replication</name>
-    <value>2</value>
-    <description>设置dsf副本数，默认3个</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>设置dsf副本数，默认3个<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.nameservices</name>
-    <value>mycluster</value>
-    <description>完全分布式集群名称</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.nameservices<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>完全分布式集群名称<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.ha.namenodes.mycluster</name>
-    <value>nn1,nn2</value>
-    <description>集群中NameNode节点都有哪些</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.ha.namenodes.mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>nn1,nn2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>集群中NameNode节点都有哪些<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.rpc-address.mycluster.nn1</name>
-    <value>node:8020</value>
-    <description>nn1的RPC通信地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.rpc-address.mycluster.nn1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>nn1的RPC通信地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.rpc-address.mycluster.nn2</name>
-    <value>node1:8020</value>
-    <description>nn2的RPC通信地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.rpc-address.mycluster.nn2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node1:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>nn2的RPC通信地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.http-address.mycluster.nn1</name>
-    <value>node:50070</value>
-    <description>nn1的http通信地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.http-address.mycluster.nn1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:50070<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>nn1的http通信地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.http-address.mycluster.nn2</name>
-    <value>node1:50070</value>
-    <description>nn2的http通信地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.http-address.mycluster.nn2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node1:50070<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>nn2的http通信地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.namenode.shared.edits.dir</name>
-    <value>qjournal://node:8485;node1:8485;node2:8485/mycluster</value>
-    <description>指定NameNode元数据在JournalNode上的存放位置</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.shared.edits.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>qjournal://node:8485;node1:8485;node2:8485/mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定NameNode元数据在JournalNode上的存放位置<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.ha.fencing.methods</name>
-    <value>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.ha.fencing.methods<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>
     sshfence
     shell(/bin/true)
-    </value>
-    <description>配置隔离机制，即同一时刻只能由一台服务器对外响应</description>
-</property>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置隔离机制，即同一时刻只能由一台服务器对外响应<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.ha.fencing.ssh.private-key-files</name>
-    <value>/root/.ssh/id_rsa</value>
-    <description>使用隔离机制时需要ssh无密钥登录</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.ha.fencing.ssh.private-key-files<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/root/.ssh/id_rsa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>使用隔离机制时需要ssh无密钥登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.journalnode.edits.dir</name>
-    <value>/usr/local/src/hadoop-2.6.0/data/ha/jn</value>
-    <description>声明journalnode服务器存储目录</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.journalnode.edits.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/usr/local/src/hadoop-2.6.0/data/ha/jn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>声明journalnode服务器存储目录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.permissions.enabled</name>
-    <value>false</value>
-    <description>关闭权限检查</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.permissions.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>关闭权限检查<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.client.failover.proxy.provider.mycluster</name>                                         <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
-    <description>指定mycluster出现故障时，负责执行故障切换的类</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.client.failover.proxy.provider.mycluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定mycluster出现故障时，负责执行故障切换的类<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>dfs.ha.automatic-failover.enabled</name>
-    <value>true</value>
-    <description>配置自动故障转移</description>
-</property>　
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.ha.automatic-failover.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>配置自动故障转移<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>　
 
 
 vi slaves
@@ -1190,7 +1197,6 @@ zkServer.sh status  # 查看状态，正确的状态只有一台机器时leader�
 </code></pre>
 <h3 id="5-在主节点上格式化-zookeeper"><a href="#5-在主节点上格式化-zookeeper" class="headerlink" title="5.在主节点上格式化 zookeeper"></a>5.在主节点上格式化 zookeeper</h3><pre class=" language-shell"><code class="language-shell">hdfs zkfc -formatZK  # 目的是在Zookeeper集群上建立HA响应节点
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129145030669.png" alt="image-20201129145030669"></p>
 <h3 id="6-启动-JournalNode-集群"><a href="#6-启动-JournalNode-集群" class="headerlink" title="6.启动 JournalNode 集群"></a>6.启动 JournalNode 集群</h3><pre class=" language-shell"><code class="language-shell"># 在所有节点输入
 hadoop-daemon.sh start journalnode  # 启动JournalNode是为了创建/data/ha/jn,此时jn里面是空的
 </code></pre>
@@ -1198,7 +1204,6 @@ hadoop-daemon.sh start journalnode  # 启动JournalNode是为了创建/data/ha/j
 hdfs namenode -format
 # 格式化NameNode，此里面jn会产生集群等ID等信息，/data/ha/tmp也会产生相关信息。
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129161912555.png" alt="image-20201129161912555"></p>
 <h3 id="8-启动-NameNode，并同步到备用-NameNode"><a href="#8-启动-NameNode，并同步到备用-NameNode" class="headerlink" title="8.启动 NameNode，并同步到备用 NameNode"></a>8.启动 NameNode，并同步到备用 NameNode</h3><pre class=" language-shell"><code class="language-shell"># 在nn1即node（主节点）节点单独启动namenode进程：
 hadoop-daemon.sh start namenode
 
@@ -1207,7 +1212,6 @@ hadoop-daemon.sh start namenode
 hdfs namenode -bootstrapStandby
 hadoop-daemon.sh start namenode
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129162043423.png" alt="image-20201129162043423"></p>
 <h3 id="9-启动所有的-DataNode"><a href="#9-启动所有的-DataNode" class="headerlink" title="9.启动所有的 DataNode"></a>9.启动所有的 DataNode</h3><pre class=" language-shell"><code class="language-shell"># DataNode 是在 slaves 文件中配置的，所以在 nn1 即 node 节点上启动所有的 datanode 进程。
 hadoop-daemons.sh start datanode
 </code></pre>
@@ -1226,67 +1230,65 @@ hdfs haadmin -getServiceState nn2
 关于故障转移机制无效，下载插件
 yum install psmisc
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163831937.png" alt="image-20201129163831937"><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163841569.png" alt="image-20201129163841569"></p>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129163858300.png" alt="image-20201129163858300"></p>
-<h2 id="Yarn-HA-环境搭建"><a href="#Yarn-HA-环境搭建" class="headerlink" title="Yarn HA 环境搭建"></a>Yarn HA 环境搭建</h2><h3 id="1-在完成-HDFS-HA-的基础上安装"><a href="#1-在完成-HDFS-HA-的基础上安装" class="headerlink" title="1.在完成 HDFS HA 的基础上安装"></a>1.在完成 HDFS HA 的基础上安装</h3><pre><code>关闭所有进程。
+<h2 id="Yarn-HA-环境搭建"><a href="#Yarn-HA-环境搭建" class="headerlink" title="Yarn HA 环境搭建"></a>Yarn HA 环境搭建</h2><h3 id="1-在完成-HDFS-HA-的基础上安装"><a href="#1-在完成-HDFS-HA-的基础上安装" class="headerlink" title="1.在完成 HDFS HA 的基础上安装"></a>1.在完成 HDFS HA 的基础上安装</h3><pre class=" language-shell"><code class="language-shell">关闭所有进程。
 </code></pre>
-<h3 id="2-同样在hadoop目录下修改配置文件"><a href="#2-同样在hadoop目录下修改配置文件" class="headerlink" title="2.同样在hadoop目录下修改配置文件"></a>2.同样在hadoop目录下修改配置文件</h3><pre class=" language-shell"><code class="language-shell">vi yarn-site.xml
+<h3 id="2-同样在hadoop目录下修改配置文件"><a href="#2-同样在hadoop目录下修改配置文件" class="headerlink" title="2.同样在hadoop目录下修改配置文件"></a>2.同样在hadoop目录下修改配置文件</h3><pre class=" language-xml"><code class="language-xml">vi yarn-site.xml
 
-<property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
-    <description>NodeManager上运行的附属服务。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>NodeManager上运行的附属服务。
     指定NodeManager获取数据的方式是shuffle
-    需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
-</property>
+    需配置成mapreduce_shuffle，才可运行MapReduce程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.ha.enabled</name>
-    <value>true</value>
-    <description>启用resourcemanager ha</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.ha.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>启用resourcemanager ha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.cluster-id</name>
-    <value>rmCluster</value>
-    <description>指定resourcemanager的cluster-id</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.cluster-id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>rmCluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定resourcemanager的cluster-id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.ha.rm-ids</name>
-    <value>rm1,rm2</value>
-    <description>声明两台resourcemanager的名字</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.ha.rm-ids<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>rm1,rm2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>声明两台resourcemanager的名字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.hostname.rm1</name>
-    <value>node</value>
-    <description>指定第一台resourcemanager的地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname.rm1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定第一台resourcemanager的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.hostname.rm2</name>
-    <value>node1</value>
-    <description>指定第二台resourcemanager的地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname.rm2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定第二台resourcemanager的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.zk-address</name>
-    <value>node:2181,node1:2181,node2:2181</value>
-    <description>指定zookeeper集群的地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.zk-address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:2181,node1:2181,node2:2181<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定zookeeper集群的地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.recovery.enabled</name>
-    <value>true</value>
-    <description>启用自动恢复</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.recovery.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>启用自动恢复<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
-<property>
-    <name>yarn.resourcemanager.store.class</name>
-    <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
-    <description>指定resourcemanager的状态信息存储在zookeeper集群地址</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.store.class<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定resourcemanager的状态信息存储在zookeeper集群地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 </code></pre>
 <h3 id="3-远程分发"><a href="#3-远程分发" class="headerlink" title="3.远程分发"></a>3.远程分发</h3><pre class=" language-shell"><code class="language-shell">scp -r yarn-site.xml node1:/usr/local/src/hadoop-2.6.0/etc/hadoop/
 scp -r yarn-site.xml node2:/usr/local/src/hadoop-2.6.0/etc/hadoop/
@@ -1304,7 +1306,6 @@ port:8088
 <p>(3).在 node 上启动 hadoop 集群。start-all.sh</p>
 <p>(4).在 node1 上启动 resourcemanager。yarn-daemon.sh start resourcemanager</p>
 <p><strong>注：全部启动后。节点数分别为</strong> <strong>8 8 5</strong></p>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201129171717556.png" alt="image-20201129171717556"></p>
 <h1 id="MySQL的安装部署"><a href="#MySQL的安装部署" class="headerlink" title="MySQL的安装部署"></a>MySQL的安装部署</h1><h2 id="1-安装-wget"><a href="#1-安装-wget" class="headerlink" title="1.安装 wget"></a>1.安装 wget</h2><pre class=" language-shell"><code class="language-shell">yum -y install wget
 </code></pre>
 <h2 id="2-下载-rpm-安装文件"><a href="#2-下载-rpm-安装文件" class="headerlink" title="2.下载 rpm 安装文件"></a>2.下载 rpm 安装文件</h2><pre class=" language-shell"><code class="language-shell">wget http://repo.mysql.com/mysql-community-release-el7-7.noarch.rpm
@@ -1317,7 +1318,6 @@ rpm -ivh mysql-community-release-el7-7.noarch.rpm
 # enabled 是否启用 1 启用，0 关闭
 # gpgchenk 是否检查
 </code></pre>
-<p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130085639398.png" alt="image-20201130085639398"></p>
 <h2 id="5-进行-MySQL-安装"><a href="#5-进行-MySQL-安装" class="headerlink" title="5.进行 MySQL 安装"></a>5.进行 MySQL 安装</h2><pre class=" language-shell"><code class="language-shell">yum install mysql-community-server
 </code></pre>
 <h2 id="6-配置MySQL"><a href="#6-配置MySQL" class="headerlink" title="6.配置MySQL"></a>6.配置MySQL</h2><pre class=" language-shell"><code class="language-shell"># 启用mysql
@@ -1332,16 +1332,16 @@ systemctl daemon-reload
 mysql -uroot -p
 # 回车，然后把复制的密码粘贴进去
 </code></pre>
-<h2 id="8-登录后修改MySQL密码"><a href="#8-登录后修改MySQL密码" class="headerlink" title="8.登录后修改MySQL密码"></a>8.登录后修改MySQL密码</h2><pre class=" language-shell"><code class="language-shell">set global validate_password_policy=LOW;
+<h2 id="8-登录后修改MySQL密码"><a href="#8-登录后修改MySQL密码" class="headerlink" title="8.登录后修改MySQL密码"></a>8.登录后修改MySQL密码</h2><pre class=" language-mysql"><code class="language-mysql">set global validate_password_policy=LOW;
 set global validate_password_length=6;
 alter user 'root'@'localhost' identified by '123456';
 </code></pre>
-<h2 id="9-开放远程连接"><a href="#9-开放远程连接" class="headerlink" title="9.开放远程连接"></a>9.开放远程连接</h2><pre class=" language-shell"><code class="language-shell"># 进入 mysql 数据库
+<h2 id="9-开放远程连接"><a href="#9-开放远程连接" class="headerlink" title="9.开放远程连接"></a>9.开放远程连接</h2><pre class=" language-mysql"><code class="language-mysql"># 进入 mysql 数据库
 use mysql;
 
 update user set host='%' where user='root' and host='localhost';
 </code></pre>
-<h2 id="10-刷新设置"><a href="#10-刷新设置" class="headerlink" title="10.刷新设置"></a>10.刷新设置</h2><pre class=" language-shell"><code class="language-shell">flush privileges;
+<h2 id="10-刷新设置"><a href="#10-刷新设置" class="headerlink" title="10.刷新设置"></a>10.刷新设置</h2><pre class=" language-mysql"><code class="language-mysql">flush privileges;
 </code></pre>
 <h1 id="hive的安装部署"><a href="#hive的安装部署" class="headerlink" title="hive的安装部署"></a>hive的安装部署</h1><h2 id="1-解压"><a href="#1-解压" class="headerlink" title="1.解压"></a>1.解压</h2><pre class=" language-shell"><code class="language-shell">tar -zxvf apache-hive* -C /usr/local/src/
 </code></pre>
@@ -1357,7 +1357,7 @@ export HIVE_HOME=/usr/local/src/hive
 export PATH=$PATH:$HIVE_HOME/bin
 source /etc/profile
 </code></pre>
-<h2 id="4-修改hive配置文件"><a href="#4-修改hive配置文件" class="headerlink" title="4.修改hive配置文件"></a>4.修改hive配置文件</h2><pre class=" language-shell"><code class="language-shell"># 进入到hive配置文件目录
+<h2 id="4-修改hive配置文件"><a href="#4-修改hive配置文件" class="headerlink" title="4.修改hive配置文件"></a>4.修改hive配置文件</h2><pre class=" language-xml"><code class="language-xml"># 进入到hive配置文件目录
 cd /usr/local/src/hive/conf
 
 cp hive-env.sh.tamplate hive-env.sh
@@ -1367,28 +1367,28 @@ export HADOOP_HOME=/usr/local/src/hadoop-2.6.0
 export HIVE_HOME=/usr/local/src/hive
 
 vi hive-site.xml    # 这个配置文件是我们自己创建的
-<configuration>
-<property>
-    <name>javax.jdo.option.ConnectionURL</name>
-     <value>jdbc:mysql://node:3306/hiveDB?createDatabaseIfNotExist=true</value>
-     <description>数据库连接地址</description>
-</property>
-<property>
-     <name>javax.jdo.option.ConnectionDriverName</name>
-     <value>com.mysql.jdbc.Driver</value>
-     <description>数据库连接驱动</description>
-</property>
-<property>
-     <name>javax.jdo.option.ConnectionUserName</name>
-     <value>root</value>
-     <description>数据库连接用户名</description>
-</property>
-<property>
-     <name>javax.jdo.option.ConnectionPassword</name>
-     <value>123456</value>
-     <description>数据库连接密码</description>
-</property>
-</configuration>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionURL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>jdbc:mysql://node:3306/hiveDB?createDatabaseIfNotExist=true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>数据库连接地址<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionDriverName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>com.mysql.jdbc.Driver<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>数据库连接驱动<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionUserName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>root<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>数据库连接用户名<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionPassword<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>123456<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>数据库连接密码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
 </code></pre>
 <h2 id="5-将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下"><a href="#5-将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下" class="headerlink" title="5.将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下"></a>5.将MySQL数据库JDBC驱动拷贝到Hive安装目录的lib下</h2><p> <a href="..........%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6%5Cmysql-connector-java-5.1.27.jar">mysql-connector-java-5.1.27.jar</a> </p>
 <h2 id="6-jar包修改"><a href="#6-jar包修改" class="headerlink" title="6.jar包修改"></a>6.jar包修改</h2><pre class=" language-shell"><code class="language-shell"># 将 hive 的 bin 目录下的 jline-2.12.jar 文件发送到 hadoop 的 share/hadoop/yarn/lib/ 目录下
@@ -1398,8 +1398,7 @@ cp jline-2.12.jar /usr/local/src/hadoop-2.6.0/share/hadoop/yarn/lib/
 cd /usr/local/src/hadoop-2.6.0/share/hadoop/yarn/lib/
 rm -rf jline-0.9.94.jar
 </code></pre>
-<h2 id="7-初始化"><a href="#7-初始化" class="headerlink" title="7.初始化"></a>7.初始化</h2><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130165822284.png" alt="image-20201130165822284"></p>
-<pre class=" language-shell"><code class="language-shell"># 在hive的bin目录下进行初始化
+<h2 id="7-初始化"><a href="#7-初始化" class="headerlink" title="7.初始化"></a>7.初始化</h2><pre class=" language-shell"><code class="language-shell"># 在hive的bin目录下进行初始化
 schematool -dbType mysql -initSchema
 
 # 启动集群
@@ -1447,8 +1446,7 @@ export HBASE_HOME=/usr/local/src/hbase
 <li>验证： sqoop help</li>
 </ul>
 <p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201130201450868.png" alt="image-20201130201450868"></p>
-<p>##二、sqoop的使用</p>
-<p><a target="_blank" rel="noopener" href="https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html">官方文档</a></p>
+<h2 id="二、sqoop的使用"><a href="#二、sqoop的使用" class="headerlink" title="二、sqoop的使用"></a>二、sqoop的使用</h2><p><a target="_blank" rel="noopener" href="https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html">官方文档</a></p>
 <ul>
 <li>公用参数：数据库连接</li>
 </ul>
@@ -1903,8 +1901,7 @@ scp -r /etc/profile node1:/etc/
 scp -r kafka node2:/usr/local/src/
 scp -r /etc/profile node2:/etc/
 </code></pre>
-<p>###5.修改其余两个server.properties</p>
-<pre class=" language-shell"><code class="language-shell"># 把node1中的改为1、node2中的改为2
+<h3 id="5-修改其余两个server-properties"><a href="#5-修改其余两个server-properties" class="headerlink" title="5.修改其余两个server.properties"></a>5.修改其余两个server.properties</h3><pre class=" language-shell"><code class="language-shell"># 把node1中的改为1、node2中的改为2
 broker.id=1
 broker.id=2
 </code></pre>
@@ -2161,35 +2158,35 @@ bin/flume-ng agent -c conf/ -f job/dir-flume-hdfs.conf -n a3
 export HBASE_HOME=/usr/local/src/hbase
 export PATH=$PATH:$HBASE_HOME/bin
 </code></pre>
-<h2 id="3-进入hbase目录下的conf目录"><a href="#3-进入hbase目录下的conf目录" class="headerlink" title="3.进入hbase目录下的conf目录"></a>3.进入hbase目录下的conf目录</h2><pre class=" language-shell"><code class="language-shell">vi hbase-env.sh
+<h2 id="3-进入hbase目录下的conf目录"><a href="#3-进入hbase目录下的conf目录" class="headerlink" title="3.进入hbase目录下的conf目录"></a>3.进入hbase目录下的conf目录</h2><pre class=" language-xml"><code class="language-xml">vi hbase-env.sh
 export JAVA_HOME=/usr/local/src/jdk1.8
 export HBASE_MANAGES_ZK=false
 
 
 vi hbase-site.xml
-<property>
-        <name>hbase.rootdir</name>
-        <value>hdfs://node:9000/hbase</value>
-</property>
-<property>
-        <name>hbase.cluster.distributed</name>
-        <value>true</value>
-</property>
-<property>
-        <name>hbase.master</name>
-        <value>node:60000</value>
-        <description>指定hbase的master节点</description>
-</property>
-<property>
-        <name>hbase.zookeeper.quorum</name>
-        <value>node,node1,node2</value>
-        <description>指定zookeeper集群</description>
-</property>
-<property>
-        <name>hbase.zookeeper.property.dataDir</name>
-        <value>/export/server/zookeeper-3.4.5/data</value>
-        <description>这个路径要与zoo.cfg设置一致</description>
-</property>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.rootdir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://node:9000/hbase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.cluster.distributed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.master<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node:60000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定hbase的master节点<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.zookeeper.quorum<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>node,node1,node2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>指定zookeeper集群<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.zookeeper.property.dataDir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/export/server/zookeeper-3.4.5/data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>这个路径要与zoo.cfg设置一致<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 
 
 vi regionservers
@@ -2721,8 +2718,12 @@ node2
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Aunean
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -2766,8 +2767,12 @@ node2
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Aunean
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -2980,7 +2985,7 @@ node2
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.9k</span>&nbsp;字
+                class="white-color">46k</span>&nbsp;字
             
             
             
