@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="code-KNXLvfbWBj" />
     <meta charset="utf-8">
-    <meta name="keywords" content="重大机密, Aunean&#39;s Blog">
+    <meta name="keywords" content="scrapy存储json格式数据, Aunean&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>重大机密 | Aunean&#39;s Blog</title>
+    <title>scrapy存储json格式数据 | Aunean&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,7 +315,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '10a2c312a653bcd2c473b99517df534f7bf836a1b8157d18e27463293354726e';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -328,12 +328,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">重大机密</h1>
+                    <h1 class="description center-align post-title">scrapy存储json格式数据</h1>
                 </div>
             </div>
         </div>
@@ -449,12 +449,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E3%8A%99/">
-                                <span class="chip bg-color">㊙</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%9C%8B%E4%B8%8D%E5%88%B0%E5%90%A7%EF%BC%8C%E6%B0%94%E6%AD%BB%E4%BD%A0/">
-                                <span class="chip bg-color">看不到吧，气死你</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                                <span class="chip bg-color">数据采集</span>
                             </a>
                         
                     </div>
@@ -465,8 +461,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%A7%81%E6%9C%89/" class="post-category">
-                                私有
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -478,21 +474,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-22
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-23
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    923
                 </div>
                 
 
@@ -509,8 +505,139 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://tool.oschina.net/encrypt?type=2">开源中国在线工具</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/QQ%E5%9B%BE%E7%89%8720210423112837.png" alt="Front-matter"></p>
+                <h2 id="1-使用终端指令行方式"><a href="#1-使用终端指令行方式" class="headerlink" title="1.使用终端指令行方式"></a>1.使用终端指令行方式</h2><ul>
+<li>指令：scrapy crawl xxx -o filePath.文件类型 -s FEED_EXPORT_ENCODING=utf-8</li>
+<li>-s FEED_EXPORT_ENCODING=utf-8 解决中文乱码</li>
+<li>注意：持久化存储对应的文本文件类型只可以为 ‘json’, ‘jsonlines’, ‘jl’, ‘csv’, ‘xml’, ‘marshal’, ‘pickle’ 类型</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210606150550881.png" alt="终端指令方式存储数据格式"></p>
+<h2 id="2-直接创建并写入-json-文件"><a href="#2-直接创建并写入-json-文件" class="headerlink" title="2.直接创建并写入 json 文件"></a>2.直接创建并写入 json 文件</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">import</span> codecs
+<span class="token keyword">import</span> json
+
+
+<span class="token keyword">class</span> <span class="token class-name">LiepinproPipeline</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 构造方法（初始化对象时执行的方法）</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 必须使用 w+ 模式打开文件，以便后续进行 读写操作（w+模式，意味既可读，亦可写）</span>
+        <span class="token comment" spellcheck="true"># 注意：此处打开文件使用的不是 python 的 open 方法，而是 codecs 中的 open 方法</span>
+        self<span class="token punctuation">.</span>json_file <span class="token operator">=</span> codecs<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">'data2.json'</span><span class="token punctuation">,</span> <span class="token string">'w+'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'UTF-8'</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 爬虫开始时执行的方法</span>
+    <span class="token keyword">def</span> <span class="token function">open_spider</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 在爬虫开始时，首先写入一个 '[' 符号，构造一个 json 数组</span>
+        <span class="token comment" spellcheck="true"># 为使得 Json 文件具有更高的易读性，我们辅助输出了 '\n'（换行符）</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'[\n'</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 爬虫 pipeline 接收到 Scrapy 引擎发来的 item 数据时，执行的方法</span>
+    <span class="token keyword">def</span> <span class="token function">process_item</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 将 item 转换为 字典类型，并编码为 json 字符串，写入文件</span>
+        <span class="token comment" spellcheck="true"># 为使得 Json 文件具有更高的易读性，辅助输出 '\n'（换行符）</span>
+        item_json <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>dict<span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>item_json <span class="token operator">+</span> <span class="token string">',\n'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> item
+
+    <span class="token comment" spellcheck="true"># 爬虫结束时执行的方法</span>
+    <span class="token keyword">def</span> <span class="token function">close_spider</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 在结束后，需要对 process_item 最后一次执行输出的 “逗号” 去除</span>
+        <span class="token comment" spellcheck="true"># 当前文件指针处于文件尾，我们需要首先使用 SEEK 方法，定位文件尾前的两个字符（一个','(逗号), 一个'\n'(换行符)）的位置</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>SEEK_END<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 使用 truncate() 方法，将后面的数据清空</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>truncate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 重新输出'\n'，并输入']'，与 open_spider(self, spider) 时输出的 '['，构成一个完整的数组格式</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'\n]'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 关闭文件</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="C:\Users\14533\AppData\Roaming\Typora\typora-user-images\image-20210606151457502.png" alt="直接写入方式存储数据格式"></p>
+<h2 id="3-使用-JsonItemExporter-写入-Json-文件"><a href="#3-使用-JsonItemExporter-写入-Json-文件" class="headerlink" title="3.使用 JsonItemExporter 写入 Json 文件"></a>3.使用 JsonItemExporter 写入 Json 文件</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> scrapy<span class="token punctuation">.</span>exporters <span class="token keyword">import</span> JsonItemExporter
+
+
+<span class="token keyword">class</span> <span class="token class-name">LiepinproPipeline</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># 构造方法（初始化对象时执行的方法）</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 使用 'wb' （二进制写模式）模式打开文件</span>
+        self<span class="token punctuation">.</span>json_file <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'data3.json'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 构建 JsonItemExporter 对象，设定不使用 ASCII 编码，并指定编码格式为 'UTF-8'</span>
+        self<span class="token punctuation">.</span>json_exporter <span class="token operator">=</span> JsonItemExporter<span class="token punctuation">(</span>self<span class="token punctuation">.</span>json_file<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'UTF-8'</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 声明 exporting 过程 开始，这一句也可以放在 open_spider() 方法中执行。</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>start_exporting<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 爬虫 pipeline 接收到 Scrapy 引擎发来的 item 数据时，执行的方法</span>
+    <span class="token keyword">def</span> <span class="token function">process_item</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 将 item 存储到内存中</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>export_item<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> item
+
+    <span class="token keyword">def</span> <span class="token function">close_spider</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 声明 exporting 过程 结束，结束后，JsonItemExporter 会将收集存放在内存中的所有数据统一写入文件中</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>finish_exporting<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 关闭文件</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="C:\Users\14533\AppData\Roaming\Typora\typora-user-images\image-20210606151925290.png" alt="JsonItemExporter写入方式存储数据格式"></p>
+<h2 id="4-使用-JsonLinesItemExporter-写入-json-文件"><a href="#4-使用-JsonLinesItemExporter-写入-json-文件" class="headerlink" title="4.使用 JsonLinesItemExporter 写入 json 文件"></a>4.使用 JsonLinesItemExporter 写入 json 文件</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> scrapy<span class="token punctuation">.</span>exporters <span class="token keyword">import</span> JsonLinesItemExporter
+
+
+<span class="token keyword">class</span> <span class="token class-name">LiepinproPipeline</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># 构造方法（初始化对象时执行的方法）</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 使用 'wb' （二进制写模式）模式打开文件</span>
+        self<span class="token punctuation">.</span>json_file <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'data4.json'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 构建 JsonLinesItemExporter 对象，设定不使用 ASCII 编码，并指定编码格式为 'UTF-8'</span>
+        self<span class="token punctuation">.</span>json_exporter <span class="token operator">=</span> JsonLinesItemExporter<span class="token punctuation">(</span>self<span class="token punctuation">.</span>json_file<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'UTF-8'</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 声明 exporting 过程 开始，这一句也可以放在 open_spider() 方法中执行。</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>start_exporting<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 爬虫 pipeline 接收到 Scrapy 引擎发来的 item 数据时，执行的方法</span>
+    <span class="token keyword">def</span> <span class="token function">process_item</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 将 item 直接写入文件中</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>export_item<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> item
+
+    <span class="token keyword">def</span> <span class="token function">close_spider</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 声明 exporting 过程 结束，结束后，JsonItemExporter 会将收集存放在内存中的所有数据统一写入文件中</span>
+        self<span class="token punctuation">.</span>json_exporter<span class="token punctuation">.</span>finish_exporting<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 关闭文件</span>
+        self<span class="token punctuation">.</span>json_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="C:\Users\14533\AppData\Roaming\Typora\typora-user-images\image-20210606152350992.png" alt="JsonLinesItemExporter写入方式存储数据格式"></p>
+<h2 id="四种写入方式对比"><a href="#四种写入方式对比" class="headerlink" title="四种写入方式对比"></a>四种写入方式对比</h2><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>内存占用情况</th>
+<th>是否为标准json格式</th>
+<th>易读性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>终端指令行存储</td>
+<td>低</td>
+<td>是</td>
+<td>较高</td>
+</tr>
+<tr>
+<td>直接创建并写入文件</td>
+<td>低</td>
+<td>是</td>
+<td>高</td>
+</tr>
+<tr>
+<td>JsonItemExporter</td>
+<td>高</td>
+<td>是</td>
+<td>高</td>
+</tr>
+<tr>
+<td>JsonLinesItemExporter</td>
+<td>低</td>
+<td>否</td>
+<td>低</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -537,7 +664,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shiyiri.top/node/99.html">https://www.shiyiri.top/node/99.html</a>
+                    <a href="https://www.shiyiri.top/node/103.html">https://www.shiyiri.top/node/103.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,12 +702,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E3%8A%99/">
-                                    <span class="chip bg-color">㊙</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%9C%8B%E4%B8%8D%E5%88%B0%E5%90%A7%EF%BC%8C%E6%B0%94%E6%AD%BB%E4%BD%A0/">
-                                    <span class="chip bg-color">看不到吧，气死你</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                                    <span class="chip bg-color">数据采集</span>
                                 </a>
                             
                         </div>
@@ -1013,46 +1136,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/node/101.html">
+                <a href="/node/103.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="博客搭建">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="scrapy存储json格式数据">
                         
-                        <span class="card-title">博客搭建</span>
+                        <span class="card-title">scrapy存储json格式数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            收集一些大佬写的搭建方法
+                            四种scrapy存储为json格式方法
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E4%BA%8Ehexo%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    基于hexo搭建
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+                        <span class="chip bg-color">数据采集</span>
                     </a>
                     
                 </div>
@@ -1066,24 +1191,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node/100.html">
+                <a href="/node/102.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="猫眼字体处理">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="高性能爬虫">
                         
-                        <span class="card-title">猫眼字体处理</span>
+                        <span class="card-title">高性能爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文记录对猫眼字体的解析和采集
+                            比较单线程、多线程、协程爬取速度
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
