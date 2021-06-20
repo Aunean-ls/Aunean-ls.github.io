@@ -468,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-06-07
                 </div>
                 
 
@@ -499,7 +499,8 @@
 <p> **Item Pipeline(管道)**：负责处理Spider中获取的Item，并经行后期处理（详细分析、过滤、存储等）的地方</p>
 <p> **Downloader Middlewares(下载中间件)**：自定义扩展下载功能组件，可以进行服务器代理等设置</p>
 <p> **Spider Middlewares(Spider中间件)**：可以自定义扩展和操作engine和Spider中间 通信的功能组件(比如进入Spider 的Responses，和从Spider出去的Requests)</p>
-<h5 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h5><p><img src="file:///D:/qq/qq%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE/1936405-124e3af5233e7c56.webp" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210607085133107.png" alt="框架结构"></p>
+<h5 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h5><p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/12983160-796fd5bfb38a39ec.png" alt="img"></p>
 <ol>
 <li>引擎从Spiders中获取到的最初的要爬取的Requests。</li>
 <li>引擎安排Requests到调度器中，并向调度器请求下一个要爬取的Requests。</li>
@@ -513,6 +514,7 @@
 <li>引擎将上步中Spider处理的及其爬取到的Item给ItemPiplline,将Spider处理的Requests发送给调度器，并向调度器请求可能存在的下一个要爬取的Requests)</li>
 <li>(从第二步)重复直到调度器中没有更多的Requests。</li>
 </ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210607090503892.png" alt="image-20210607090503892"></p>
 <h5 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h5><p>创建scrapy项目</p>
 <pre><code>scrapy startproject xxx
 </code></pre>
@@ -1656,7 +1658,7 @@ ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">63.3k</span>&nbsp;字
+                class="white-color">63.4k</span>&nbsp;字
             
             
             
