@@ -328,7 +328,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tse1-mm.cn.bing.net/th/id/R-C.586168edfab07179b89a5f7b3cae742a?rik=p%2fwhfzkoh4bZDw&riu=http%3a%2f%2fwww.tekbrowser.com%2fwp-content%2fuploads%2f2020%2f06%2fb-5.jpg&ehk=dMQTYDaS4YabNWy4LigPt3oVrl5tpxLS68t%2bpogHIbs%3d&risl=&pid=ImgRaw&r=0')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -447,12 +447,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/kafka/">
+                                <span class="chip bg-color">kafka</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -468,7 +481,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-08-02
                 </div>
                 
 
@@ -701,7 +714,7 @@ kafka-console-consumer.sh --topic first --bootstrap-server node1:9092 --from-beg
 <h4 id="分区分配策略"><a href="#分区分配策略" class="headerlink" title="分区分配策略"></a>分区分配策略</h4><p>​    一个consumer group中有多个consumer，一个topic有多个partition，所以必然会涉及partition的分配问题，即缺点哪个partition由哪个consumer来消费</p>
 <p><strong>Kafka由两种分配策略</strong></p>
 <pre><code>      1. RoundRobin
-            2. Range
+                    2. Range
 </code></pre>
 <h5 id="RoundRobin"><a href="#RoundRobin" class="headerlink" title="RoundRobin"></a>RoundRobin</h5><p><img src="https://i.loli.net/2020/03/14/W4thI97LAS6rQpU.png" alt="image.png"><img src="https://i.loli.net/2020/03/14/T7SLAjEMzJ9UKP1.png" alt="image.png"></p>
 <p>使用这种分配策略必须保证消费者组内所有consumer订阅的主题是一样的</p>
@@ -1156,7 +1169,11 @@ kafka.eagle.password=123
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/kafka/">
+                                    <span class="chip bg-color">kafka</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1594,16 +1611,15 @@ kafka.eagle.password=123
                 <a href="/node/6.html">
                     <div class="card-image">
                         
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1200px-NumPy_logo_2020.svg.png" class="responsive-img" alt="Numpy笔记">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Numpy学习">
-                        
-                        <span class="card-title">Numpy学习</span>
+                        <span class="card-title">Numpy笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本文记录Numpy学习的一些笔记
                         
                     </div>
                     <div class="publish-info">
@@ -1612,11 +1628,27 @@ kafka.eagle.password=123
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Aunean
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/Numpy/">
+                        <span class="chip bg-color">Numpy</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1631,8 +1663,7 @@ kafka.eagle.password=123
                 <a href="/node/4.html">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hive笔记">
+                        <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.uhWs845uho6CCJZKYvf78gHaD3?pid=ImgDet&rs=1" class="responsive-img" alt="Hive笔记">
                         
                         <span class="card-title">Hive笔记</span>
                     </div>
@@ -1640,7 +1671,7 @@ kafka.eagle.password=123
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本文记录Hive学习的一些笔记
                         
                     </div>
                     <div class="publish-info">
@@ -1649,11 +1680,23 @@ kafka.eagle.password=123
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Aunean
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hive/">
+                        <span class="chip bg-color">Hive</span>
+                    </a>
+                    
                 </div>
                 
             </div>
