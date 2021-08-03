@@ -3025,9 +3025,9 @@ node2
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="4628814494"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -3287,6 +3287,15 @@ $(function () {
         document.addEventListener("visibilitychange",function(){
             document.hidden?(document.title="ヽ(●-`Д´-)ノ页面丢失了",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ又好了哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
         })
+    </script>
+
+
+    <script type="text/javascript">
+    //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
     </script>
 
 

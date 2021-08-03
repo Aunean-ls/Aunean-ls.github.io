@@ -344,9 +344,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/Aunean-ls/Aunean-ls.github.io/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Aunean-ls/Aunean-ls.github.io/medias/banner/0.jpg)');
 </script>
 
 
@@ -525,7 +523,7 @@
                     <a href="/node/6.html">
                         <div class="card-image tag-image">
                             
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1200px-NumPy_logo_2020.svg.png" class="responsive-img" alt="Numpy笔记">
+                            <img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/1200px-NumPy_logo_2020.svg.png" class="responsive-img" alt="Numpy笔记">
                             
                             <span class="card-title">Numpy笔记</span>
                         </div>
@@ -593,9 +591,9 @@
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="4628814494"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -855,6 +853,15 @@ $(function () {
         document.addEventListener("visibilitychange",function(){
             document.hidden?(document.title="ヽ(●-`Д´-)ノ页面丢失了",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ又好了哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
         })
+    </script>
+
+
+    <script type="text/javascript">
+    //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
     </script>
 
 
