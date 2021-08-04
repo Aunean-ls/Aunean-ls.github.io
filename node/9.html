@@ -328,7 +328,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s3.amazonaws.com/thinkific/courses/course_card_image_000/216/1891512778404.original.jpg?1512778404')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/u028.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -485,7 +485,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-02
+                    2021-08-04
                 </div>
                 
 
@@ -509,13 +509,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h2><h5 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h5><p> **Scrapy Engine(引擎)**：负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等</p>
-<p> **Scheduler(调度器)**：负责接收engine发送过来的Request请求并按照一定的方式进行整理排列，入队，当engine需要时，交还给engine</p>
+                <h2 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h2><h5 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h5><p> <strong>Scrapy Engine(引擎</strong>）：负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等</p>
+<p> <strong>Scheduler(调度器</strong>）：负责接收engine发送过来的Request请求并按照一定的方式进行整理排列，入队，当engine需要时，交还给engine</p>
 <p> <strong>Downloader（下载器</strong>）：负责下载engine 发送的所有Requests请求，并将其获取到的Responses交还给Engine，由Engine交给Spider处理</p>
-<p> <strong>Spider（爬虫）</strong>：负责处理所有Responses,从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给engine，将URL提交给engine，再次进入Scheduler</p>
-<p> **Item Pipeline(管道)**：负责处理Spider中获取的Item，并经行后期处理（详细分析、过滤、存储等）的地方</p>
-<p> **Downloader Middlewares(下载中间件)**：自定义扩展下载功能组件，可以进行服务器代理等设置</p>
-<p> **Spider Middlewares(Spider中间件)**：可以自定义扩展和操作engine和Spider中间 通信的功能组件(比如进入Spider 的Responses，和从Spider出去的Requests)</p>
+<p> <strong>Spider（爬虫</strong>）：负责处理所有Responses,从中分析提取数据，获取Item字段需要的数据，并将需要跟进的URL提交给engine，将URL提交给engine，再次进入Scheduler</p>
+<p> <strong>Item Pipeline(管道</strong>）：负责处理Spider中获取的Item，并经行后期处理（详细分析、过滤、存储等）的地方</p>
+<p> <strong>Downloader Middlewares(下载中间件</strong>）：自定义扩展下载功能组件，可以进行服务器代理等设置</p>
+<p> <strong>Spider Middlewares(Spider中间件</strong>）：可以自定义扩展和操作engine和Spider中间 通信的功能组件(比如进入Spider 的Responses，和从Spider出去的Requests)</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210607085133107.png" alt="框架结构"></p>
 <h5 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h5><p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/12983160-796fd5bfb38a39ec.png" alt="img"></p>
 <ol>
@@ -533,15 +533,14 @@
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/image-20210607090503892.png" alt="image-20210607090503892"></p>
 <h5 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h5><p>创建scrapy项目</p>
-<pre><code>scrapy startproject xxx
+<pre class=" language-a"><code class="language-a">scrapy startproject xxx
 </code></pre>
 <p>进入项目文件夹，在项目中创建文件</p>
-<pre><code>scrapy genspider pytest cn.bing.com
+<pre class=" language-a"><code class="language-a">scrapy genspider pytest cn.bing.com
 </code></pre>
-<pre><code>`scrapy genspider [爬虫名] [url]
+<pre class=" language-a"><code class="language-a">scrapy genspider [爬虫名] [url]
 </code></pre>
-<h5 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h5><p><img src="C:\Users\Aunean\AppData\Roaming\Typora\typora-user-images\image-20201209113609652.png" alt="image-20201209113609652"></p>
-<h6 id="spiders"><a href="#spiders" class="headerlink" title="spiders"></a>spiders</h6><p>创建的爬虫</p>
+<h5 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h5><h6 id="spiders"><a href="#spiders" class="headerlink" title="spiders"></a>spiders</h6><p>创建的爬虫</p>
 <p>初始内容及意义：</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding: utf-8 -*-</span>
 <span class="token keyword">import</span> scrapy
@@ -1142,7 +1141,7 @@ ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean"
         repo: 'blog_comments',
         owner: 'Aunean-ls',
         admin: "Aunean-ls",
-        id: '2021-04-19T22-46-48',
+        id: '2021-04-19T15-09-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1172,30 +1171,31 @@ ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/node/100.html">
+                <a href="/node/6.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/7.jpg" class="responsive-img" alt="猫眼字体处理">
                         
-                        <span class="card-title">猫眼字体处理</span>
+                        <img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/u012.webp" class="responsive-img" alt="Numpy笔记">
+                        
+                        <span class="card-title">Numpy笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文记录对猫眼字体的解析和采集
+                            本文记录Numpy学习的一些笔记
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -1205,8 +1205,12 @@ ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
-                        <span class="chip bg-color">数据采集</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/Numpy/">
+                        <span class="chip bg-color">Numpy</span>
                     </a>
                     
                 </div>
@@ -1223,7 +1227,8 @@ ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean"
                 <a href="/node/7.html">
                     <div class="card-image">
                         
-                        <img src="https://static.pypandas.cn/site/logo.png" class="responsive-img" alt="Pandas笔记">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/u012.webp" class="responsive-img" alt="Pandas笔记">
                         
                         <span class="card-title">Pandas笔记</span>
                     </div>
