@@ -30,9 +30,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Aunean's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -481,7 +481,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-04
+                    2021-09-30
                 </div>
                 
 
@@ -2271,6 +2271,35 @@ node1
 node2
 </code></pre>
 <h3 id="hbase和-hadoop-的版本问题"><a href="#hbase和-hadoop-的版本问题" class="headerlink" title="hbase和 hadoop 的版本问题"></a>hbase和 hadoop 的版本问题</h3><p><img src="https://cdn.jsdelivr.net/gh/Aunean-ls/pic/img/20180605162240282" alt="img"></p>
+<h2 id="storm的安装部署"><a href="#storm的安装部署" class="headerlink" title="storm的安装部署"></a>storm的安装部署</h2><h3 id="1-解压安装"><a href="#1-解压安装" class="headerlink" title="1.解压安装"></a>1.解压安装</h3><h3 id="2-storm需要安装好zookeeper"><a href="#2-storm需要安装好zookeeper" class="headerlink" title="2.storm需要安装好zookeeper"></a>2.storm需要安装好zookeeper</h3><h3 id="3-配置conf-storm-yaml"><a href="#3-配置conf-storm-yaml" class="headerlink" title="3.配置conf/storm.yaml"></a>3.配置conf/storm.yaml</h3><pre class=" language-shell"><code class="language-shell">storm.zookeeper.servers:
+     - "node"
+     - "node1"
+     - "node2"
+
+nimbus.seeds: ["node"]
+
+ui.port: 8082
+ui.host: 0.0.0.0
+storm.local.dir: "/export/server/stormData"
+storm.zookeeper.port: 2181
+
+supervisor.slots.ports:
+      - 6700
+      - 6701
+      - 6702
+</code></pre>
+<h3 id="4-分发-1"><a href="#4-分发-1" class="headerlink" title="4.分发"></a>4.分发</h3><h3 id="5-配置环境变量-1"><a href="#5-配置环境变量-1" class="headerlink" title="5.配置环境变量"></a>5.配置环境变量</h3><pre class=" language-shell"><code class="language-shell">export STORM_HOME=/export/server/storm
+export PATH=$PATH:$STORM_HOME/bin
+</code></pre>
+<h3 id="6-启动"><a href="#6-启动" class="headerlink" title="6.启动"></a>6.启动</h3><pre class=" language-shell"><code class="language-shell"># 主节点启动
+storm nimbus > /dev/nul 2>&1 &
+storm logviewer > /dev/null 2>&1 &
+storm ui > /dev/null 2>&1 &
+
+# 从节点启动
+storm logviewer  > /dev/null 2>&1 &
+sotrm supervisor  > /dev/null 2>&1 &
+</code></pre>
 
                 
             </div>
@@ -2824,7 +2853,7 @@ node2
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">64.7k</span>&nbsp;字
+                class="white-color">64.8k</span>&nbsp;字
             
             
             
